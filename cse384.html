@@ -1,0 +1,916 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSE384 - Home</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Systems and Network Programing course notes">
+  <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+  <meta name="Author" content="Mike Corley">
+  <meta name="Author" content="Michael Corley">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="./css/menu.css" />
+  <link rel="stylesheet" href="./css/academics.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <main-menu>
+    <div class="menuItems">
+      <a href="index.html">Home</a>
+      <a href="UnderConstruction.html">Projects</a>
+      <a href="cse384.html">CSE384</a>
+      <a href="UnderConstruction.html">Interests</a>
+      <a href="UnderConstruction.html">Career</a>
+      <a href="UnderConstruction.html">Blogs</a>
+    </div>
+  </main-menu>
+
+  <Center>
+    <H1>CSE384 - System and Network Programing</H1>
+  </Center>
+
+  <div class="courseScope">
+
+    <H2>Course Overview:</H2>
+    <p>
+      Linux is popular (a Unix-like) open source operating system (OS) used in acedemia
+      and many industrial/business environments. Since the mid-1990s Linux has gained a
+      global user-base and runs virtually everywhere: from to small embedded devices
+      such as phones, video game consoles, routers, televisions, to PCs, and all of the worlds top 500 supercomputers
+      <a href="https://www.linux.com/what-is-linux/" <sup> https://www.linux.com/what-is-linux/ </sup>. </a>
+    </p>
+
+    <p>
+      The objective of this course is become familiar with the Linux environment (paradigm: fundational concepts, tools,
+      coventions, and the systems programming interface).
+      The course will begin with a focus on the the environment and tools needed to use Linux to
+      perform technical tasks with proficiency.
+      Topics will include: overview Linux, review of shell(s) - bash, csh, tcsh, ksh, files, permissions, groups
+      and ownership (chmod, chown, setuid),
+      man pages, input/output streams, redirecton, pipes, vim, find, grep (regex), sed, etc. An introduction to BASH scripting and
+      Python programming with corresponding student exercises will be required.
+    </p>
+
+    <p>
+      The course will continue with focus on the Linux systems programming interface. Topics include system calls:
+      e.g. open, read/write, fork, exec, etc), files and I/O, programming editors and IDEs, Makefiles, static and shared libaries, 
+      the C/C++ compilaton model, tool chains, processes and signals 
+      will discussed. The C programming language with the C standard library (libc), and (stdlib) will be used to develop useful
+      tools and facilities that extend and customize the standard Linux environment. The packet capture LIBPCAP (PCAP) is widely 
+      used used open source library for developing network monitoring tools such as TCPdump, SNORT IDS, etc). 
+      PCAP code examples that process network packets will be used to demonstrate advanced C language constructs 
+      including pointers, memory allocation, resource management techniques, and abstract
+      data types (ADT).
+    </p>
+
+    <p>
+      Client/Server models and socket programming examples will be used to introduce network (distributed) application
+      programming and major related concepts including threads, queues, and synchronization primitives such as mutex locks and semaphores. 
+      A C++ (socket-based) messaging middleware will discussed, demonstrated, and made available as a reusable facility for developing complex
+      distributed network applications. A comparision of C versus C++ programming models will be discussed. 
+      A significant final project will require the student to develop a distributed
+      client/server application using socket-based messaging, Time permitting, a discussion of RPC and RESTful
+      communication styles will introduced and demonstrated.
+    </p>
+
+    <p>
+      DevOps (a portmanteau for "Development" and "Operations") is recent and widely odopted set of practices that seek
+      to enhance the efficiency of the software development life cycle (SLDC).  Modern distributed (Cloud computing) models 
+      provide DevOps services that utilize technologies   
+      Docker container and Kubernetes are widely for managing application distribution and deployment and orchestration.
+    </p>
+
+    <center>
+      <div id="protoFrame">
+        <div id="photoInFrame">
+          <img src="./photos/students.jpg" width="100%" height="100%">
+        </div>
+        <p> Software Courses at SU = &#128077; </p>
+      </div>
+    </center>
+
+    <section class="CourseContent">
+      <details>
+        <summary style="font-size: xx-large; font-style: bold; color:blue; text-decoration: underline;">Course Syllabus</summary>
+
+        <div style="margin: 3%;">
+          <div style="border: solid thick; padding:1em; margin-left:3%;background-color: cornsilk">
+
+            <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+              <p> Class Meeting Times: </p>
+              <indent-block style="color:red"> Section 1 - MoWe 2:15pm-3:30pm - Location: Link 105 </indent-block>
+              <indent-block style="color:red"> Section 2 - MoWe 5:15pm-6:35pm - Location: Hall of Languages
+              </indent-block>
+            </div>
+            <hr>
+
+            <div class="officeHours" style="margin: 3%;">
+              <div style="font-size:large; font-weight:bold; margin-bottom:20px;">
+                Office Hours: <a href="#help">QUESTIONS/HELP!</a>
+              </div>
+              <table>
+                <tbody>
+                  <tr style="background-color:white;">
+                    <th style="background-color:cornsilk;text-align: center; ">
+                      <img src="./photos/mike.jpg" height="100">
+                    </th>
+                    <th style="background-color:cornsilk;text-align: center;">
+                      <img src="../photos/ta1.jpg" height="100">
+                      </td>
+                    <th style="background-color:cornsilk;text-align: center;">
+                      <img src="../photos/ta2.jpg" height="100">
+                      </td>
+                  </tr>
+
+                  <tr style="font-size:smaller; text-align: center;">
+                    <td>
+                      Mike Corley <br>
+                      CSE 384 Instructor <br>
+                      mwcorley79@gmail.com
+                    </td>
+                    <td>
+                      TA (Section 1) <br> TA1@syr.edu
+                    </td>
+                    <td>
+                      TA (Section1) <br> TA1@syr.edu
+                    </td>
+                  </tr>
+
+                  <tr style="font-size:smaller; text-align: center;">
+
+                    <!-- TA # 1 -->
+                    <td class="top">
+                      <ul>
+                        <li style="list-style-type:none; margin-left:-40px;">
+                          <u>MoWe:</u><br>4:00pm-5:00pm<br>Location: TBD
+                        </li>
+                      </ul>
+                    </td>
+
+                    <!-- TA # 2 -->
+                    <td>
+                      <ul style="list-style-type:none; margin-left:-40px;">
+                        <li><u>Day(TBD):</u><br>Time<br>Location</li>
+                      </ul>
+                    </td>
+
+                    <!-- TA # 3 -->
+                    <td>
+                      <ul style="list-style-type:none; margin-left:-40px;">
+                        <li><u>Day(TBD):</u><br>Time<br>Location</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="3" style="text-align: center;">
+                      <ul style="list-style-type:none; margin-left:-40px;">
+                        <li><u>Weekly Help Session:</u><br>Time: TBD<br>Location:TBD</li>
+                        <li>
+                          <p class="ImportantNote">
+                            Note: If the TA's needs to cancel their office hours they will post a note on Piazza and/or Black Board
+                            with a makeup
+                            time.
+                          </p>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+              Recommended Texts and Notes
+              <indent-block style="margin-bottom: 2em;">
+                Suggested Texts: 
+                <a
+                  href="https://www.amazon.com/Linux-Programming-Interface-System-Handbook/dp/1593272200/ref=sr_1_3?keywords=linux+programming&qid=1577993145&s=books&sr=1-3">
+                  The Linux Programming Interface: A Linux and UNIX System Programming Handbook, 1st Edition, Michael
+                  Kerrisk
+                </a>
+              </indent-block>
+
+              <indent-block style="margin-bottom: 2em;">
+                References: 
+                <a 
+                  href="https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X/ref=sr_1_15?crid=SVM8LJBBXQL7&keywords=linux+system+programming&qid=1578780938&sprefix=system+programming+linux%2Caps%2C163&sr=8-15">
+                  Computer Systems: A Programmer's Perspective (3rd Edition)," Randal E. Bryant and David R. O'Hallaron
+                 </a>
+              </indent-block>
+   
+            </div>
+
+            <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+              Grading:
+              <indent-block> Weekly Homework/Exercises: 12 total (30%) </indent-block>
+                <indent-block>
+                  <ul style="color: red;">
+                     <li> Homework exercises (H/W) will be assigned, and due at the beginning of Weds. class (see schedule) </li>  
+                     <li> H/W not submitted on time will incur 5 point penalty off the top (there are to many students enrolled in this course to manage late H/W) </li>       
+                  </ul>
+                </indent-block>
+              <indent-block style="margin-bottom: 1em;"> Class Participation:(10%) </indent-block>
+              <indent-block> Project 1:(20%)</indent-block>
+              <indent-block>
+                <ul style="color: red;">
+                  <li> Project(s) not submitted on the due date will incur a 1 point per day penalty  </li>          
+               </ul>
+              </indent-block>
+              <indent-block style="margin-bottom: 1em;"> Midterm:(20%) </indent-block>
+              <indent-block> Final Project:(20%)</indent-block>
+              <indent-block>
+                <ul style="color: red;">
+                  <li> The final project must be submitted on due date for sufficient time to grade </li>          
+               </ul>
+              </indent-block>
+              
+            </div>
+
+            <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+              Academic Integrity:
+              <indent-block style="color:red;font-size: medium;">University Policy <a
+                  href="https://policies.syr.edu/policies/academic-rules-student-responsibilities-and-services/academic-integrity-policy/">
+                  Please Read it </a> </indent-block>
+              <indent-block style="color:red; font-size: medium;">Using someone else's work or ideas as your own is plagiarism!
+              </indent-block>
+              <indent-block style="color:red; font-size: medium;">If plagiarism is detected, all parties involved will receive no credit for
+                that project</indent-block>
+              <indent-block style="color:red; font-size: medium;">Be certain to source (give sufficient credit) all materials/ideas
+                referenced (e.g. the web) that are not your own</indent-block>
+            </div>
+
+            <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+              Important dates:
+              <indent-block style="color:red;font-size: medium;"> Spring 2020 Academic Calendar 
+                <a
+                  href="https://www.syracuse.edu/wp-content/uploads/2019-20-Academic-Calendar-with-Deadlines.pdf">
+                  View here 
+                </a> 
+              </indent-block>
+            </div>
+
+            <p class="ImportantNote"> Note: Both sections of this course are near enrollment capacity!
+              Please attend the section in which you are registrered! If there are not enough seats available,
+              I will ask everyone not registered in the section to leave! Please help me to avoid that!
+            </p>
+
+            
+
+
+          </div>
+        </div>
+        <indent-block>
+         
+          <p class="ImportantNote"> Note: The schedule as outlined below is fairly ambitious and tentative.
+            We will add/remove/adjust content for the course as we progress. Some topics may be removed, extended,
+            or combined.  Consider the topics listed as basic outline. 
+          </p>
+      
+          <table class="syllabus">
+            <tbody>
+              <tr>
+                <th colspan="4"> (Tentative) Lecture Schedule: CSE 384 - System and Network Programming </th>
+              </tr>
+              <tr>
+                <th>Topics</th>
+                <th>Lecture</th>
+                <th>Read before class</th>
+                <th>Project</th>
+              </tr>
+              <tr>
+                <td>
+                  Course Introduction:
+                  <br>
+                  <a href="cse384_lecture1.html"> Lecture # 1 </a>, Mon Jan 13
+                </td>
+                <td>
+                  Course overview: materials, projects, grading, etc.
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Virtual machine (Linux Test Environment) Setup
+                  <br>
+                  <a href="cse384_lecture2.html"> Lecture # 2 </a>, Wed Jan 15
+                </td>
+                <td>
+                  Setup/install VirtualBox/environent: (Mint/Ubuntu), Linux Overview
+                </td>
+                <td>
+                </td>
+                <td>
+                  H/W # 1: Familarize yourself with Linux
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Martin Luther King day: No classes!
+                  <br>
+                  <a href="cse384_lecture2.html"> Lecture # 3 </a>, Mon Jan 20
+                </td>
+                <td>
+                  Martin Luther King day: No class
+                </td>
+              
+                <td>
+                
+                </td>
+                </td>
+                <td>
+              </tr>
+
+
+              <tr>
+                <td>
+                   Introduce Linux: Overview of shell(s) and Basic Commands 
+                  <br>
+                  <a href="cse384_lecture2.html"> Lecture # 3 </a>, Wed Jan 22
+                </td>
+                <td>
+                   Topics: Files and I/O, permissions, 
+                   groups and ownership (chmod, chown, setuid), man pages, 
+                   input/output streams, redirecton, pipes, vim, 
+                   find, regular exressions grep, sed,  etc.
+                </td>
+              </td>
+              <td>
+                <td>
+                  H/W # 2: TBA 
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Linux Environment: Shell(s) and Commands (continued) 
+                  <br>
+                  <a href="cse384_lecture2.html"> Lecture # 4 </a>, Mon Jan 27
+                </td>
+                <td>
+                   Topics: Files and I/O, permissions, 
+                   groups and ownership (chmod, chown, setuid), man pages, 
+                   input/output streams, redirecton, pipes, vim, 
+                   find, regular exressions grep, sed, etc.
+                </td>
+                
+                <td>Lecture Notes</td>
+
+                <td>
+                  
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                    Shell Programming in BASH
+                    <br>
+                    <a href="cse384_lecture2.html"> Lecture #5 </a>, Wed Jan 29
+                </td>
+
+                <td>
+                   Language syntax/constructs, variables, command line args, etc. 
+                   examples and demonstration
+                </td>
+                
+                <td>
+                    Lecture Notes
+                </td>
+                <td>
+                    <b style="color: red;">  H/W # 2 due  </b> <br>
+                    H/W # 3: TBA 
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                    Introduction to Python Programming 
+                  <br>
+                  <a href="cse384_lecture2.html"> Lecture # 6 </a>, Mon Feb 3
+                </td>
+                <td>
+                   Overview (presentation): Python language constucts, syntax, 
+                   conventions, code examples and demonstration
+                </td>
+                
+                <td>
+                  Lecture Notes
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                   Introduction to the C Programming Language 
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 7 </a>, Wed Feb 5
+                </td>
+                <td>
+                   Language overview: syntax, structure, conventions, compilation model,
+                   using gcc, man pages, basic code examples and  demonstration
+                </td>
+                
+                <td>
+                  Lecture Notes
+                </td>
+                <td>
+                  <b style="color: red;">  H/W # 3 due  </b> <br>
+                  H/W # 4: TBA 
+              </td>
+              </tr>
+
+              <tr>
+                <td>
+                   Advanced C Programming topics 
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 8 </a>, Mon Feb 10
+                </td>
+                <td>
+                   Discuss and demonstrate pointers, type casting, strong versus weak types 
+                   memory allocation, bit masks, resource management
+                   process (memory) layout, stacks and heaps etcs.     
+                </td>
+
+                <td>
+                  Lecture Notes
+                </td>
+                
+                <td>
+                  
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                   Advanced C Programming using LIBPCAP
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 9 </a>, Web Feb 12
+                </td>
+                <td>
+                   Overview TCP/IP, demonstrate TCPdump, wireshark.
+                   Introduce PCAP as means to demonstrate advanced C constructs 
+                   in interesting real-world context: pointers, type casting, bit masking, 
+                   resource management defining abstract data types (ADT) 
+                   as needed for network packet handling.
+                </td>
+              
+                <td>
+                  Lecture Notes
+                </td>
+                <td>
+                  <b style="color: red;">  H/W # 4 due  </b> <br>
+                  H/W # 5: TBA 
+                </td>
+
+
+              </tr>
+              <tr>
+                <td>
+                   *** Instructor travel: TA supervised (in class) PCAP Programming project/exercise 
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 10 </a>, Mon Feb 17
+                </td>
+                <td>
+                    writing a packet sniffer to analyze network traffic flows
+                    Details to follow
+                </td>
+                <td>
+                  Lecture Notes
+                </td>
+                <td>
+                 
+                </td>    
+              </tr>
+
+              <tr>
+                <td>
+                   *** Instructor travel: TA supervised (in class) PCAP Programming project/exercise
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 11 </a>, Wed Feb 19
+                </td>
+                <td>
+                    writing a packet sniffer to analyze network traffic flows
+                </td>
+                <td>
+                  Lecture Notes
+                </td>
+
+                <td>
+                  <b style="color: red;">  H/W # 5 due  </b> <br>
+                  H/W # 6: complete PCAP exercise (gives you lots of time!)  
+                </td>       
+              </tr>
+
+              <tr>
+                <td>
+                   Advanced C Programming topics (continued): building libraries  
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 12 </a>, Mon Fed 24
+                </td>
+                <td>
+                  Overview of function pointers, static(.a) and dynamic (shared-object .so)
+                  libraries: Demostration of object factory method, and shared-object library plugin example 
+                </td>
+                <td>
+                  Lecture Notes
+                </td>
+                    
+                <td>        
+                </td>
+                
+              </tr>
+
+              <tr>
+                <td>
+                    Systems Programming
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 13 </a>, Wed Fed 26
+                </td>
+                <td>
+                  Linux system interface, the C library (libc), POSIX   
+                  Discussion of system calls: file I/O (open, read, write), processes (fork,exec), pipes (IPC), signals etc.   
+                  Discuss Project 1:  Details to Follows..
+                </td>
+                    
+                <td>   
+                  Lecture Notes 
+                </td>
+
+                <td>
+                  <b style="color: red;">  H/W # 5 due  </b> <br>
+                  H/W # 6: TBA 
+                </td>
+
+                
+              </tr>
+
+              <tr>
+                <td>
+                    Midterm Review, Project 1 ideas/discussion 
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 14 </a>, Mon Mar 2
+                </td>
+
+                <td>
+                    Midterm Review:  *** Ask Questions ***
+                    Note: Project 1 statement and requirements discussion
+                </td>
+                    
+                <td> 
+                  Lecture notes       
+                </td>
+
+                <td>
+                  <b style="color: red;"> *** Project 1 assigned today **** </b> <br>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td >
+                  <b style="color: red;">*** Midterm Exam Today </b>
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 15 </a>, Wed Mar 4
+                </td>
+                <td style="color: red;"">
+                    Please place all items below your desk, no cellphones, no discussion during the exam. 
+                    You have the entire period! Please write your name and SUID number on exam.  
+                </td>
+                <td> 
+                  Lecture notes       
+                </td> 
+
+                <td>
+                  <b style="color: red;">  H/W # 6 due  </b> <br>
+                  H/W # 7: Project 1 
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                    Systems Programming: Linux System interface (Continued)
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 16 </a>, Mon Mar 9
+                </td>
+                <td>
+                   Discussion of system calls, and libraries (libc, stdlib) for Project 1
+                   Code examples: file I/O (open, read, write), processes (fork,exec), pipes (IPC), signals etc.   
+                </td>
+                <td> 
+                  Lecture notes       
+                </td> 
+
+                <td>
+                   Project 1
+                </td>
+                
+              </tr>
+
+              <tr>
+                <td>
+                  Linux System interface (continued), Loadable Kernel Modules (LKM) 
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 17 </a>, Wed Mar 11 
+                </td>
+                <td>
+                     Extending (inserting code into) the kernel: discuss and demonstrate 
+                     (.ko) files, insmod, modprobe commands etc.
+                </td>
+                    
+                <td> 
+                  Lecture notes       
+                </td> 
+
+                <td>  
+                   H/W # 8: TBA      
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                    <b> Spring break </b> 
+                   <br>
+                   Mon Mar 16 
+                </td>
+                <td style="color: red">
+                     *** Spring Break: no class ****
+                    
+                </td>
+                <td></td>
+                <td>  
+                  Project 1  
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                   <b> Spring break </b> 
+                   <br>
+                   Wed Mar 18 
+                </td>
+                <td style="color: red">
+                     *** Spring Break: no class ****
+                     
+                </td>
+                <td></td>   
+                <td>   
+                  Project 1
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                   Introduction to the C++ Programming Language
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 18 </a>, Mon Mar 23 
+                </td>
+                <td>
+                  Overview language concepts: classes (abstraction and encapsulation),
+                  C versus C++, brief discussion of object-oriented design (SOLID) principles
+                  Liskcov subsitution principle: polymorphism    
+                </td>
+                    
+                <td>lecture notes</td>
+                <td>  
+                  Project 1 
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Overview threads and scheduling
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 19 </a>, Wed Mar 25 
+                </td>
+
+                <td>
+                    Discuss and demonstrate pthreads and C++ standard threads
+                </td>
+                 
+                <td> Lecture notes </td>
+
+                <td>
+                  <b style="color: red;">  H/W # 8 due  </b> <br>
+                  H/W # 9: TBA  
+                </td>  
+              </tr>
+
+              <tr>
+                <td>
+                   Locking/Syncronization, Using threads and queues
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 20 </a>, Mon Mar 30 
+                </td>
+                <td>
+                   Locking constructs:  mutex, condition variables, semaphores, etc.
+                   Code examples using standard C++ locks    
+                   Discuss and demonstrate Dr. Fawcett's blocking queue
+                </td>
+                    
+                <td>  
+                   Lecture notes      
+                </td>
+
+                <td>  
+                  <b style="color: red;">  *** Project 1 Due ***  </b> <br>
+                  <b style="color: red;">  *** Final Project assigned ***  </b> <br>
+               </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Locking and Thread Syncronization
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 21 </a>, Wed Apr 1 
+                </td>
+
+                <td>
+                  Locking and Syncronization
+                  Locking contructs:  critical section, monitor, mutex, condition variable, semaphores
+                  C++ code examples of locking: 
+                  Dr. Fawcett's blocking queue
+                </td>
+                   
+                <td>
+                  Lecture notes
+                </td>
+
+                <td>
+                  <b style="color: red;">  H/W # 9 due  </b> <br>
+                  H/W # 10: TBA  
+                </td>  
+
+              </tr>
+
+              <tr>
+                <td>
+                 Introduction to Socket Programming
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 22 </a>, Mon Apr 6 
+                </td>
+                <td>
+                   TCP/IP (review), Sockets overview (presentation),
+                   TCP (connnection-oriented) sockets: C/C++ code examples.
+                   Discuss Final project statement and requirements 
+                </td>
+                    
+                <td> 
+                  Lecture Notes       
+                </td>
+
+                <td>
+                  Final Project
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                    Sockets (continued), resusable C++ (socket) message passing library (MPL)
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 23 </a>, Wed Apr 8 
+                </td>
+
+                <td>
+                    Socket code examples, 
+                    putting in all togther: demonstrate threads, queues, locks, and sockets in a 
+                    messaging passing framework for developing distributed (network) applications 
+                    using message passing.  
+                </td>
+                
+                <td>
+                  Lecture notes
+                </td>
+                
+                
+                  <td>
+                    <b style="color: red;">  H/W # 10 due  </b> <br>
+                    H/W # 11: TBA  
+                  </td> 
+                
+              </tr>
+
+              <tr>
+                <td>  
+                    Managed Programming: C# .Net Core), Final project help/ideas/discussion
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 24 </a>, Mon Apr 13 
+                </td>
+                <td>
+                     chalk talk: design ideas, helpers for final project, discuss managed programming using 
+                     the C# language (specifically .Net Core) targeting Linux.  
+                     Demonstration using the Visual Studio Code editor
+                </td>
+                
+                <td>
+                  Lecture Notes
+                </td>
+                
+                <td>  
+                   Final Project      
+                </td>
+              </tr>
+
+              <tr>
+                <td>  
+                     Introduction to DevOps Concepts and Tools (Docker Container Technology)
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 25 </a>, Wed Apr 15 
+                </td>
+                <td>
+                  Review SLDC models: Waterfall -> Agile -> DevOps
+                  Overview of Container (os-virtualization) technology: Docker, Kubernetes
+                  Demonstrate Docker containers in action.
+                </td>
+                 
+                <td>    
+                  Lecture notes
+                </td>
+
+                <td>
+                  <b style="color: red;">  H/W # 11 due  </b> <br>
+                  H/W # 12: TBA  
+                </td> 
+              </tr>
+
+              <tr>
+                <td>  
+                    Final project help, Where do we go from here?      
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 26 </a>, Mon Apr 20 
+                </td>
+
+                <td>
+                   Discussion of other courses to take, skills sought after by industry.
+                   Students ask questions  
+                </td>
+                 
+                <td>    
+                   Lecture Notes
+                </td>
+
+                <td>
+                  Final Project
+                </td>
+              </tr>
+
+              <tr>
+                <td>  
+                   Miscellaneous topics, makeup/review topics, final project help
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 27 </a>, Wed Apr 22 
+                </td>
+                <td>
+                  Miscellaneous topics, makeup/review previous topics as necessary, Final project help
+                </td>
+                
+                <td>
+                  Lecture notes
+                </td>
+
+                <td>    
+                  <b style="color: red;">  H/W # 12 due  </b> <br>
+                   Final Projects 
+                </td>
+              </tr>
+
+              <tr>
+                <td>  
+                    Last day of classes, Final project help
+                   
+                   <br>
+                   <a href="cse384_lecture2.html"> Lecture # 28 </a>, Mon Apr 27 
+                </td>
+
+                <td>
+                  Final project help
+                  <b> Final project due Friday April 31st!  No Exceptions! </b>
+                </td>
+                 
+                <td>    
+                   Lecture notes
+                </td>
+                <td>
+                  <b style="color: red;">  Final project due Friday April 31st!  No Exceptions! </b> <br>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <indent-block>
+            <//details> </section> </div> <footer>
+            Revised: 01/11/2020
+            </footer>
+
+</body>
+
+</html>

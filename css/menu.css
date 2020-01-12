@@ -1,0 +1,55 @@
+﻿main-menu {
+    margin:2%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: navy;
+    justify-content: center;
+    font-family: Tahoma;
+    font-size: medium;
+    border: solid;
+    border-color:orange;
+}
+
+
+div.menuItems > a {
+    background-color: sandybrown;
+    margin: 2px;
+    padding: 6px;
+    border: solid;
+    text-decoration: none;
+    color:navy;
+    text-align: center;
+    justify-content: center;
+    border-color: sandybrown;
+    
+    border-radius:2em;
+    transition: 3s opacity;
+}
+
+    div.menuItems > a:hover {
+        background-color: lightblue;
+        border-color: blue;
+        color: yellow;
+    }
+
+
+footer {
+    display: block;
+   
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: navy;
+    color: sandybrown;
+    text-align: center;
+    padding: 0.25em;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top:2%;
+    border:solid;
+    border-color:orange;
+}

@@ -1,0 +1,53 @@
+﻿body {
+    background-color: beige;
+    font-family: Tahoma;
+    font-size: medium;
+    color:navy;  
+}
+
+
+.master_layout
+{
+   margin-left:2%;
+   
+}
+
+layout.hr
+{
+  
+}
+
+
+.link {
+    padding: 3pt;
+    background-color:sandybrown;
+    color: navy;
+    border: solid;
+    text-decoration: none;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+spacer-10 {
+    display: block;
+    height: 10px;
+}
+
+spacer-5 {
+    display: block;
+    height: 5px;
+}
+
+indent-block {
+    display: block;
+    margin: 5px 25px;
+    font-size:medium;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+  
+}
+
+

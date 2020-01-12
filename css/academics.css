@@ -1,0 +1,63 @@
+﻿grid-container {
+    /*---- the grid ----*/
+    display: grid;
+    grid-gap: 0em;
+    /*---- define column widths ----*/
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    background-color: #660033;
+    border: 0.15em solid orange;
+    width: 90%;
+}
+
+grid-col { /*--- a column in grid ----*/
+    text-align: center;
+    background-color: cornsilk;
+}
+
+grid-elem { /*---- a row element in column ----*/
+    display: block;
+    font-style: italic;
+    font-size:medium;
+    padding: 0.25em;
+    border: 0.15em solid orange;
+}
+
+.University {
+    background-color: white;
+    width: 90%;
+    height: 20%;
+    color: black;
+    padding: 10px;
+    border: solid thin;
+    margin: 3%;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 400px; 
+}
+
+table.syllabus
+{
+    margin-top: 2em;
+}
+
+table.syllabus th 
+{
+    background-color: 
+cornsilk;
+color:black;
+border: 2px solid saddlebrown;
+}
+
+th {
+    background-color: #eee;
+    text-align: left;
+}
+th, td {
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 10px;
+    background-color: cornsilk;
+}
+table {
+    border-collapse: collapse;
+}
