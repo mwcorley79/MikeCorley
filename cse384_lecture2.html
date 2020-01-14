@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSE384 - </title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Systems and Network Programing course notes">
+  <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+  <meta name="Author" content="Mike Corley">
+  <meta name="Author" content="Michael Corley">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="./css/menu.css" />
+  <link rel="stylesheet" href="./css/academics.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <main-menu>
+    <div class="menuItems">
+      <a href="index.html">Home</a>
+      <a href="UnderConstruction.html">Projects</a>
+      <a href="cse384.html">CSE384</a>
+      <a href="UnderConstruction.html">Interests</a>
+      <a href="UnderConstruction.html">Career</a>
+      <a href="UnderConstruction.html">Blogs</a>
+    </div>
+  </main-menu>
+
+  <div class="course" style="margin: 3%">
+    <H1>Lecture # 2 - Systems and Network Programming</H1>
+    <H2>Environment (VM) Setup </H2>
+  </div>
+
+  <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+    <div class=LectureContentBlock>
+      <h2>Agenda for Today (1/15/20):</h2>
+      <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
+        
+        Note: Take away from first class        
+        <ul>    
+            <li style="color: red; font-style: bold"> Most of the students have heard of Linux, but know very little about it. </li>
+            <li style="color: red; font-style: bold"> Most of the students would like to learn more about C/C++ </li>    
+        </ul>
+
+        <ol>
+           <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li> 
+            <ul><li> <a href=".\presentations\virtualization.docx"> A side comment on Virtualization </a> </li></ul>
+            <ol> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE)</a> 
+		        <ul>
+               <li>Why Linux Mint?</li> 
+               <ul>
+                   <li> Free, open source, based on Debian and Ubuntu, but easier to use (great for beginners), very modern and elegant! </li>
+                   <li> Comes with a lot of "stuff" out of the box</li>
+                   <li> Some sources suggest it as the 4th most popular desktop distribution after Windows, Mac OS, and Ubuntu</li>
+                   <li> <a href="https://www.linuxmint.com/about.php"> About Mint </a> </li>
+                   <li> Still not convinced? </li>
+                     <ul> 
+                        <li>
+                           Okay! No problem, we all have our preferences!  I'm okay with you using your distribution of choice, but keep in mind 
+                           that there variances across distributions:  commands, configuration files, software packages (package managers etc.) 
+                        </li>
+                        <li>
+                           I will likely prepare my tests and examples on Mint  
+                        </li>
+                    </ul>
+               </ul>
+              
+             <li> Walk through the process together!  I hope you brought your PC, else look on with a friend and pay close
+                  attention! 
+             </li>
+                  <ol>
+                      <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li> 
+                      <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>
+                      <li> 
+                        <ul>
+                            <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>           
+                        </ul>
+                        <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                        <li> <a href="./presentations/SharedFolders.docx">Configure shared folders</a>, then run the following commands.. </li >
+                           <ol  style="color: red; font-weight: bold; font-family: monospace; font-style: italic; border:solid thin; margin-right: 40%;">
+                             <li>
+                                run: sudo usermod -a -G vboxsf `whoami`
+                             </li>
+                             <li>
+                                run: sudo chown -R `whoami`:users name-of-mount-point
+                             </li>
+                             <li>
+                                log out, and log back in
+                             </li>
+                             <li>open a terminal, time permitting, brief walk through the Mint environment </li>
+
+                            </ol>          
+                    </ol>    
+                    <ul> 
+                       <li> <a href="./presentations/CSE384.ppt">Instructions for Installing VirtualBox and Mint (incomplete)</a> </li>
+                       <li> <a href="./presentations/virtualBoxUbuntu.pdf">Previous semester Instructions for installing and older version of VirtualBox and Ubuntu (very similar)</a> </li>
+                    </ul> 
+                  
+           
+            <li>Make sure everyone is enrolled in Piazza!</li>
+           <li>  
+          
+            Purchase this book (if you haven't already): 
+            <a 
+            href="https://www.amazon.com/Linux-Command-Line-2nd-Introduction/dp/1593279523/ref=sr_1_1?keywords=linux+programming+interface+2nd+edition&qid=1578931367&s=books&sr=1-1">  
+            The Linux Command Line, 2nd Edition: A Complete Introduction 2nd Edition, William Shotts </a>
+           </li>
+          </ol>
+
+         
+
+        
+		    
+             <li style="color: red; font-style: bold; list-style: none;""> 
+              *** Action Items for Next Class ***  
+              <ul>    
+                <li style="color: red; font-style: bold"> H/W # 1: Experiment with Linux (run a command or two), take a screen and upload to Blackboard for next Weds. </li>
+             </ul>
+             </li>        
+        </ul>     
+      </div>
+    </div>
+  </div>
+
+  
+
+  <footer>
+    Revised: 01/11/2020
+  </footer>
+
+</body>
+
+</html>
