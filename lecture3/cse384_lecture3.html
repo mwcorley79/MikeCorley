@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE384 - Lecture 3</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Systems and Network Programing course notes">
+    <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+    <meta name="Author" content="Mike Corley">
+    <meta name="Author" content="Michael Corley">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/academics.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <main-menu>
+        <div class="menuItems">
+            <a href="../index.html">Home</a>
+            <a href="../UnderConstruction.html">Projects</a>
+            <a href="../cse384.html">CSE384</a>
+            <a href="../UnderConstruction.html">Interests</a>
+            <a href="../UnderConstruction.html">Career</a>
+            <a href="../UnderConstruction.html">Blogs</a>
+        </div>
+    </main-menu>
+
+    <div class="course" style="margin: 3%">
+        <H1>Lecture # 3 - Systems and Network Programming</H1>
+        <H2> Linux Overview, Shell environment, Basic commands </H2>
+    </div>
+
+    <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+        <div class=LectureContentBlock>
+            <h3>House keeping items:</h3>
+
+            <ul style="color:blue; font-style: bold; font-size: large;">
+                <li>Make sure to check Piazza for class notifications! </li>
+                <li>Submit H/W # 1 today</li>
+                <li> <a href=".\Hw2.pdf">H/W # 2</a> exercise is posted: due 01/29/20 </li>
+                <li>TA office hours/location(s) updated: <a href='..\cse384.html'>See Syllabus</a></li>
+                <li style="color: red; font-style: italic;">How is everyone doing with the environment setup?</li>
+            </ul>
+            
+            <h2>Agenda for Today (1/22/20):</h2>
+
+            <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
+              
+                <div>
+                    
+                   
+                        <H3> Class Text is free online: The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction, William Shotts 
+                        <a href="http://linuxcommand.org/tlcl.php">   
+                          Free (PDF) format available at: linuxcommand.org 
+                        </a>
+                        </H3>
+
+                        <spacer-10></spacer-10>
+
+
+                    <H3> Webminal - A free online Linux terminal </H3>
+                    <p> After experimenting with Webminal, I've decided I like it, and will use for some aspects of the lectures. It is simple and fast to get an account. It's particularly well organized for explaining, demonstrating, and for allowing the student
+                        to exercise and experiment with the commands
+                    </p>
+
+                    <ul style="color: red; font-style: bold">
+                        <li>Instructions for getting an account here: <a href="../presentations/Webminal.pdf"> Webminal </a> </li>
+                        <li>Note: if you don't have your Linux environment setup, please use Webminal to accomplish H/W # 2 </li>
+                        <li>Please continue to work on your environment setup (VirtualBox and Mint Linux). You will need to have Mint for the upcoming programming components coming soon
+                        </li>
+                    </ul>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h3> Environment Setup Notes: </h3>
+                    <ol>
+                        <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li>
+                        <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>
+                        <li>
+                            <ul>
+                                <li> Desktop Comparisons:  <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/choose.html">MATE versus Cinnamon</a> </li>
+                                <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>
+                            </ul>
+                            <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                            <li> <a href="../presentations/SharedFolders.pdf">Configure shared folders</a>, then run the following commands.. </li>
+
+                            <ol style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em; font-style: italic; border:solid thin; margin-right: 30%;">
+                                <li> run: sudo usermod -a -G vboxsf `whoami` </li>
+                                <li> run: sudo chown -R `whoami`:users name-of-mount-point </li>
+                                <li> log out, and log back in </li>
+                            </ol>
+                    </ol>
+                </div>
+
+                <div>
+                    <hr>
+                    <h3 style="margin-bottom: 0;"> Linux Notes:</h3>
+                    <ol style="margin-top: .5em;">
+                        <li>Background Material
+                          <ol>
+                            <li> History - <a href="https://www.computerhope.com/history/unix.htm"> Unix/Linux Timeline</a> </li>
+                            <li> GNU - <a href="https://en.wikipedia.org/wiki/GNU"> "GNU is not Unix - collection of "free" softwate (GPL)</a></li>
+                            <li> Linux Kernel +  GNU software = <a href="https://www.gnu.org/gnu/linux-and-gnu.en.html"> GNU/Linux </a></li>
+                            <li> <a href="../presentations/2018-Summer-Tutorial-Intro-to-Linux.pdf#page=9"> Linux Intro/tutorial by Augustine Abaris Summer 2108 (Boston University) </a> </li> 
+                          </ol>
+                        </li>
+                        <li style="color:red; font-weight:bold"> Main Lecture Content (class Text): <a href="../presentations/TLCL-19.01.pdf#page=25"> The Linux Command Line, William Shotts </a> </li> 
+                        <li> Previous CSE384 Instructor Notes: YUZHE (RICHARD) TANG 
+                            <ul>
+                                <li> <a href="../presentations/Lecture1-Unix.pdf">Introduction</a> </li> 
+                                <li> <a href="../presentations/Lecture1_shell_files.pdf"> Shell Commands </a> </li> 
+                            </ul>
+                        </li>
+
+                        <li> Webminal - discussion, examples, exercises <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                    </ol>
+
+                    <h3 style="margin-bottom: 0;"> Resources:</h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="http://linuxcommand.org/"> LinuxCommang.org - Excellent Linux web resource (class text book here) </a> </li>
+                        <li> <a href="../presentations/2018-Fall-Tutorial-Intro-to-Linux.pdf#page=18"> Linux Intro/tutorial by Augustine Abaris Fall 2018 (Boston University) </a> </li>                      
+                        <li> <a href="../presentations/2018-Summer-Tutorial-Intro-to-Linux.pdf#page=9"> Linux Intro/tutorial by Augustine Abaris Summer 2108 (Boston University) </a> </li>            
+                        <li> <a href="https://www.guru99.com/introduction-linux.html"> A good Linux Overview (by Guru99)  </a> </li>
+                        <li> <a href="https://www.tutorialspoint.com/operating_system/os_linux.htm">  Tutorialspoint - deeper look at OS components </a> </li>
+                        <li> <a href="./LinuxReference.html"> Summary of Bash Commands from Dr. Fawcett's notes</a> </li>
+                        <li> Webminal - discussion, examples, exercises <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                    </ol>
+
+                    <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
+                        <li> <a href="https://docs.docker.com/engine/docker-overview/"> Docker (Container Technology) </a> </li>
+                    </ol>
+                       
+
+
+                    *** Action Items for Next Class ***
+                    <ul style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em;">
+                        <li> <a href=".\Hw2.pdf"> H/W # 2</a> due 01/29 </li>
+                        <li> Review lecture Resources</li>
+                        <li> skim chapter 1-5, Read chapters 5-10 </li>
+                        <li> complete environment (VirtualBox, Mint) setup </li>    
+                    </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        Revised: 01/11/2020
+    </footer>
+
+</body>
+
+</html>
