@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE384 - Lecture 6</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Systems and Network Programing course notes">
+    <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+    <meta name="Author" content="Mike Corley">
+    <meta name="Author" content="Michael Corley">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/academics.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <main-menu>
+        <div class="menuItems">
+            <a href="../index.html">Home</a>
+            <a href="../UnderConstruction.html">Projects</a>
+            <a href="../cse384.html">CSE384</a>
+            <a href="../UnderConstruction.html">Interests</a>
+            <a href="../UnderConstruction.html">Career</a>
+            <a href="../UnderConstruction.html">Blogs</a>
+        </div>
+    </main-menu>
+
+    <div class="course" style="margin: 3%">
+        <H1>Lecture # 6 - Systems and Network Programming</H1>
+        <H2> Common tools and commands: editors (vi), grep (regex), find, sed, awk, etc. </H2>
+    </div>
+
+    <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+        <div class=LectureContentBlock>
+            <h2>House keeping items:</h2>
+            <ul style="color:blue; font-style: bold; font-size: large;">
+                <li> <a href="..\lecture5\HW3.pdf">H/W # 3</a> exercises posted: due Weds 02/05 </li>   
+                  <li> Class Text is free online: The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction,
+                      William Shotts
+                      <a href="http://linuxcommand.org/tlcl.php">
+                         Free (PDF) format available at: linuxcommand.org
+                      </a>  
+                  </li>   
+                <li>
+                  <H3> Webminal - A free online Linux terminal/environment </H3>
+                  <ul style="color: red; font-style: bold">
+                    <li>Instructions for getting an account here: <a href="../presentations/Webminal.pdf"> Webminal </a> </li>
+                    <li> Webminal <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                    <li>Note: if you don't have your Linux environment setup, please use Webminal to accomplish H/W # 3 </li>
+                    <li>Please continue to work on your environment setup (VirtualBox and Mint Linux).
+                        You will need to have Mint for the upcoming programming components coming soon
+                    </li>
+                  </ul>
+               </li>
+            </ul>
+            
+            <h2>Agenda for Today (1/29/20):</h2>
+            <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
+            
+                <div>
+                    <h3 style="margin-bottom: 0;"> Lecture # 6 Notes:</h3>
+                    <ol style="margin-top: .5em;">
+                        <li>  <a href="./CSE384Lecture6.pdf"> Tools Presentation </a></li>
+                    </ol>  
+                       
+                    <h3 style="margin-bottom: 0;"> Resources:</h3>   
+                        <ol style="margin-top: .5em; font-size:medium;">  
+                            <h4> vi editor </h4> 
+                            <ol> 
+                               <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=165"> Class Text (chapter 12): Introduction to vi </a> </li> 
+                               <li> <a href="https://www.cs.colostate.edu/helpdocs/vi.html"> Basic Commands: Colorado State University </a> </li> 
+                               <li> <a href="https://www.geeksforgeeks.org/vi-editor-unix/"> vi Tutorial: GeeksforGeeks </a> </li> 
+                               <li> <a href="https://www.ccsf.edu/Pub/Fac/vi.html"> vi Introduction:  City College San Franciso </a>
+                            </ol>
+
+                             <h4> grep - g/re/p (global search a regular expression and print) </h4> 
+                             <ol> 
+                                <li> grep, regular expressions (regex): <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=275"> Class Text: Chapter 19 </a> </li> 
+                                <li> Previous CSE384 Instructor Notes: YUZHE (RICHARD) TANG <a href="./Lecture4_shell_grep.pdf">Find and grep presentation</a> </li> 
+                                <li> <a href="https://www.regular-expressions.info/tutorial.html">Complete regex tutorial</a> </li>
+                                <li> <a href="https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/">15 practical grep examples</a> </li>
+                                <li> <a href="https://www.softwaretestinghelp.com/grep-command-in-unix/">more grep examples </a> </li>   
+                                <li> <a href="http://web.mit.edu/hackl/www/lab/turkshop/slides/regex-cheatsheet.pdf">Regex cheat sheet: MIT </a> </li>
+                                <li> <a href="https://www.petefreitag.com/cheatsheets/regex/">Regex (Basic) cheat sheet</a> </li>   
+                                <li> <a href="https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html">Nice regex overview, programming examples</a> </li>
+                             </ol>
+
+                             <h4> Find and locate files </h4>  
+                             <ol>   
+                                <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=241"> Class Text (chapter 17) Searching for Files </a> </li>
+                                <li> <a href="https://kb.iu.edu/d/admm"> Find command tutorial:  Indiana University</a> </li>
+                                <li> <a href="https://shapeshed.com/unix-find/"> Find Command (Tutorial)</a> </li>
+                                <li> Previous CSE384 Instructor Notes: YUZHE (RICHARD) TANG <a href="./Lecture4_shell_grep.pdf">Find and grep presentation</a> </li> 
+                             </ol>
+
+
+                             <h4> sed - stream editor  </h4> 
+                             <ol>  
+                               <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=325">Class Text (Chapter 20): Text Processing </a> </li>
+                               <li> <a href="https://www.gnu.org/software/sed/manual/sed.html">sed - stream editor </a> </li>  
+                               <li> <a href="https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/">sed examples </a> </li>  
+                             </ol>
+
+                             <h4> AWK programming langauge  </h4> 
+                             <ol>  
+                               <li> <a href="https://www.tutorialspoint.com/awk/awk_overview.htm">Tutorialspoint</a> </li>
+                               Typical Uses
+                               <ul>
+                                  <li> Producing formatted text reports </li>
+                                  <li> Performing arithmetic operations </li>
+                                  <li> Performing string operations, and many more </li>
+                               </ul>
+                             </ol>
+
+                             <h4> Processes:  ps command  </h4> 
+                             <ol>  
+                                <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=134">Class Text (chapter 10) processes</a></li>
+                            </ol>
+
+                            <spacer-10> </spacer-10>
+                            <spacer-10> </spacer-10>
+
+                            <li> <a href="./LinuxReference.html"> Summary of Bash Commands from Dr. Fawcett's notes</a> </li>
+                            <li> Webminal - discussion, examples, exercises <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                        </ol>         
+                </div>
+
+                <div>
+                    <hr>
+                    <h3> Environment Setup Notes: </h3>
+                    <ol>
+                        <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li>
+                        <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>
+                       
+                            <ul>
+                                <li>Desktop Comparisons:  <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/choose.html">MATE versus Cinnamon</a> </li>
+                                <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>
+                            </ul>
+                            <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                            <li> <a href="../presentations/SharedFolders.pdf">Configure shared folders</a>, then run the following commands.. </li>
+
+                            <ol style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em; font-style: italic; border:solid thin; margin-right: 30%;">
+                                <li> run: sudo usermod -a -G vboxsf `whoami` </li>
+                                <li> run: sudo chown -R `whoami`:users name-of-mount-point </li>
+                                <li> log out, and log back in </li>
+                            </ol>
+                            <li>Update Mint (run): "sudo apt update && sudo apt upgrade -y"</li>
+
+                            <div style="color:red;">
+                              <li> <a href="./LinuxSetup.pdf"> *** Nice presentation from Dr. Fawcett for creating a complete virtual environment using VirtualBox and Ubuntu *** </a></li> 
+                              <li> *** I've also started to build standard Mint VM which I can distribute (see me) *** </li>
+                            </div>
+                    </ol>
+
+                   
+                    <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
+                        <li> <a href="https://docs.docker.com/engine/docker-overview/"> Docker (Container Technology) </a> </li>
+                        <li> <a href="https://www.tcpdump.org/"> TCPDump & LIBPCAP </a> </li>
+                        <li> <a href="http://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html"> Extended Berkeley Packet Filter (eBPF) </a> </li>  
+                    </ol>
+                       
+                    *** Action Items for Next Class ***
+                    <ul style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em;">
+                        <li> <a href="..\lecture5\HW3.pdf"> H/W # 3</a> posted: due Weds: 02/05 </li>
+                        <li> <a href="http://linuxcommand.org/lc3_writing_shell_scripts.php">Writing Shell Scripts</a></li>
+                        <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=387">Shell scripts (beginning chapter 24)</a></li>
+                        <li> complete environment (VirtualBox, Mint) setup </li>       
+                    </ul>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        Revised: 01/11/2020
+    </footer>
+
+</body>
+
+</html>
