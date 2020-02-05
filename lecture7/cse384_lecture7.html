@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CSE384 - Lecture 6</title>
+    <title>CSE384 - Lecture 7</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="description" content="Systems and Network Programing course notes">
     <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
@@ -28,15 +28,15 @@
     </main-menu>
 
     <div class="course" style="margin: 3%">
-        <H1>Lecture # 6 - Systems and Network Programming</H1>
-        <H2> Common tools and commands: editors (vi), grep (regex), find, sed, awk, etc. </H2>
+        <H1>Lecture # 7 - Systems and Network Programming</H1>
+        <H2> Shells and Scripting </H2>
     </div>
 
     <div class="LectureResources" style="margin-left:5%; margin-right:3%">
         <div class=LectureContentBlock>
             <h2>House keeping items:</h2>
             <ul style="color:blue; font-style: bold; font-size: large;">
-                <li> <a href="..\lecture5\HW3.pdf">H/W # 3</a> exercises posted: due Weds 02/05 </li>   
+                <li> <a href=".\HW4.pdf">H/W # 4</a> exercises posted: due Weds 02/12/20 </li>   
                   <li> Class Text is free online: The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction,
                       William Shotts
                       <a href="http://linuxcommand.org/tlcl.php">
@@ -48,7 +48,7 @@
                   <ul style="color: red; font-style: bold">
                     <li>Instructions for getting an account here: <a href="../presentations/Webminal.pdf"> Webminal </a> </li>
                     <li> Webminal <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
-                    <li>Note: if you don't have your Linux environment setup, please use Webminal to accomplish H/W # 3 </li>
+                    <li>Note: if you don't have your Linux environment setup, please use Webminal to accomplish H/W # 4 </li>
                     <li>Please continue to work on your environment setup (VirtualBox and Mint Linux).
                         You will need to have Mint for the upcoming programming components coming soon
                     </li>
@@ -56,18 +56,36 @@
                </li>
             </ul>
             
-            <h2>Agenda for Today (02/03/20):</h2>
+            <h2>Agenda for Today (02/05/20):</h2>
             <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
             
                 <div>
-                    <h3 style="margin-bottom: 0;"> Lecture # 6 Notes:</h3>
+                    <h3 style="margin-bottom: 0;"> Lecture # 7 Notes:</h3>
                     <ol style="margin-top: .5em;">
-                        <li>  <a href="./CSE384Lecture6.pdf"> Tools Presentation </a></li>
+                        <li>  <a href="./CSE384Lecture7.pdf#page=15"> Scripting Presentation </a></li>      
                     </ol>  
-                       
-                    <h3 style="margin-bottom: 0;"> Resources:</h3>   
+                        <h3 style="margin-bottom: 0;"> Resources:</h3>   
                         <ol style="margin-top: .5em; font-size:medium;">  
-                            <h4> vi editor </h4> 
+                            <h4> Shell Scripting: </h4> 
+                             <ol>
+                                <li> <a href="http://linuxcommand.org/lc3_writing_shell_scripts.php">Writing Shell Scripts: Linuxcommand.org</a></li>
+                                <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=387">Shell scripts (beginning chapter 24)</a></li> 
+                                <li> <a href="https://www.shellscript.sh/index.html"> Nice Shell Scripting Tutorial </a> </li>
+                                <li> <a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php">BASH Tutorial</a> </li> 
+                                <li> <a href="https://linuxize.com/post/bash-functions/">BASH Functions Tutorial</a> </li> 
+                                <li> <a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html">BASH Guide for Beginners</a></li>
+                                <li> <a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php">BASH Variables tutorial</a></li>
+                                <li> <a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php">BASH If (test command) tutorial</a></li>
+                                <li> <a href="http://linuxcommand.org/lc3_man_pages/testh.html">man page: test command</a></li>  
+                                <li> <a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-loops.php">BASH Loops tutorial</a></li>
+                                <li> <a href="https://linuxconfig.org/how-to-use-arrays-in-bash-script#h5-create-an-array">BASH Arrays tutorial</a></li>
+                                <li> <a href="https://www.ubuntupit.com/simple-yet-effective-linux-shell-script-examples/">40 Simple Linux Shell Script Examples</a></li>
+                                <li> <a href="http://programmingexamples.wikidot.com/bash-scripting"> Shell Programming Examples </a> </li>
+                                <li> <a href="https://www.tecmint.com/basic-shell-programming-part-ii/"> 5 Shell Scripts for Linux Newbies </a> </li>
+                                <li> Download class Examples: <a href="./lecture7_examples.tar.gz"> here </a> </li>
+                            </ol>
+
+                             <h4> vi editor </h4> 
                             <ol> 
                                <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=165"> Class Text (chapter 12): Introduction to vi </a> </li> 
                                <li> <a href="https://www.cs.colostate.edu/helpdocs/vi.html"> Basic Commands: Colorado State University </a> </li> 
@@ -121,9 +139,7 @@
 
                             <spacer-10> </spacer-10>
                             <spacer-10> </spacer-10>
-
-                            <li> <a href="./LinuxReference.html"> Summary of Bash Commands from Dr. Fawcett's notes</a> </li>
-                            <li> Webminal - discussion, examples, exercises <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                             
                         </ol>         
                 </div>
 
@@ -147,14 +163,8 @@
                                 <li> log out, and log back in </li>
                             </ol>
                             <li>Update Mint (run): "sudo apt update && sudo apt upgrade -y"</li>
-
-                            <div style="color:red;">
-                              <li> <a href="./LinuxSetup.pdf"> *** Nice presentation from Dr. Fawcett for creating a complete virtual environment using VirtualBox and Ubuntu *** </a></li> 
-                              <li> *** I've also started to build standard Mint VM which I can distribute (see me) *** </li>
-                            </div>
                     </ol>
-
-                   
+    
                     <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
                     <ol style="margin-top: .5em; font-size:medium; ">
                         <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
@@ -165,12 +175,10 @@
                        
                     *** Action Items for Next Class ***
                     <ul style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em;">
-                        <li> <a href="..\lecture5\HW3.pdf"> H/W # 3</a> posted: due Weds: 02/05 </li>
-                        <li> <a href="http://linuxcommand.org/lc3_writing_shell_scripts.php">Writing Shell Scripts</a></li>
-                        <li> <a href="https://mwcorley79.github.io/MikeCorley/presentations/TLCL-19.01.pdf#page=387">Shell scripts (beginning chapter 24)</a></li>
+                        <li> <a href=".\HW4.pdf"> H/W # 4</a> posted: due Weds: 02/12 </li>
+                        <li> Begin C/C++ programming </li>
                         <li> complete environment (VirtualBox, Mint) setup </li>       
-                    </ul>
-                   
+                    </ul>         
                 </div>
             </div>
         </div>
