@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE384 - Lecture 8</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Systems and Network Programing course notes">
+    <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+    <meta name="Author" content="Mike Corley">
+    <meta name="Author" content="Michael Corley">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/academics.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <main-menu>
+        <div class="menuItems">
+            <a href="../index.html">Home</a>
+            <a href="../UnderConstruction.html">Projects</a>
+            <a href="../cse384.html">CSE384</a>
+            <a href="../UnderConstruction.html">Interests</a>
+            <a href="../UnderConstruction.html">Career</a>
+            <a href="../UnderConstruction.html">Blogs</a>
+        </div>
+    </main-menu>
+
+    <div class="course" style="margin: 3%">
+        <H1>Lecture # 8 - Systems and Network Programming</H1>
+        <H2> Introduction to C/C++ Programming </H2>
+    </div>
+
+    <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+        <div class=LectureContentBlock>
+            <h2>House keeping items:</h2>
+            <ul style="color:blue; font-style: bold; font-size: large;">
+                <li> <a href="..\lecture7\HW4.pdf">H/W # 4</a> exercises posted: due Weds 02/12/20 </li>            
+                 <li>
+                   <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+                    Book references: 
+                    <indent-block style="margin-bottom: 2em;">
+                     <a
+                       href="https://www.amazon.com/Linux-Programming-Interface-System-Handbook/dp/1593272200/ref=sr_1_3?keywords=linux+programming&qid=1577993145&s=books&sr=1-3">
+                       The Linux Programming Interface: &nbsp; A Linux and UNIX System Programming Handbook, 1st Edition, Michael
+                       Kerrisk
+                     </a>
+                   </indent-block>
+     
+                   <indent-block style="margin-bottom: 2em;"> 
+                     <a 
+                       href="https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X/ref=sr_1_15?crid=SVM8LJBBXQL7&keywords=linux+system+programming&qid=1578780938&sprefix=system+programming+linux%2Caps%2C163&sr=8-15">
+                       Computer Systems: &nbsp; A Programmer's Perspective (3rd Edition)," Randal E. Bryant and David R. O'Hallaron
+                      </a>
+                   </indent-block>
+     
+                   <indent-block style="margin-bottom: 2em;">
+                     This an older reference (but a must have for any serious C Programmer): &nbsp; 
+                     <a 
+                       href="https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_3?crid=1KF2KX2JMXKUR&keywords=c+programming+language&qid=1578923664&sprefix=c+pr%2Caps%2C165&sr=8-3">
+                       C Programming Language, 2nd Edition, Kernighan and Ritchie
+                      </a>
+                   </indent-block>
+
+                   <indent-block style="margin-bottom: 2em;">
+                   The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction,
+                      William Shotts
+                      <a href="http://linuxcommand.org/tlcl.php">
+                         Free (PDF) format available at: linuxcommand.org
+                      </a>  
+                   </indent-block> 
+                </li>
+                <li>
+                  <H3> Webminal - A free online Linux terminal/environment </H3>
+                  <ul style="color: red; font-style: bold">
+                    <li>Instructions for getting an account here: <a href="../presentations/Webminal.pdf"> Webminal </a> </li>
+                    <li> Webminal <a href="https://www.webminal.org/terminal/"> Start Terminal Here </a> </li>
+                    <li>Note: if you don't have your Linux environment setup, please use Webminal to accomplish H/W # 4 </li>
+                    <li>Please continue to work on your environment setup (VirtualBox and Mint Linux).
+                        You will need to have Mint for the upcoming programming components coming soon
+                    </li>
+                  </ul>
+               </li>
+            </ul>
+            
+            <h2>Agenda for Today (02/10/20):</h2>
+            <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
+                <div>
+                    <h2 style="margin-bottom: 0;"> Lecture # 8 Notes:</h2>
+                    <p>  Most operating systems are written in the C programming Language. Unix (and Linux) are both almost entirely developed in C.  
+                         The C++ language is based on a C language core, but adds powerful and expressive support for object-oriented
+                         and generic programming (templates) programming paradigms. Most C programs will compile as C++ programs. This semester 
+                         we will use both C and C++ (where appropriate) in order to expose the students to the best of both.  
+                    </p>
+                    <ol style="margin-top: .5em;">
+                        <li>  <a href="./CSE384Lecture8.pdf"> C/C++ Presentation </a></li>     
+                        <li> Download class Examples: <a href="./lecture8_examples.tar.gz"> here </a> </li>  
+                        <li style="color: red; font-style: bold"> Note: You will need C and C++ compilers 
+                           <ul>
+                                <li> Intend to use GNU C/C++ (gcc/g++).  The Linux Minit distro comes with gcc installed by default, but not g++ </li>
+                                <li> Install g++ with the following command (Open terminal and type): sudo apt-get install g++</li>
+                                <li> You can install and use gcc/g++ on your Mac computer. Use this is option if you don't have a Linux distro </li>
+                           </ul>
+                        </li>
+                        
+                    </ol>  
+                        <h3 style="margin-bottom: 0;"> Other Resources:</h3>   
+                        <ol style="margin-top: .5em; font-size:medium;">  
+                                <li> <a href="https://www.tutorialspoint.com/cprogramming/index.htm"> Excellent C Programming Tutorial: Tutorialpoint </a> </li>    
+                                <li> <a href="https://www.learn-c.org/"> Another Excellent C Programming Tutorial(divided in basic and advanced topics): Learn-C.org </a> </li> 
+                                <li> <a href="http://www.cplusplus.com/doc/tutorial/">One of the best C++ tutorials I've seen: cpluspluss.com </a> </li>    
+                                <li> <a href="https://ecs.syr.edu/faculty/fawcett/handouts/CSE687/Lectures/GettingStartedWithCpp.htm"> Dr. Fawcett's Page on Getting Started with C++ </a> </li> 
+                                <li> <a href="https://www.learncpp.com/"> A very good C++ tutorial: LearnCpp.com </a> </li>        
+                                <li> <a href="https://www.geeksforgeeks.org/memory-layout-of-c-program/"> Program memory layout </a> 
+                                <li> <a href="http://codewiki.wikidot.com/c:system-calls:stat"> Stat system call </a>   
+                                <li> <a href="../presentations/TLCL-19.01.pdf#page=373"> Compiling Programs using make (chapter 23): linux command line </a> </li> 
+                                <li> <a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/01/lec.html"> Lectures from a well thought out systems programming course at USNA</a> </li>
+                                <li> <a href="https://www.linuxjournal.com/article/6463"> Compilation, Linking and Loading article</a> </li>
+                                       
+                        </ol>
+
+                        <h3> Dr. Fawcett's developed resources: </h2>
+                        <p>   Dr. Fawcett taught graduate software design courses here at Syracuse from 1990 - Spring 2019.  Most of my software training 
+                              was here at SU in Dr. Fawcett's courses from 2005-2019.  It retirement he is continuing to
+                              develop (current) software training materials, most of which is hosted in his new github website available
+                              via the URLs below. 
+                        </p>
+                              
+                         <ol style="margin-top: .5em; font-size:medium;"> 
+                            <li>   The C++ story provides detailed coverage of the C++ language, it features and how utilize 
+                                   the language and its features effectively. The intent of the story is to meet each person based on individual experience. Beginning 
+                                   C++ programmers can get a handle on using the language, while experienced programmers get get knowledge and refesher and insight 
+                                   into the more advanced features of the language.<a href="https://jimfawcett.github.io/CppStory_Prologue.html"><br> View the C++ story here </a>  </a></li><br>
+
+                            <li> A series of the C++ videos corresponding to the C++ story <a href="https://jimfawcett.github.io/Videos.html"><br> View C++ videos here </a>  </a></li><br></li>
+                            <li> <a href="https://ecs.syr.edu/faculty/fawcett/handouts/webpages/CSE687.htm"> Previously taught (Spring 2019) graduate Object-oriented Design course using C++ </a> </li> 
+                         </ol>     
+                                
+                </div>
+
+                <div>
+                    <hr>
+                    <h3> Environment Setup Notes: </h3>
+                    <ol>
+                        <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li>
+                        <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>
+                       
+                            <ul>
+                                <li>Desktop Comparisons:  <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/choose.html">MATE versus Cinnamon</a> </li>
+                                <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>
+                            </ul>
+                            <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                            <li> <a href="../presentations/SharedFolders.pdf">Configure shared folders</a>, then run the following commands.. </li>
+
+                            <ol style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em; font-style: italic; border:solid thin; margin-right: 30%;">
+                                <li> run: sudo usermod -a -G vboxsf `whoami` </li>
+                                <li> run: sudo chown -R `whoami`:users name-of-mount-point </li>
+                                <li> log out, and log back in </li>
+                            </ol>
+                            <li>Update Mint (run): "sudo apt update && sudo apt upgrade -y"</li>
+                    </ol>
+    
+                    <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
+                        <li> <a href="https://docs.docker.com/engine/docker-overview/"> Docker (Container Technology) </a> </li>
+                        <li> <a href="https://www.tcpdump.org/"> TCPDump & LIBPCAP </a> </li>
+                        <li> <a href="http://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html"> Extended Berkeley Packet Filter (eBPF) </a> </li>  
+                    </ol>
+                       
+                    *** Action Items for Next Class ***
+                    <ul style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em;">
+                        <li> <a href="..\lecture7\HW4.pdf"> H/W # 4</a> posted: due Weds: 02/12 </li>
+                        <li> C/C++ programming </li>  
+                    </ul>         
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        Revised: 01/11/2020
+    </footer>
+
+</body>
+
+</html>
