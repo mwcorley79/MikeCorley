@@ -1,0 +1,2 @@
+Compiler Command: gcc -o stat_example stat.c
+Run Command:      ./start_example [filename]

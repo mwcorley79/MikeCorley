@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE384 - Lecture 13</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Systems and Network Programing course notes">
+    <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+    <meta name="Author" content="Mike Corley">
+    <meta name="Author" content="Michael Corley">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/academics.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <main-menu>
+        <div class="menuItems">
+            <a href="../index.html">Home</a>
+            <a href="../UnderConstruction.html">Projects</a>
+            <a href="../cse384.html">CSE384</a>
+            <a href="../UnderConstruction.html">Interests</a>
+            <a href="../UnderConstruction.html">Career</a>
+            <a href="../UnderConstruction.html">Blogs</a>
+        </div>
+    </main-menu>
+
+    <div class="course" style="margin: 3%">
+        <H1>Lecture # 13 - Systems and Network Programming</H1>
+        <H2> Guest Lecture: Machine Learning Topics </H2>
+    </div>
+
+    <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+        <div class=LectureContentBlock>
+            <h2>House keeping items:</h2>
+            <ul style="color:blue; font-style: bold; font-size: large;">
+                <li> <a href=".\HW7.pdf">H/W # 7</a> posted: due Weds 03/04/20 </li>            
+                 <li>
+                   <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
+                    Book references: 
+                    <indent-block style="margin-bottom: 2em;">
+                     <a
+                       href="https://www.amazon.com/Linux-Programming-Interface-System-Handbook/dp/1593272200/ref=sr_1_3?keywords=linux+programming&qid=1577993145&s=books&sr=1-3">
+                       The Linux Programming Interface: &nbsp; A Linux and UNIX System Programming Handbook, 1st Edition, Michael
+                       Kerrisk
+                     </a>
+                   </indent-block>
+                   <indent-block style="margin-bottom: 2em;"> 
+                    <a 
+                      href="https://www.amazon.com/Hands-System-Programming-performant-concurrent-ebook/dp/B07GVNFTWD">
+                      Hands-On System Programming with C++: Build performant and concurrent Unix and Linux systems with C++17 1st Edition, Dr. Rian Quinn
+                     </a>
+                  </indent-block>
+
+                   <indent-block style="margin-bottom: 2em;"> 
+                     <a 
+                       href="https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X/ref=sr_1_15?crid=SVM8LJBBXQL7&keywords=linux+system+programming&qid=1578780938&sprefix=system+programming+linux%2Caps%2C163&sr=8-15">
+                       Computer Systems: &nbsp; A Programmer's Perspective (3rd Edition)," Randal E. Bryant and David R. O'Hallaron
+                      </a>
+                   </indent-block>
+     
+                   <indent-block style="margin-bottom: 2em;">
+                     This an older reference (but a must have for any serious C Programmer): &nbsp; 
+                     <a 
+                       href="https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_3?crid=1KF2KX2JMXKUR&keywords=c+programming+language&qid=1578923664&sprefix=c+pr%2Caps%2C165&sr=8-3">
+                       C Programming Language, 2nd Edition, Kernighan and Ritchie
+                      </a>
+                   </indent-block>
+
+                   <indent-block style="margin-bottom: 2em;">
+                   The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction,
+                      William Shotts
+                      <a href="http://linuxcommand.org/tlcl.php">
+                         Free (PDF) format available at: linuxcommand.org
+                      </a>  
+                   </indent-block> 
+                </li>
+                <li>
+                  <H3> Linux Environment Setup</H3>
+                  <ul style="color: red; font-style: bold">   
+                    <li>
+                        You will need to have a Linux environment for the programming projects. If you don't have access to personal PC an/or you've had complications 
+                        with the Linux/VirtualBox you have a some options:
+                    </li>
+                    <li>
+                         The University has a Linux system for which you can get an account: <a href="https://answers.syr.edu/pages/viewpage.action?pageId=42271095"> Contact ITS for info</a>
+                    </li>
+                    <li>
+                        As a last resort, students with Mac OS computers who don't have a running Linux environment can get gcc/g++ by installing Xcode. 
+                    </li>
+
+                  </ul>
+               </li>
+               <H3> Questions about C/C++ </H3>
+                  <ul style="color: red; font-style: bold">   
+                    <li>
+                        How is everyone doing with HW 5?
+                    </li>
+                    <li> 
+                        Other questions? 
+                    </li>
+                  </ul>
+               </li>
+            </ul>
+            
+            <h2>Agenda for Today (02/26/20):</h2>
+            <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
+                <div>
+                    <h2 style="margin-bottom: 0;"> Lecture # 13 Notes:</h2>
+                    <p>  Today (Wednesday 2/26), will be a special (one-time) lecture from AI/ML professional: Mr. Michael Weir.
+                          Mr. Weir has an extensive career in military, government, and industry.  He has a diverse technical background and currently 
+                          the principal developer and instructor of an AI/ML bootcamp curriculum used to train incoming Air Force Reasearch Laboratory (AFRL) engineers 
+                    </p>
+                    <ol style="margin-top: .5em;">
+                        <li>  <a href=""> Mr. Weir's presentation: (will be posted soon) </a> </li>    
+                        <li> Download class code examples: <a href="./lecture13_examples.tar.gz"> here </a> </li> 
+                    </ol>                 
+                </div>
+
+                <div>
+                    <hr>
+                    <h3> Environment Setup Notes: </h3>
+                    <ol>
+                        <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li>
+                        <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>  
+                            <ul>
+                                <li>Desktop Comparisons:  <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/choose.html">MATE versus Cinnamon</a> </li>
+                                <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>
+                            </ul>
+                            <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                            <li> <a href="../presentations/SharedFolders.pdf">Configure shared folders</a>, then run the following commands.. </li>
+
+                            <ol style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em; font-style: italic; border:solid thin; margin-right: 30%;">
+                                <li> run: sudo usermod -a -G vboxsf `whoami` </li>
+                                <li> run: sudo chown -R `whoami`:users name-of-mount-point </li>
+                                <li> log out, and log back in </li>
+                            </ol>
+                            <li>
+                                Update Mint (run): "sudo apt update && sudo apt upgrade -y"
+                            </li>
+                    </ol>
+    
+                    <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
+                        <li> <a href="https://docs.docker.com/engine/docker-overview/"> Docker (Container Technology) </a> </li>
+                        <li> <a href="https://www.tcpdump.org/"> TCPDump & LIBPCAP </a> </li>
+                        <li> <a href="http://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html"> Extended Berkeley Packet Filter (eBPF) </a> </li>  
+                    </ol>
+                       
+                    *** Action Items for Next Class ***
+                    <ul style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em;">
+                        <li> <a href="./HW7.pdf"> H/W # 7</a> posted: due Weds: 03/04 </li>
+                        <li> C/C++ programming </li> 
+                    </ul>         
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        Revised: 01/11/2020
+    </footer>
+
+</body>
+
+</html>

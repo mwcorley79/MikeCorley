@@ -1,0 +1,4 @@
+Compiler command: gcc -o minShellTest minShell.c
+Run Command:  ./minShellTest
+
+type: Ctrl-C to exit the minShell
