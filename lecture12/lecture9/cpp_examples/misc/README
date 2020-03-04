@@ -1,0 +1,6 @@
+Compiler command: g++ -o scat simpleCat.cpp
+run: ./scat filename   
+     ls -l | ./scat
+     ./scat
+
+
