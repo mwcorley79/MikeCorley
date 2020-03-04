@@ -67,18 +67,19 @@ std::string CopyFile(const std::string& source_file,
    int block_count = 0;
    try
    {
+      sf.open(source_file, std::ios::in | std::ios::binary);
+      
+      if(!sf.is_open())
+	throw std::runtime_error("File: " + source_file + " not found");
+      
       // get the length of the input file
       sf.seekg (0, sf.end);
       int length = sf.tellg();
       sf.seekg (0, sf.beg);
-
-      // allocate memory using c++ new (not malloc)
+     
+       // allocate memory using c++ new (not malloc)
       char* buf = new char [length];
-
-      sf.open(source_file, std::ios::in | std::ios::binary);
-      if(!sf.is_open())
-	throw std::runtime_error("File: " + source_file + " not found");
-      
+ 
       df.open(dest_file, std::ios::out | std::ios::binary);
       if(!df.is_open())
 	throw std::runtime_error("File: " + dest_file + " could not be not opened");
