@@ -1,0 +1,10 @@
+Jim,1,24
+Joe,2,58
+Wayne,3,36
+Jim,4,38
+Joy,5,90
+Mike,6,99
+Joy,7,55
+Mike,8,9
+Mike,9,9
+Joy,10,93
