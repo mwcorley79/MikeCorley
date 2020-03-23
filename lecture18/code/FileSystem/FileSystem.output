@@ -1,0 +1,211 @@
+
+  Demonstrate Path Class
+ ========================
+  dsktopSpec = /home/jim/Desktop
+  saving current directory
+  setting current directory to dsktopSpec
+  currDir = /home/jim/Desktop
+  getting absolute path for relative path = .
+  full path is: /home/jim/Desktop
+  relative path to file in desktop = /home/jim/Desktop/Test1.txt
+
+  Path::fileSpec(".","temp.txt") = ./temp.txt
+  Path::getPath("./temp.txt") = ./
+  Path::getFullFileSpec("./temp.txt") = /home/jim/code/FileSystem/temp.txt
+  Path::getName("./temp.txt") = temp.txt
+  Path::getExt("./temp.txt") = txt
+  Path::toUpper("temp.txt") = TEMP.TXT
+  Path::toLower("Temp.Txt") = temp.txt
+
+  Demonstrate Directory class
+ =============================
+  current directory is:
+    /home/jim/code/FileSystem
+  It contains files:
+    FileSystem.output
+    FileSystem.exe
+    FileSystem.cpp
+    anothertest.txt
+    FileSystem.h
+    FileSystem
+    FileSystem.o
+    makefile
+  and contains directories:
+    TestDst
+    .vscode
+    TestSrc
+
+  files residing in /home/jim
+    .bashrc
+    packages-microsoft-prod.deb
+    .vboxclient-clipboard.pid
+    .gman
+    .profile
+    .ICEauthority
+    .sudo_as_admin_successful
+    .bash_logout
+    examples.desktop
+    .vboxclient-draganddrop.pid
+    .vboxclient-display.pid
+    .vboxclient-seamless.pid
+    .bash_history
+
+  *.txt files residing in /home/jim
+
+   FileSystem.* files residing in /home/jim
+
+  directories residing in /home/jim
+    Documents
+    .cache
+    code
+    .config
+    .gnupg
+    .vscode
+    Public
+    Pictures
+    Templates
+    Downloads
+    .pki
+    .gconf
+    .mono
+    .gvfs
+    Desktop
+    Music
+    .mozilla
+    Videos
+    .dotnet
+    .local
+    .dbus
+
+  Demonstrate FileInfo Class Operations
+ =======================================
+
+  current path is "/home/jim/code/FileSystem
+
+  Test file spec is: /home/jim/code/FileSystem/FileSystem.h
+  name: 	FileSystem.h
+  date: 	01/21/2015 11:24:32
+  date: 	01/21/2015
+  date: 	11:24:32
+  size: 	7123 bytes
+  is not archive
+  is not compressed
+  is not directory
+  is not encrypted
+  is not hidden
+  is normal
+  is not offline
+  is readonly
+  is not system
+  is not temporary
+  FileSystem.h == FileSystem.h
+  FileSystem.h >= FileSystem.h
+  FileSystem.h != FileSystem.cpp
+  FileSystem.h >= FileSystem.cpp
+  FileSystem.h is smaller than FileSystem.cpp
+  FileSystem.h is earlier than FileSystem.cpp
+
+  Demonstrate File class operations
+ ===================================
+
+  src = "/home/jim/code/FileSystem/FileSystem.o"
+  copying:
+    /home/jim/code/FileSystem/FileSystem.o
+  to:
+    /home/jim/code/FileSystem/TestDst/copy.o
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 16384 bytes
+    writing block of 16384 bytes
+    reading block of 7464 bytes
+    writing block of 7464 bytes
+
+
+  Please enter, on the command line, a filename to process.
+
+  Processing file FileSystem.cpp
+ --------------------------------
+  /////////////////////////////////////////////////////////////////////////////
+  // FileSystem.cpp - Support file and directory operations                  //
+  // Linux ver 1.1                                                           //
+  // Language:    gcc/g++ v4.6.1                                             //
+  // Platform:    Dell XPS 8300, Core i7, kubuntu v11.10                     //
+  // Application: Summer Projects, 2012                                      //
+  // Author:      Jim Fawcett, CST 4-187, Syracuse University                //
+  //              (315) 443-3948, jfawcett@twcny.rr.com                      //
+  /////////////////////////////////////////////////////////////////////////////
+  
+
+  Processing file FileSystem.h
+ ------------------------------
+  #ifndef FILESYSTEM_H
+  #define FILESYSTEM_H
+  /////////////////////////////////////////////////////////////////////////////
+  // FileSystem.h - Support file and directory operations                    //
+  // Linux ver 1.1                                                           //
+  // Language:    gcc/g++ v4.6.1                                             //
+  // Platform:    Dell XPS 8300, Core i7, kubuntu v11.10                     //
+  // Application: Summer Projects, 2012                                      //
+  // Author:      Jim Fawcett, CST 4-187, Syracuse University                //
+  //              (315) 443-3948, jfawcett@twcny.rr.com                      //
+
+  Can't open file test.txt
+  Here's what the program can't find:
+  /home/jim/code/FileSystem/test.txt
+  Can't open file foobar
+  Here's what the program can't find:
+  /home/jim/code/FileSystem/foobar
+
+  writing to anothertest.txt
+ ----------------------------
+

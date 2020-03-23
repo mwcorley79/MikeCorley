@@ -1,0 +1,3 @@
+compiler command: gcc -o bookDemo executive.c bookutils.c book.c
+to run type: ./bookDemo 
+
