@@ -34,7 +34,24 @@
     <div class="LectureResources" style="margin-left:5%; margin-right:3%">
         <div class=LectureContentBlock>
             <h2>House keeping items:</h2>
-            <h3>  Lecture 18  (Section 1 and 2) Video Recordings</h3>
+            <h3>Lecture Videos</h3>
+            
+            <h4> Lecture 19 (3/25): Section 2 (2:15pm) - videos </h4>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li> <a href="https://us-lti.bbcollab.com/recording/211d22d2a45246d8b30de8d451145887">System call discussion</a></li>
+                <li> <a href="https://us-lti.bbcollab.com/recording/f839280e15f8418da35496970de963bc">Code/Serialization Examples Demos</a> </li>
+                <li> <a href="https://us-lti.bbcollab.com/recording/f680f6abfba64fd0b2c586612d333208">Project 1 Discussion and Solution Demo </a> </li>
+            </ul>
+
+            <h4> Lecture 19 (3/25): Section 1 (5:15pm) - videos </h4>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li> <a href="https://us-lti.bbcollab.com/recording/5852ab0a84874ce7bb84c61ed3c9c808">System call discussion</a></li>
+                <li> <a href="https://us-lti.bbcollab.com/recording/ac2e10068102495da58cb90d3a0a6437">Code/Serialization Examples Demos</a> </li>
+                <li> <a href="https://us-lti.bbcollab.com/recording/0900839693c44428be0236c56a19f307">Project 1 Discussion and Solution Demo </a> </li>
+            </ul>
+       
+
+            <h4>Lecture 18 (3/23): (Section 1 and 2)</h4>
             <ul style="color:blue; font-style: bold; font-size: large;">    
                 <li> <a href="https://us-lti.bbcollab.com/recording/d38f3043607d49a59994b7827f828332">Link to section 1 (3/23: 5:15pm) lecture 18 video 1 of 2 </a> </li>
                 <li> <a href="https://us-lti.bbcollab.com/recording/7e626a9767b64c4e8c93a7809cc9be15">Link to section 1 (3/23: 5:15pm) lecture 18 video 2 of 2 </a> </li>
@@ -48,57 +65,10 @@
                         <li style="padding-left:2em;"> (Note: you were NOT asked for a C solution:
                             readfile_block.c - provided as example of how use C standard library functions: fread/fwrite) </li> 
                     </ul> 
-                </li>  
-                <li>
-                   <div style="font-size:large; font-weight:bold; margin:3%; margin-top: 1%">
-                    Book references: 
-                    <indent-block style="margin-bottom: 2em;">
-                        <a
-                          href="https://www.amazon.com/Primer-Plus-6th-Developers-Library/dp/0321776402/ref=sr_1_1?keywords=C%2B%2B+Primer+prata&qid=1582989603&s=books&sr=1-1">
-                          C++ Primer Plus (6th Edition) -- Stephen Prata
-                        </a>
-                    </indent-block>
-
-                    <indent-block style="margin-bottom: 2em;">
-                     <a
-                       href="https://www.amazon.com/Linux-Programming-Interface-System-Handbook/dp/1593272200/ref=sr_1_3?keywords=linux+programming&qid=1577993145&s=books&sr=1-3">
-                       The Linux Programming Interface: &nbsp; A Linux and UNIX System Programming Handbook, 1st Edition, Michael
-                       Kerrisk
-                     </a>
-                   </indent-block>
-
-                   <indent-block style="margin-bottom: 2em;"> 
-                    <a 
-                      href="https://www.amazon.com/Hands-System-Programming-performant-concurrent-ebook/dp/B07GVNFTWD">
-                      Hands-On System Programming with C++: Build performant and concurrent Unix and Linux systems with C++17 1st Edition, Dr. Rian Quinn
-                     </a>
-                   </indent-block>
-
-                   <indent-block style="margin-bottom: 2em;"> 
-                     <a 
-                       href="https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X/ref=sr_1_15?crid=SVM8LJBBXQL7&keywords=linux+system+programming&qid=1578780938&sprefix=system+programming+linux%2Caps%2C163&sr=8-15">
-                       Computer Systems: &nbsp; A Programmer's Perspective (3rd Edition)," Randal E. Bryant and David R. O'Hallaron
-                      </a>
-                   </indent-block>
-     
-                   <indent-block style="margin-bottom: 2em;">
-                     This an older reference (but a must have for any serious C Programmer): &nbsp; 
-                     <a 
-                       href="https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_3?crid=1KF2KX2JMXKUR&keywords=c+programming+language&qid=1578923664&sprefix=c+pr%2Caps%2C165&sr=8-3">
-                       C Programming Language, 2nd Edition, Kernighan and Ritchie
-                      </a>
-                   </indent-block>
-
-                   <indent-block style="margin-bottom: 2em;">
-                   The Linux Command Line, Fifth Internet Edition (class) : A Complete Introduction,
-                      William Shotts
-                      <a href="http://linuxcommand.org/tlcl.php">
-                         Free (PDF) format available at: linuxcommand.org
-                      </a>  
-                   </indent-block> 
-                </li>        
-            </ul>
-            
+                </li> 
+            </ul> 
+                
+                  
             <h2>Agenda for Today (03/25/20):</h2>
             <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
                 <div>
@@ -111,7 +81,7 @@
                        <li><a href="./fork_exec_examples/exec_example.c">  exec syscall example </a> -  demonstrates the exec system call:
                         "exec" is a process loader, and used to load a different process image, into the context of an existing processs. 
                          This examples load the /bin/ls process image into the existing  "exec_example" process </li>
-                       <li><a href="./fork_exec_examples/fork_exec_example.c"> fork and exec example </a> - this example demonstrates a very shell using fork and exec to
+                       <li><a href="./fork_exec_examples/fork_exec_example.c"> fork and exec example </a> - this example demonstrates a very simple shell concept using fork and exec to
                        spawn and run commands in child processes </li>
                        <li><a href="./syscall_code/fork_exec_syscall_examples.tar.gz">Download fork, exec examples here </a></li>
                     </ol>
