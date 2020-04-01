@@ -53,6 +53,7 @@ int main()
     cout << "\n  can't create child thread\n\n";
     return 0;
   }
+  sleep(1);
   pthread_mutex_lock(&mutex);
   showIds("main thread: ");
   pthread_mutex_unlock(&mutex);

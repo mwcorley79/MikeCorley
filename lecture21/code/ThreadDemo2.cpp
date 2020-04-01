@@ -70,7 +70,7 @@ void* thrd_funct(void* arg)
   ARGS* args = (ARGS*) arg;
   int val = args->val;
   
-  for(int i = 0; i < 50; ++i)
+  for(int i = 0; i < 25; ++i)
   {
     int n = (rand() % 10) + 1;
      sleep(n);
@@ -94,7 +94,7 @@ int main()
   cout << "\n  Thread Demo";
   cout << "\n =============\n";
   string msg;
-  pthread_t thread_handles[3];
+  pthread_t thread_handles[2];
   
   ARGS args;
   args.msg = &msg;
@@ -122,10 +122,11 @@ int main()
 
     for(int i = 0; i < 5; ++i)
     {
-       m.unlock();
+       m.lock();
        std::cout <<"Thread M:-> " << msg << std::endl;
-       sleep(5);
+       
        m.unlock();
+       sleep(10);
     }
     std::cout << "okay thread M says bye " << std::endl; 
   
