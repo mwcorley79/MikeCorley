@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CSE384 - Lecture 22</title>
+    <title>CSE384 - Lecture 23</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="description" content="Systems and Network Programing course notes">
     <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
@@ -28,7 +28,7 @@
     </main-menu>
 
     <div class="course" style="margin: 3%">
-        <H1>Lecture # 22 - Systems and Network Programming</H1>
+        <H1>Lecture # 23 - Systems and Network Programming</H1>
     </div>
 
     <div class="LectureResources" style="margin-left:5%; margin-right:3%">
@@ -58,7 +58,7 @@
             <h2 style="color: red;"> *** Notices *** </h2>
             <ul style="color:red; font-style: bold; font-size: large;">    
                 <li> The university has extended the Pass/Fail grading option to Friday April 10th. </li>
-                <li> Grades are updated in BB.  We are still working with ITS to resolve issues with viewing grades (please check). 
+                <li>  See Piazza notification with ITS recommendations for view midterm submissions in BB </li>
                    <ul> 
                        <li> The HWs are now far past the due date! The grades are now calculated, and no more late homeworks will accepted from this point. </li>
                        <li> 
@@ -70,19 +70,55 @@
                         developed in part from ideas based on C++, but supports secure coding by construction. Dr. Fawcett is a Teaching Professor Emeritus here at Syracuse.  
                         He taught graduate level software design courses from 1990 to Spring 2019.  Most of my software training was here at Syracuse under Dr. Fawcett  
                 </li>
-
-                <li>  Project 1 extended to Monday (April 6th) midnight. I'm assuming that would be useful?(There will be a 1 point per day penalty for late submissions!) </li>
-                <li>  Monday (4/6) I intend to discuss Sockets, and Project 2 statement </li>
             </ul>
                
-       
-            <h2>Agenda for Today (04/06/20):</h2>
+            
+            <h2>Agenda for Today (04/08/20):</h2>
             <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
                 <div>
+                    <h2 style="margin-bottom: 0;"> Lecture # 23 </h2>
+                    <h3> Project 2 helpers: *** Please See Project 2 Statement for instructions *** <a href="../projects/Project2.pdf"> 
+                         Project 2 statement </a> </h3> 
+                         <h4 style="color: red;">
+
+                        ***Note:*** I’ve given lots of help. <br> All that you need to do to complete Project 2 is to supply remaining 
+                          the code required in <a href="./Project2_helpers/Messenger.cpp"> Messenger.cpp </a>  Specifically, you need 
+                          complete functions: <br> MessageHandler::AppProc() and <br> bool SendMessage(const Message &message, const EndPoint &dstPeerEP)
+                          <br><br>
+                          <a href="./Project2_helpers/Project2_helpers.tar.gz">Download Project 2 helper code here </a> 
+                           <br><br>
+                           For insight view the test stubs (bottom) of files:<a href="./code/sockets/Sender.cpp"> Sender.cpp </a> and 
+                           <a href="./code/sockets/Receiver.cpp"> Receiver.cpp </a> to see how you might implement 
+                           these functions. <br> You are not required to use my helper code!   You can build all of your own code, but 
+                           you do need to meet all of requirements specified in the Project statement (see MPL (Sender/Recveiver/ClientHandler) 
+                           code below).
+
+                         </h4>  
+                   
+                    <ol>
+                        <li>  Sender Package - client-side message passing for developing TCP clients 
+                            <ul>
+                                <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
+                                <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest </a> </li>
+                            </ul>
+                        </li> 
+                        <li>  Receiver Package - server-side message passing:  listening server and ClientHandler servcie host 
+                          <ul>
+                             <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
+                             <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run ./ReceiverTest </a> </li>
+                          </ul>
+                        </li>
+                         <li>  ClientHandler Package - server-side message passing class abstraction for defining custom server processing.  Register with Receiver  </a> 
+                             <ul>
+                                 <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                 <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code.  ** See Receiver.cpp for test stub: run ./ReceiverTest *() </a> </li>
+                             </ul>
+                         </li>
+                       </li>     
+                     </ol>
+
                     
-                    <h2 style="margin-bottom: 0;"> Lecture # 22 Notes: </h2>
-                    <h3> Sockets </h3>
-                          
+                    <h3> Sockets notes: </h3>        
                     <ul> 
                         <li> <a href="https://www.csd.uoc.gr/~hy556/material/tutorials/cs556-3rd-tutorial.pdf"> Introduction to Sockets </a></li> </li>
                         <li> <a href="./sockets.pdf"> Sockets Presentation  </a></li>
@@ -152,36 +188,7 @@
                         </li> 
                     </ul>
 
-                    <h3> Project 1 helpers: *** Please See Updated Project Statement *** <a href="../projects/Project1.pdf"> Project1 statement </a> </h3>
-                    <h4 style="color: red;">
-                        ***Note:*** I’ve given lots of help. <br> All you should really need do to complete Project 1 is 
-                           implement the two functions:  DoProcessExternalCommand, DoProcessBuiltInCommand in minShell.cpp, 
-                           which handle the set and show shell variables (built-in copmmands), and executing external programs 
-                           respectively.  View the test stubs in Process.cpp and Command Manager.cpp to see how you might implement 
-                           these functions. <br> You are not required to use my helper code!   You can build all of your own code, but 
-                           you do need to meet all of requirements specified in the Project statement (see helper code below).
-                    </h4>  
-                    <ol>
-                         <li>
-                            Process: package runs external programs by creating processes (fork and exec): see interface(.h) and test stub in (.cpp) file.
-                            <ul>   
-                              <li><a href="./Project1_helpers/Process.h"> Process.h </a> - package interface header file </li>
-                              <li><a href="./Project1_helpers/Process.cpp"> Process.cpp </a> - package implementation file (with test stub) </li>
-                            </ul>
-                        </li>
-                        <li>
-                             CommandManager: package supports creation and management of shell variables, and provides searching a user specified path variable for programs stored in the filesystem
-                            <ul>   
-                              <li><a href="./Project1_helpers/CommandManager.h"> CommandManager.h </a> - package interface header file </li>
-                              <li><a href="./Project1_helpers/CommandManager.cpp"> CommandManager.cpp </a> - package implementation file (with test stub) </li>
-                            </ul>
-                        </li>
-
-                        <li><a href="./Project1_helpers/minShell.cpp"> minShell executive </a> - implements the minShell solution, using the services of the 
-                                                                                                 Process and CommandManager packages</li>
-                        <li><a href="./Project1_helpers/minshell_example_output.PNG"> An example of what your complete minShell output should look like </a></li>
-                        <li><a href="./Project1_helpers/Project1_helpers.tar.gz"> Download the Project1 Helper Code Here </a></li>
-                    </ol>
+                    
 
                     <h4> C/C++ examples: System calls, serialization, files and I/O </h4>
 
