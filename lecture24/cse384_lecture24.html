@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CSE384 - Lecture 23</title>
+    <title>CSE384 - Lecture 24</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="description" content="Systems and Network Programing course notes">
     <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
@@ -28,7 +28,7 @@
     </main-menu>
 
     <div class="course" style="margin: 3%">
-        <H1>Lecture # 23 - Systems and Network Programming</H1>
+        <H1>Lecture # 24 - Systems and Network Programming</H1>
     </div>
 
     <div class="LectureResources" style="margin-left:5%; margin-right:3%">
@@ -56,34 +56,34 @@
                 <li><a href="https://us-lti.bbcollab.com/recording/34de5741b0824f25bd99929523218cec">Sockets and Message Passing</a></li>       
             </ul>
 
-         
             <h2 style="color: red;"> *** Notices *** </h2>
             <ul style="color:red; font-style: bold; font-size: large;">    
-                <li> The university has extended the Pass/Fail grading option to Friday April 10th. </li>
                 <li>  See Piazza notification with ITS recommendations for view midterm submissions in BB </li>
-                   <ul> 
-                       <li> The HWs are now far past the due date! The grades are now calculated, and no more late homeworks will accepted from this point. </li>
+                    <ul> 
+                       <li> The HWs are now far past the due date! The grades are now calculated, and no more late homeworks accepted from this point. </li>
                        <li> 
                             Class participation is 10% of your grade. If you've had good attendance history, and good submission history 
                             (i.e. you've submitted everything on time. You can expect to get the full participation credit!) 
                        </li>
-                     </ul> 
-                <li> ***Weds. April 15th ***  Dr. James Fawcett has offered to give a guest lecture on the Rust programming language. Rust is a newer language
-                        developed in part from ideas based on C++, but supports secure coding by construction. Dr. Fawcett is a Teaching Professor Emeritus here at Syracuse.  
-                        He taught graduate level software design courses from 1990 to Spring 2019.  Most of my software training was here at Syracuse under Dr. Fawcett  
+                    </ul> 
+                <li>   
+                    Weds. April 15th Dr. James Fawcett will give a guest lecture on the Rust programming language. Rust is a newer language
+                    developed in part from ideas based on C++, but supports secure coding by construction. Dr. Fawcett is a Teaching Professor Emeritus here at Syracuse.  
+                    He taught graduate level software design courses from 1990 to Spring 2019.  Most of my software training was here at Syracuse under Dr. Fawcett  
                 </li>
             </ul>
-               
-            
-            <h2>Agenda for Today (04/08/20):</h2>
+                  
+            <h2>Agenda for Today (04/13/20):</h2>
             <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
                 <div>
-                    <h2 style="margin-bottom: 0;"> Lecture # 23 </h2>
-                    <h3> Project 2 helpers: *** Please See Project 2 Statement for instructions *** <a href="../projects/Project2.pdf"> 
+                    <h2 style="margin-bottom: 0;"> Lecture # 24 </h2>
+                   
+                    <h3> In class Project 2 Help session: Questions? Look at the Message Passing Library (MPL) in more detail</h3>
+
+                    <h3> Project 2 helpers - Please See Project 2 Statement for instructions: <a href="../projects/Project2.pdf"> 
                          Project 2 statement </a> </h3> 
                          <h4 style="color: red;">
-
-                        ***Note:*** I’ve given lots of help. <br> All that you need to do to complete Project 2 is to supply remaining 
+                          ***Note:*** I’ve given lots of help. <br> All that you need to do to complete Project 2 is to supply remaining 
                           the code required in <a href="./Project2_helpers/Messenger.cpp"> Messenger.cpp </a>  Specifically, you need 
                           complete functions: <br> MessageHandler::AppProc() and <br> bool SendMessage(const Message &message, const EndPoint &dstPeerEP)
                           <br><br>
@@ -94,24 +94,23 @@
                            these functions. <br> You are not required to use my helper code!   You can build all of your own code, but 
                            you do need to meet all of requirements specified in the Project statement (see MPL (Sender/Recveiver/ClientHandler) 
                            code below).
-
                          </h4>  
-                    
-                   <h4> Message Passing Library (libmpl.a) </h4> 
-                    <ol>
-                        <li>  Sender Package - client-side message passing for developing TCP clients 
+                   
+                         <h4> Message Passing Library (libmpl.a) </h4> 
+                    <ol> 
+                        <li>  Sender Package - client-side message passing
                             <ul>
                                 <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
                                 <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest </a> </li>
                             </ul>
                         </li> 
-                        <li>  Receiver Package - server-side message passing:  listening server and ClientHandler servcie host 
+                        <li>  Receiver Package - server-side message passing:  listening server and ClientHandler service host 
                           <ul>
                              <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
                              <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run ./ReceiverTest </a> </li>
                           </ul>
                         </li>
-                         <li>  ClientHandler Package - server-side message passing class abstraction for defining custom server processing.  Register with Receiver  </a> 
+                         <li>  ClientHandler Package - server-side message passing class for defining custom server processing.  Register with Receiver  </a> 
                              <ul>
                                  <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
                                  <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code.  ** See Receiver.cpp for test stub: run ./ReceiverTest *() </a> </li>
@@ -142,7 +141,7 @@
                               <li><a href="https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html"> TCP versus UDP </a> </li>
                             </ol>
                         </li> 
-                        <li> Code Examples: 
+                        <li> Simple Socket Code Examples: 
                            <ol> 
                              <li> Example #1: simple (single) client/server example 
                                  <ol>
@@ -160,27 +159,7 @@
                                 </ol>
                             </li>
 
-                            <li> Example #3: Version 1: message pass library (MPL) -- intent is to use the this for Project 2: <a href="./code/sockets/buildAll">*** run ./buildAll script to build the library + tests</a>
-                                <ol>
-                                   <li>  Sender Package - client-side message passing for developing TCP clients 
-                                       <ul>
-                                           <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
-                                           <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest </a> </li>
-                                       </ul>
-                                   </li> 
-                                   <li>  Receiver Package - server-side message passing:  listening server and ClientHandler servcie host 
-                                    <ul>
-                                        <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
-                                        <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run ./ReceiverTest </a> </li>
-                                    </ul>
-                                   </li>
-                                    <li>  ClientHandler Package - server-side message passing class abstraction for defining custom server processing.  Register with Receiver  </a> 
-                                        <ul>
-                                            <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
-                                            <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code.  ** See Receiver.cpp for test stub: run ./ReceiverTest *() </a> </li>
-                                        </ul>
-                                    </li>
-                                </li> 
+                            
                                  
                                    
                                 </ol>
