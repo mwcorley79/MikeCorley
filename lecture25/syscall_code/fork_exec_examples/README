@@ -1,0 +1,21 @@
+fork_exec_example.c - demonstrates process creation with the fork and exec system calls
+
+"fork" spawns a child process which is an exact copy of the parent process. 
+"exec" is a process loader, and used to load a different process image, into context of the 
+       created child process.
+
+uses the GNU readline project (https://tiswww.case.edu/php/chet/readline/rltop.html). 
+You need to install readline by typing: sudo apt-get install libreadline-dev 
+Compiler Command: gcc -o simpleShell fork_exec_example.c -lreadline
+Run Command: ./simpleShell
+
+
+
+exec_example.c - demonstrates the exec system call
+
+  "exec" is a process loader, and used to load a different process image, into context of the 
+         created child process.  This examples load the /bin/ls process image into the "exec_example" 
+
+Compiler/Build command: gcc -o exec_example exec_example.c
+Run Command: ./exec_example
+
