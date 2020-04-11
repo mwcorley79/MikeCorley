@@ -1,0 +1,10 @@
+# run the server on endpoint localhost (127.0.0.1) and service port 6060. Store files ./serverFiles 
+mate-terminal -e "./fs_server ./serverFiles/  127.0.0.1 6060" -t "CSE 384 Project2: File Server Prototype"
+
+# run client 1: connect to fs_server running on endpoint 127.0.0.1 and port 6060
+# client1's endpoint (for server response) is 127.0.0.1 5050. Store files ./client1Files 
+mate-terminal -e "./fs_client  ./client1Files/ 127.0.0.1 6060  127.0.0.1 5050" -t "FS Client # 1"
+
+# run client 2: connect to fs_server running on endpoint 127.0.0.1 and port 6060
+# client2's endpoint (for server response) is 127.0.0.1 5051. Store files ./client2Files
+mate-terminal -e "./fs_client  ./client2Files/ 127.0.0.1 6060  127.0.0.1 5051" -t "FS Client # 2"

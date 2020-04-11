@@ -92,29 +92,40 @@
                            code below).
                          </h4>  
                    
-                         <h4> Message Passing Library (libmpl.a) </h4> 
-                    <ol> 
-                        <li>  Sender Package - client-side message passing
-                            <ul>
-                                <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
-                                <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest </a> </li>
-                            </ul>
-                        </li> 
-                        <li>  Receiver Package - server-side message passing:  listening server and ClientHandler service host 
-                          <ul>
-                             <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
-                             <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run ./ReceiverTest </a> </li>
-                          </ul>
-                        </li>
-                         <li>  ClientHandler Package - server-side message passing class for defining custom server processing.  Register with Receiver  </a> 
-                             <ul>
-                                 <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
-                                 <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code.  ** See Receiver.cpp for test stub: run ./ReceiverTest *() </a> </li>
-                             </ul>
-                         </li>
-                       </li>     
-                     </ol>
-
+                         <h4 style="margin-bottom: 0;" >File Server code example based on message passing <br>
+                            Demonstrates to how use message passing to support file transfer: 
+                            sender/receive files a block at time (similar in ways to HW#8 - copyfileBlock) </h4> 
+                            <ol style="margin-top: .5em;"> 
+                               <li> <a href="./code/mpl_file_server/cse384_file_server_executive.cpp"> cse384_file_server_executive.cpp -- concurrent file server </a> </li>
+                               <li> <a href="./code/mpl_file_server/cse384_client_executive.cpp"> cse384_client_executive.cpp -- file server client app </a> </li>
+                               <li> <a href="./code/mpl_file_server/README.txt"> README.txt -- getting started (compiling and running) file server example </a> </li>
+                               <li> <a href="./code/mpl_file_server_example.tar.gz">  Download File Server example code here </a> </li>                            
+                            </ol>
+                  
+                       <h4 style="margin-bottom: 0;"> Message Passing Library (libmpl.a) </h4> 
+                       <ol style="margin-top: .5em;">
+                           <li> Sender Package - client-side message passing
+                               <ul>
+                                   <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
+                                   <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
+                               </ul>
+                           </li>
+                           <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
+                               <ul>
+                                   <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
+                                   <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
+                                           ./ReceiverTest </a> </li>
+                               </ul>
+                           </li>
+                           <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
+                                 Receiver </a>
+                               <ul>
+                                   <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                   <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
+                                       Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
+                               </ul>
+                           </li>
+                       </ol>
                     
                     <h3> Sockets notes: </h3>        
                     <ul> 

@@ -1,0 +1,13 @@
+# run Receiver test stub
+mate-terminal -e "./ReceiverTest" -t "Server"
+
+# run Sender test stub
+mate-terminal -e "./SenderTest 1" -t "Sender 1"
+
+# run Sender test stub
+mate-terminal -e "./SenderTest 2" -t "Sender 2"
+
+# run Sender test stub
+mate-terminal -e "./SenderTest 3" -t "Sender 3"
+
+
