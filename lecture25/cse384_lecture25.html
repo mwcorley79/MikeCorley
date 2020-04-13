@@ -91,41 +91,80 @@
                            you do need to meet all of requirements specified in the Project statement (see MPL (Sender/Recveiver/ClientHandler) 
                            code below).
                          </h4>  
-                   
+
+                         <hr>
                          <h4 style="margin-bottom: 0;" >File Server code example based on message passing <br>
-                            Demonstrates to how use message passing to support file transfer: 
-                            sender/receive files a block at time (similar in ways to HW#8 - copyfileBlock) </h4> 
+                             Demonstrates to how use message passing to support file transfer: 
+                             sender/receive files a block at time (similar in ways to HW#8 - copyfileBlock) -- Half duplex MPL </h4> 
+                             <ol style="margin-top: .5em;"> 
+                                <li> <a href="./code/mpl_file_server/cse384_file_server_executive.cpp"> cse384_file_server_executive.cpp -- concurrent file server </a> </li>
+                                <li> <a href="./code/mpl_file_server/cse384_client_executive.cpp"> cse384_client_executive.cpp -- file server client app </a> </li>
+                                <li> <a href="./code/mpl_file_server/README.txt"> README.txt -- getting started (compiling and running) file server example </a> </li>
+                                <li> <a href="./code/mpl_file_server_example.tar.gz">  Download File Server example code here </a> </li>                            
+                             </ol>
+                        
+                        <h4 style="margin-bottom: 0;"> Message Passing Library (libmpl.a) - Half duplex</h4> 
+                        <ol style="margin-top: .5em;">
+                            <li> Sender Package - client-side message passing
+                                <ul>
+                                    <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
+                                </ul>
+                            </li>
+                            <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
+                                <ul>
+                                    <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
+                                            ./ReceiverTest </a> </li>
+                                </ul>
+                            </li>
+                            <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
+                                  Receiver </a>
+                                <ul>
+                                    <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
+                                        Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <hr>
+                        <h4 style="margin-bottom: 0; margin-top: .5em;" >This is a verson of the MPL that supports full duplex (bidirectional TCP socket comm ) between Senders and Receivers.
+                            It makes development easier since both the client and server can each send/receive messages.  A network (file) copy program: 
+                            ( i.e. another version a file transfer service and a client have been developed as an example)
+                            atop the full duplex version of the MPL. The network file copy service is  
+                            similar in concept to HW#8 (copyfileBlock), except it sends/receives files across the network one block at a time (as messages)  </h4> 
                             <ol style="margin-top: .5em;"> 
-                               <li> <a href="./code/mpl_file_server/cse384_file_server_executive.cpp"> cse384_file_server_executive.cpp -- concurrent file server </a> </li>
-                               <li> <a href="./code/mpl_file_server/cse384_client_executive.cpp"> cse384_client_executive.cpp -- file server client app </a> </li>
-                               <li> <a href="./code/mpl_file_server/README.txt"> README.txt -- getting started (compiling and running) file server example </a> </li>
-                               <li> <a href="./code/mpl_file_server_example.tar.gz">  Download File Server example code here </a> </li>                            
+                               <li> <a href="./code/full_duplex_mpl/netCopyService.cpp"> Full Duplex (Synchronous) network file copy server</a> </li>
+                               <li> <a href="./code/full_duplex_mpl/netCopyClient.cpp">   network file copy client </a> </li>
+                               <li> <a href="./code/full_duplex_mpl/README.txt"> README.txt -- getting started (compiling and running)  </a> </li>
+                               <li> <a href="./code/full_duplex_file_service.tar.gz">  Download the example code  </a> </li>
+                               
+                               <h4 style="margin-bottom: 0;margin-top: .5em;"> Full Duplex Message Passing Library -- (version 2, libmpl.a) </h4> 
+                               <ol style="margin-top: .5em;">
+                                <li> Sender Package - client-side message passing
+                                   <ul>
+                                      <li> <a href="./code/full_duplex_mpl/Sender.h"> Sender.h - package interface </a> </li>
+                                      <li> <a href="./code/full_duplex_mpl/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
+                                  </ul>
+                                </li>
+                                <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
+                                   <ul>
+                                     <li> <a href="./code/full_duplex_mpl/Receiver.h"> Receiver.h - package interface </a> </li>
+                                     <li> <a href="./code/full_duplex_mpl/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
+                                            ./ReceiverTest </a> </li>
+                                   </ul>
+                                </li>
+                                <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
+                                     Receiver </a>
+                                  <ul>
+                                      <li> <a href="./code/full_duplex_mpl/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                      <li> <a href="./code/full_duplex_mpl/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
+                                        Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
+                                  </ul>
+                               </li>
+                              </ol>
+
                             </ol>
-                  
-                       <h4 style="margin-bottom: 0;"> Message Passing Library (libmpl.a) </h4> 
-                       <ol style="margin-top: .5em;">
-                           <li> Sender Package - client-side message passing
-                               <ul>
-                                   <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
-                                   <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
-                               </ul>
-                           </li>
-                           <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
-                               <ul>
-                                   <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
-                                   <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
-                                           ./ReceiverTest </a> </li>
-                               </ul>
-                           </li>
-                           <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
-                                 Receiver </a>
-                               <ul>
-                                   <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
-                                   <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
-                                       Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
-                               </ul>
-                           </li>
-                       </ol>
                     
                     <h3> Sockets notes: </h3>        
                     <ul> 
