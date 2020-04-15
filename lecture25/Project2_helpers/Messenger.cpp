@@ -83,6 +83,7 @@ bool SendMessage(const Message &message, const EndPoint &dstPeerEP)
    // complete the code to send messages to MPeers,
    // using an instance of Sender messages.
    // Look at the test Sender package stub (bottom of file: Sender.cpp)
+  
    std::cout << "complete this function to send messages" << std::endl;
    return false;
 }
@@ -153,7 +154,7 @@ bool SendMessage(const Message &message, const EndPoint &dstPeerEP)
    {
       if (argc != 3)
       {
-         std::cerr << "Usage: My-IP-Adress My-Service-Port" << std::endl;
+         std::cerr << "Usage: My-IP-Address My-Service-Port" << std::endl;
          return 0;
       }
 
