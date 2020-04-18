@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE384 - Lecture 26</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Systems and Network Programing course notes">
+    <meta name="keywords" content="Lecture, Notes, Code, Syracuse,University">
+    <meta name="Author" content="Mike Corley">
+    <meta name="Author" content="Michael Corley">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/academics.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <main-menu>
+        <div class="menuItems">
+            <a href="../index.html">Home</a>
+            <a href="../UnderConstruction.html">Projects</a>
+            <a href="../cse384.html">CSE384</a>
+            <a href="../UnderConstruction.html">Interests</a>
+            <a href="../UnderConstruction.html">Career</a>
+            <a href="../UnderConstruction.html">Blogs</a>
+        </div>
+    </main-menu>
+
+    <div class="course" style="margin: 3%">
+        <H1>Lecture # 26 - Systems and Network Programming</H1>
+    </div>
+
+    <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+        <div class=LectureContentBlock>
+            <h2>House keeping items:</h2>
+
+            <h3> Lecture 26 (4/20): Section 2 (2:15pm) - video </h3>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li><a href="javascript:; ”style=”background-color:#ddd;”>[link text]">Dr. Fawcett: The Rust Programming Language (part 2 of 2)</a></li>       
+            </ul>
+
+            <h3> Lecture 26 (4/20): Section 1 (5:15pm) - video </h3>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li><a href="javascript:; ”style=”background-color:#ddd;”>[link text]">Dr. Fawcett: The Rust Programming Language (part 2 of 2)</a></li>       
+            </ul>
+            
+            <h3> Lecture 25 (4/15): Section 2 (2:15pm) - video </h3>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li><a href="https://us-lti.bbcollab.com/recording/a34c3b91129346ffb39600d853a1bc55">Dr. Fawcett: The Rust Programming Language (part 1 of 2)</a></li>       
+            </ul>
+
+            <h3> Lecture 25 (4/15): Section 1 (5:15pm) - video </h3>
+            <ul style="color:blue; font-style: bold; font-size: large;">    
+                <li><a href="https://us-lti.bbcollab.com/recording/0e44653a387a4a89ac268928d54c88c8">Dr. Fawcett: The Rust Programming Language (part 1 of 2)</a></li>       
+            </ul>
+
+          
+            <h2>Agenda for Today (04/20/20):</h2>
+            <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">  
+                <div>
+                    <h3> 
+                        Dr. James Fawcett is a Teaching Professor Emeritus
+                        here at Syracuse. He taught graduate software design courses from 1990 to Spring 2019. <br><br>
+                        Most of my software training was here at Syracuse under Dr. Fawcett.
+                       
+                    </h3>
+                    <h4>
+                         Today, Dr. Fawcett will continue his two-part lecture series on "Rust Programming." He will complete
+                         the discussion on Rust programming models and demonstrate a source code package he developed using Rust for 
+                         navigating the file system, and for performing file and directory level processing.
+                    </h4>
+
+                        <h4 style="margin-bottom:.5em">Rust Programming Resources:</h4>
+                         <ol style="margin-top: 0">
+                           <li style="margin-top: .5em"> <a href="https://jimfawcett.github.io/Resources/RustTourAbbrev.pdf">A Tour Of Rust</a></li>
+                           <li style="margin-top: .5em"> <a href="https://jimfawcett.github.io/Resources/RustModels.pdf#page=1">Rust Models</a></li>
+                           <li style="margin-top: .5em"> <a href="https://jimfawcett.github.io/RustModels.html">Rust Models (demo code)</a></li>
+                           <li style="margin-top: .5em"> <a href="https://jimfawcett.github.io/Videos.html">Rust Videos</a></li>
+                           <li style="margin-top: .5em; color: red"> 
+                               Note: Dr. Fawcett often schedules summer project meetings in which he reserves a room on campus, we gather as a group
+                               and he leads a discussion of specific software topics. In the past we have discussed a variety of topics: C++, design methodologies,
+                               web controls, and most recently the Rust programming language.  This summer Dr. Fawcett intends to continue meetings on Rust programming,
+                               and related software topics of interest.  All are welcome to attend!  If for some reason campus remains closed, he will likely conduct the 
+                               meetings using video conferencing tools such as Zoom. You can register to be notified for Dr. Fawcett's summer meetings 
+                               by joining his Summer Projects group at his <a href="https://piazza.com/syr/fall2019/001">Piazza.com site </a> and join <b> Class 1: 001: JimFawcett </b> <br> <br>  
+                               You can also view Dr. Fawcett's github site <a href="https://jimfawcett.github.io/index.html"> here </a>  for more information     
+                           </li>
+                           <li style="margin-top: .5em" > Dr. Fawcett's <a href="https://jimfawcett.github.io/BlogMessagePassingComm.html"> Message Passing Blog </a> (relevant to current class topics) </li>
+                         </ol>
+                         
+                         <h4></h4>
+                      <hr>
+
+                    <h3> Project 2 helpers - Please See Project 2 Statement for instructions: <a href="../projects/Project2.pdf"> 
+                         Project 2 statement </a> 
+                    </h3> 
+                         <h4 style="color: red;">
+                          ***Note:*** I’ve given lots of help. <br> All that you need to do to complete Project 2 is to supply remaining 
+                          the code required in <a href="./Project2_helpers/Messenger.cpp"> Messenger.cpp </a>  Specifically, you need 
+                          complete functions: <br> MessageHandler::AppProc() and <br> bool SendMessage(const Message &message, const EndPoint &dstPeerEP)
+                          <br><br>
+                          <a href="./Project2_helpers/Project2_helpers.tar.gz">Download Project 2 helper code here </a> 
+                           <br><br>
+                           For insight view the test stubs (bottom) of files:<a href="./code/sockets/Sender.cpp"> Sender.cpp </a> and 
+                           <a href="./code/sockets/Receiver.cpp"> Receiver.cpp </a> to see how you might implement 
+                           these functions. <br> You are not required to use my helper code!   You can build all of your own code, but 
+                           you do need to meet all of requirements specified in the Project statement (see MPL (Sender/Recveiver/ClientHandler) 
+                           code below).
+                         </h4>  
+
+                         <hr>
+                         <h4 style="margin-bottom: 0;" >File Server code example based on message passing <br>
+                             Demonstrates to how use message passing to support file transfer: 
+                             sender/receive files a block at time (similar in ways to HW#8 - copyfileBlock) -- Half duplex MPL </h4> 
+                             <ol style="margin-top: .5em;"> 
+                                <li> <a href="./code/mpl_file_server/cse384_file_server_executive.cpp"> cse384_file_server_executive.cpp -- concurrent file server </a> </li>
+                                <li> <a href="./code/mpl_file_server/cse384_client_executive.cpp"> cse384_client_executive.cpp -- file server client app </a> </li>
+                                <li> <a href="./code/mpl_file_server/README.txt"> README.txt -- getting started (compiling and running) file server example </a> </li>
+                                <li> <a href="./code/mpl_file_server_example.tar.gz">  Download File Server example code here </a> </li>                            
+                             </ol>
+                        
+                        <h4 style="margin-bottom: 0;"> Message Passing Library (libmpl.a) - Half duplex</h4> 
+                        <ol style="margin-top: .5em;">
+                            <li> Sender Package - client-side message passing
+                                <ul>
+                                    <li> <a href="./code/sockets/Sender.h"> Sender.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
+                                </ul>
+                            </li>
+                            <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
+                                <ul>
+                                    <li> <a href="./code/sockets/Receiver.h"> Receiver.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
+                                            ./ReceiverTest </a> </li>
+                                </ul>
+                            </li>
+                            <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
+                                  Receiver </a>
+                                <ul>
+                                    <li> <a href="./code/sockets/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                    <li> <a href="./code/sockets/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
+                                        Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <hr>
+                        <h4 style="margin-bottom: 0; margin-top: .5em;" >This is a verson of the MPL that supports full duplex (bidirectional TCP socket comm ) between Senders and Receivers.
+                            It makes development easier since both the client and server can each send/receive messages.  A network (file) copy program: 
+                            ( i.e. another version a file transfer service and a client have been developed as an example)
+                            atop the full duplex version of the MPL. The network file copy service is  
+                            similar in concept to HW#8 (copyfileBlock), except it sends/receives files across the network one block at a time (as messages)  </h4> 
+                            <ol style="margin-top: .5em;"> 
+                               <li> <a href="./code/full_duplex_mpl/netCopyService.cpp"> Full Duplex (Synchronous) network file copy server</a> </li>
+                               <li> <a href="./code/full_duplex_mpl/netCopyClient.cpp">   network file copy client </a> </li>
+                               <li> <a href="./code/full_duplex_mpl/README.txt"> README.txt -- getting started (compiling and running)  </a> </li>
+                               <li> <a href="./code/full_duplex_file_service.tar.gz">  Download the example code  </a> </li>
+                               
+                               <h4 style="margin-bottom: 0;margin-top: .5em;"> Full Duplex Message Passing Library -- (version 2, libmpl.a) </h4> 
+                               <ol style="margin-top: .5em;">
+                                <li> Sender Package - client-side message passing
+                                   <ul>
+                                      <li> <a href="./code/full_duplex_mpl/Sender.h"> Sender.h - package interface </a> </li>
+                                      <li> <a href="./code/full_duplex_mpl/Sender.cpp"> Sender.cpp - package library code + test stub: run ./SenderTest</a> </li>
+                                  </ul>
+                                </li>
+                                <li> Receiver Package - server-side message passing: listening server and ClientHandler service host
+                                   <ul>
+                                     <li> <a href="./code/full_duplex_mpl/Receiver.h"> Receiver.h - package interface </a> </li>
+                                     <li> <a href="./code/full_duplex_mpl/Receiver.cpp"> Receiver.cpp - package library code + test stub: run
+                                            ./ReceiverTest </a> </li>
+                                   </ul>
+                                </li>
+                                <li> ClientHandler Package - server-side message passing class for defining custom server processing. Register with
+                                     Receiver </a>
+                                  <ul>
+                                      <li> <a href="./code/full_duplex_mpl/ClientHandler.h"> ClientHander.h - package interface </a> </li>
+                                      <li> <a href="./code/full_duplex_mpl/ClientHandler.cpp"> ClientHandler.cpp - package library code. ** See
+                                        Receiver.cpp for test stub: run ./ReceiverTest  </a> </li>
+                                  </ul>
+                               </li>
+                              </ol>
+
+                            </ol>
+                    
+                    <h3> Sockets notes: </h3>        
+                    <ul> 
+                        <li> <a href="https://www.csd.uoc.gr/~hy556/material/tutorials/cs556-3rd-tutorial.pdf"> Introduction to Sockets </a></li> </li>
+                        <li> <a href="./sockets.pdf"> Sockets Presentation  </a></li>
+                        <li> <a href="./MPL.pdf"> Message Passing Layer (concept) </a></li>
+
+                        <li> Resources: 
+                            <ol> 
+                              <li><a href="https://www.geeksforgeeks.org/socket-programming-cc/"> Geeks for Geeks Socket Tutorial </a></li>
+                              <li><a href="https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm"> Tutorialspoint: Sockets </a> </li>
+                              <li><a href="http://alumni.cs.ucr.edu/~ecegelal/TAw/socketTCP.pdf"> Introduction to Socket Programming  </li>
+                              <li><a href="https://beej.us/guide/bgnet/html/#socket"> Beej's Guide to Network Programming </a></li>   
+                           </ol>
+                        </li>
+                        <li> Network (TCP/IP) background: 
+                           <ol> 
+                              <li><a href="https://www.guru99.com/tcp-ip-model.html"> Overview of TCP/IP </a> </li>
+                              <li><a href="https://www.guru99.com/tcp-3-way-handshake.html"> TCP 3-way Handshake </a> </li>
+                              <li><a href="https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html"> TCP versus UDP </a> </li>
+                            </ol>
+                        </li> 
+                        <li> Simple Socket Code Examples: 
+                           <ol> 
+                             <li> Example #1: simple (single) client/server example 
+                                 <ol>
+                                    <li> <a href="./code/sockets/client.c"> client.c - simple client-side TCP socket demo </a> </li> 
+                                    <li> <a href="./code/sockets/server.c"> server.c - simple server-side TCP socket demo</a> </li> 
+                                 </ol>
+                             </li>
+
+                             <li> Example #2: simple (concurrent) client/server example (using fork to start process to server each client request) 
+                                <ol>
+                                   <li> <a href="./code/sockets/client2.c"> client2.c - simple client-side TCP socket demo </a> </li> 
+                                   <li> <a href="./code/sockets/concurrent-server-fork.c"> concurrent-server-fork.c - simple (concurrent -- fork) server demo</a> </li> 
+                                   <li> <a href="./code/sockets/run_client.sh">  run_clients.sh - A small bash script used to run multiple client instances </a></li>
+                                   <li> netstat -t in the terminal</li>
+                                </ol>
+                            </li>
+
+                            
+                                 
+                                   
+                                </ol>
+                            </li>
+                            <li> <a href="./code/sockets/socket_demos.tar.gz"> Download socket code examples here </a> </li>
+                            
+                           </ol>
+                        </li> 
+                    </ul>
+
+                    
+
+                    <h4> C/C++ examples: System calls, serialization, files and I/O </h4>
+
+                    <ol style="margin-top: .5em;">
+                        1. USNA (Systems Programming) lectures     
+                        <ol>
+                            <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/11/lec.html"> User/Kernel space, System call Overview</a></li>
+                            <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/12/lec.html"> File I/O: read, write, open system calls </a></li>
+                            <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/13/lec.html"> Process creation and termination: I/O buffering </a></li>
+                            <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/14/lec.html"> Fork, Exec system calls, Process management </a></li>
+                            <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/15/lec.html"> Process Scheduling </a></li>
+                        </ol>
+                                
+                        2. Previous (Lecture 15) Notes and C/C++ Presentation Materials     
+                        <ol>
+                            <li><a href="./cse384LectureC_Cpp.pdf">C/C++ Introduction: Mike C. notes </a></li>
+                            <li><a href="./survivalguide.pdf">C++ Survival Guide (basic syntax notes and important concepts): Dr. Fawcett</a></li>  
+                            <li><a href="./CppModels.pdf">C and C++ compilation, memory, and computation models</a></li>  
+                            <li><a href="./assessmentCpp.pdf">Assessment of the C++ </a></li> 
+                            <li><a href="./ctocpp.pdf">Discussion on the elements that comprise C and C++ </a></li>
+                            <li><a href="./Packages-1.pdf">Discussion on Packages and Modularity </a></li> 
+                            <li><a href="./LinuxSysProgramming.pdf"> Important linux/system header files </a> </li>
+                            <li>The structure and data flow in sytems is often documented with standard  <a href="https://ecs.syr.edu/faculty/fawcett/handouts/CSE681/Lectures/UML-Diagrams.htm">UML diagramming: You should be aware of it </a> </li>      
+                        </ol>
+                        
+                        3. Code Examples from 03/02 and 03/04        
+                        <ol>
+                            <li><a href="./code/write_sys.cpp"> Demo stdout/stderr file streams, write system call  </a></li>
+                            <li><a href="./code/PassByRefByVal.cpp"> Demo Pass by value, Pass by reference, basic pointers and memory allocation (new/delete, malloc/free)</a></li>
+                            <li><a href="./code/CstringDemoGotcha.c"> Demo C-style strings</a></li>
+                            <li><a href="./code/stringDemo.cpp"> Demo C++ std::strings</a></li>
+                            <li><a href="./code/readTextFile.c"> Demo File I/O in C (fopen/fgetc/fprintf,read lines, memory allocation with malloc etc.) Reading/Writing Text Files: C example </a></li>
+                            <li><a href="./code/readTextFile.cpp"> Demo File I/O in C++ (ifsteam/ofstream streams: Reading/Writing Text Files: C++ example  </a></li>
+                            <li><a href="./code/WriteReadstruct.cpp"> Demo structs, serialization, reading/writing binary files: C++ example </a></li>
+                            <li><a href="./code/readfile_block.c"> Demo reading/writing binary files in C (glibc: fopen/fread/fwrite/fseek etc) C example </a></li>
+                            <li><a href="./code/readfile_block.cpp"> Demo reading/writing binary files in C++ (fstream library: command line args, ifstream/oftstream etc.) C example </a></li>
+                        </ol>
+                        4. Type Serialization/Deserialization example  
+                                <ul>
+                                    <li> <a href="./code/serialize/books.h">books.h (package) header file </a> </li>
+                                    <li> <a href="./code/serialize/books.cpp"> book.cpp  - package implementation file </a> </li>
+                                    <li> <a href="./code/serialize/serialize.cpp"> serialize.cpp - serialize/deserialize types</de> </a> </li>
+                                    <li><a href="./code/serializeTypes.tar.gz"> Download serialize/deserialize types example </a></li>        
+                                </ul>
+                            
+                        5. C Package example for HW # 7 
+                                <ul>
+                                    <li> <a href="./code/package/books.h">books.h - header ( books package interface) </a> </li>
+                                    <li> <a href="./code/package/book.c"> book.c  - package implementation for books package </a> </li>
+                                    <li> <a href="./code/package/bookutils.h">bookutils.h - header (bookutils package interface) </a> </li>
+                                    <li> <a href="./code/package/bookutils.c">bookutils.c  - code implementation for bookutils package </a> </li>
+                                    <li> <a href="./code/package/executive.c ">executive.c - the client application (uses book and bookutils packages) </a> </li>
+                                    <li> <a href="./code/package/README">Package example README (compiler build/run commands) </a> </li>
+                                    <li> <a href="./package/package.jpg">Package diagram </a> </li>
+                                    <li><a href="./code/HW7_cpackage.tar.gz"> Download package example (C version) HW7_cpackage.tar.gz</a></li>
+                                </ul>
+                            
+                        6. Example of a real C++ package - supports linux file and directory operations (prior to C++ 17 file system)   
+                               <ul>
+                                    <li> <a href="./code/FileSystem/FileSystem.h"> FileSystem package interface </a></li>
+                                    <li> <a href="./code/FileSystem/FileSystem.cpp"> FileSystem package implementation </a></li>
+                                    <li> <a href="./code/FileSystem/makefile"> Makefile - build(compile) the package </a></li>
+                               </ul>
+                                 
+                        7. Lecture 14 Examples: <a href="./code/lect14_examples.tar.gz"> Download </a></li>
+                           
+                        </ol>
+                        
+                        <li style="color: red; font-style: bold"> Note: You will need C and C++ compilers 
+                           <ul>
+                                <li> I will use GNU C/C++ (gcc/g++). The Linux Minit distro comes with gcc installed by default, but not g++ </li>
+                                <li> Install g++ with the following command (Open terminal and type): sudo apt-get install g++</li>
+                                <li> You can install and use gcc/g++ on your Mac computer. Use this is option if you don't have a Linux distro </li>
+                           </ul>
+                        </li>     
+                    </ol>  
+                        <h3 style="margin-bottom: 0;"> Code (C and C++ tutorial) Resources:</h3>   
+                        <ol style="margin-top: .5em; font-size:medium;">  
+                                <li> <a href="https://beginnersbook.com/2014/01/c-pointers/">Really Nice C tutorial </a> 
+                                <li> <a href="https://www.tutorialspoint.com/cprogramming/index.htm"> Excellent C Programming Tutorial: Tutorialpoint </a> </li>    
+                                <li> <a href="https://www.learn-c.org/"> Another Excellent C Programming Tutorial(divided in basic and advanced topics): Learn-C.org </a> </li> 
+                                <li> <a href="http://www.cplusplus.com/doc/tutorial/">One of the best C++ tutorials I've seen: cpluspluss.com </a> </li>    
+                                <li> <a href="https://ecs.syr.edu/faculty/fawcett/handouts/CSE687/Lectures/GettingStartedWithCpp.htm"> Dr. Fawcett's Page on Getting Started with C++ </a> </li> 
+                                <li> <a href="https://www.learncpp.com/"> A very good C++ tutorial: LearnCpp.com </a> </li>        
+                                <li> <a href="https://www.geeksforgeeks.org/memory-layout-of-c-program/"> Program memory layout </a>    
+                                <li> <a href="https://www.geeksforgeeks.org/pointers-in-c-and-c-set-1-introduction-arithmetic-and-array/">Pointers Tutorial </a>   
+                                <li> <a href="http://codewiki.wikidot.com/c:system-calls:stat"> Stat system call </a> 
+                                <li> <a href="https://linux.die.net/man/2/stat">  Stat man page  </li> </li> 
+                                <li> <a href="../presentations/TLCL-19.01.pdf#page=373"> Compiling Programs using make (chapter 23): linux command line </a> </li> 
+                                <li> <a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/01/lec.html"> Lectures from a well thought out systems programming course at USNA</a> </li>
+                                <li> <a href="https://www.linuxjournal.com/article/6463"> Compilation, Linking and Loading article</a> </li>
+                                <li> A series of Systems Programming lectures from U.S. Naval Academy (USNA) 
+                                    <ul>  
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/04/lec.html">Introduction to C Programming and C strings</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/05/lec.html">Pointers, Arrays, and Structures</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/06/lec.html">C Strings, String Library, and Pointer Arithmetic</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/07/lec.html">Arrays, Command Line Arguments, and Error Checking</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/08/lec.html">Memory Allocation and Program Memory Layout</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/09/lec.html">Dynamic Array Allocations and Data Representation Model</a></li>
+                                        <li><a href="https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/10/lec.html">File Streams</a></li>
+                                    </ul>
+                                 </li>              
+                        </ol>
+
+                        <h3> Dr. Fawcett's developed resources: </h2>
+                        <p>   Dr. Fawcett taught graduate software design courses here at Syracuse from 1990 - Spring 2019.  Most of my software training 
+                              was here at SU in Dr. Fawcett's courses from 2005-2019.  In retirement he is continuing to
+                              develop (current) software training materials, most of which is hosted in his new github website available
+                              via the URLs below. 
+                        </p>
+                              
+                        <ol style="margin-top: .5em; font-size:medium;"> 
+                            <li>   The C++ story provides detailed coverage of the C++ language: specifically how to utilize 
+                                   the language and its features effectively. The intent of the story is to meet people on individual level of experience. Beginning 
+                                   C++ programmers can begin to get handle on using the language, while experienced programmers can get detailed insight 
+                                   into the more advanced aspects.<a href="https://jimfawcett.github.io/CppStory_Prologue.html"><br> View the C++ story here </a>  </a></li><br>
+
+                            <li> A series of the C++ videos corresponding to the C++ story <a href="https://jimfawcett.github.io/Videos.html"><br> can be viewed here </a>  </a></li><br></li>
+                            <li> <a href="https://ecs.syr.edu/faculty/fawcett/handouts/webpages/CSE687.htm"> Previously taught (Spring 2019) graduate Object-oriented Design course using C++ </a> </li> 
+                        </ol>                      
+                </div>
+
+                <div>
+                    <hr>
+                    <h3> Environment Setup Notes: </h3>
+                    <ol>
+                        <li> <a href="https://www.virtualbox.org/wiki/Downloads"> Install VirtualBox </a> </li>
+                        <li> <a href="https://linuxmint.com/download.php">Install Linux Mint (based on Ubuntu -- I prefer MATE desktop, but many people like Cinnamon)</a> </li>
+                       
+                            <ul>
+                                <li>Desktop Comparisons:  <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/choose.html">MATE versus Cinnamon</a> </li>
+                                <li>Install Guest Additions - device drivers and system applications that optimize the guest operating system for better performance and usability. </li>
+                            </ul>
+                            <li> Enable "Shared Clipboard and Drag'nDrop": Settings -> Advanced </li>
+                            <li> <a href="../presentations/SharedFolders.pdf">Configure shared folders</a>, then run the following commands.. </li>
+
+                            <ol style="color: red; font-weight: bold; font-family: monospace; margin-top: .5em; font-style: italic; border:solid thin; margin-right: 30%;">
+                                <li> run: sudo usermod -a -G vboxsf `whoami` </li>
+                                <li> run: sudo chown -R `whoami`:users name-of-mount-point </li>
+                                <li> log out, and log back in </li>
+                            </ol>
+                            <li>Update Mint (run): "sudo apt update && sudo apt upgrade -y"</li>
+                    </ol>
+    
+                    <h3 style="margin-bottom: 0;"> Interesting Technologies related to Linux: </h3>
+                    <ol style="margin-top: .5em; font-size:medium; ">
+                        <li> <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"> Kernel-based Virtual Machine (KVM) - turn Linux into a Hypervisor </li>
+                        <li> <a href="https://docs.docker.com/engine/docker-overview/"> Docker (Container Technology) </a> </li>
+                        <li> <a href="https://www.tcpdump.org/"> TCPDump & LIBPCAP </a> </li>
+                        <li> <a href="http://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html"> Extended Berkeley Packet Filter (eBPF) </a> </li>  
+                    </ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        Revised: 03/24/2020
+    </footer>
+
+</body>
+
+</html>

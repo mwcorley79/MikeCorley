@@ -1,0 +1,4 @@
+echo "Building the file server client: fs_client"
+echo "g++ -o fs_client cse384_client_executive.cpp  Project2utils.cpp FileSystem.cpp libmpl.a -lpthread"
+g++ -o fs_client cse384_client_executive.cpp  Project2utils.cpp FileSystem.cpp libmpl.a -lpthread
+

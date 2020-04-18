@@ -1,0 +1,11 @@
+# build the MPL libary (eventually this will be done using a Makefile)
+g++ -c Sender.cpp Receiver.cpp ClientHandler.cpp Message.cpp MPUtils.cpp Cpp11-BlockingQueue.cpp 
+ar -rcs libmpl.a *.o
+
+# build the sender test
+g++ -DTEST_SENDER Sender.cpp libmpl.a -lpthread
+
+# build the Receiver test
+g++ -DTEST_RECEIVER Receiver.cpp libmpl.a -lpthread
+
+ 
