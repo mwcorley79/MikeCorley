@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm libs.so
+rm user
+rm *.o

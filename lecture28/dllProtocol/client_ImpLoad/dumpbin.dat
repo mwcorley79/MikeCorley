@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 8.00.50727.42
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file derived.dll
+
+File Type: DLL
+
+  Section contains the following exports for derived.dll
+
+    00000000 characteristics
+    4624FF7E time date stamp Tue Apr 17 13:10:22 2007
+        0.00 version
+           1 ordinal base
+           6 number of functions
+           6 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00011177 ?getInt@derived2@@UAEHXZ = @ILT+370(?getInt@derived2@@UAEHXZ)
+          2    1 000111DB ?makeObj@protocol@@SAPAV1@XZ = @ILT+470(?makeObj@protocol@@SAPAV1@XZ)
+          3    2 00011014 ?passRef@derived2@@UAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@@Z = @ILT+15(?passRef@derived2@@UAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@@Z)
+          4    3 00011159 ?passVal@derived2@@UAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z = @ILT+340(?passVal@derived2@@UAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z)
+          5    4 00011050 ?putInt@derived2@@UAEXH@Z = @ILT+75(?putInt@derived2@@UAEXH@Z)
+          6    5 0001114A gMakeObj = @ILT+325(_gMakeObj)
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        6000 .text
+       10000 .textbss

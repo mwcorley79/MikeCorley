@@ -1,0 +1,3 @@
+#!/bin/sh
+
+g++ user.cpp -o user -ldl

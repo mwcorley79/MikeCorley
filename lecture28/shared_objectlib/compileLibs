@@ -1,0 +1,6 @@
+#!/bin/sh
+
+g++ -fpic -c lib0.cpp -o lib0.o
+g++ -fpic -c lib1.cpp -o lib1.o
+g++ -shared -o libs.so lib0.o lib1.o
+

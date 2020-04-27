@@ -1,0 +1,334 @@
+#ifndef PROTOCOL_H
+#define PROTOCOL_H
+///////////////////////////////////////////////////////////////////////////
+//  protocol.h - define protocol class                                   //
+//                                                                       //
+//  this is all the client knows about the protocol, e.g., the language  //
+//                                                                       //
+//  Jim Fawcett, CSE791 - Distributed Objects, Demonstration             //
+///////////////////////////////////////////////////////////////////////////
+/*
+
+   design note:
+   ------------
+   Protocol class hierarchies (sometimes called homeomorphic
+   class structures) consist of an abstract base class and
+   usually a single layer of derived classes.  The base class
+   provides a language, or protocol, for client access to all
+   the derived classes.  Clients know only the protocol, but
+   not any of the details which distinguish one class from
+   another.
+
+   The derived classes provide all of the real functionality.
+   The client code, however, does not need to know how any of
+   the derived classes do their business.
+
+   In this demonstration the member functions getInt() and
+   putInt() are pure virtual functions so protocol class is an
+   abstract base class.
+
+   No protocol objects can be created.  Only objects of derived
+   classes which give definitions for both the pure virtual
+   functions are concrete and can create objects.
+
+   However, since the makeObj() protocol member function is
+   static clients don't need objects to invoke it.  Client
+   code can do that with the syntax protocol::makeObj(), etc.
+   So, we can invoke static members of an abstract class.  We
+   do just that in the client code in protocol.cpp
+
+   This project builds derived1.cpp into derived.dll and derived.lib,
+   the dynamic link library and exports definition file.  Since they
+   both name the output library the same, the client will load the
+   last one built.
+
+   Note that the derived classes in derived1.cpp and derived2.cpp
+   create an object of their class type, so the one you get depends
+   on the library that is loaded, e.g., the last one built.
+
+                            +-----------+
+                            | protocol  |
+                            +-----+-----+
+                                  |
+                                 / \
+                   +--------------+--------------+
+                   |              |              |
+             +-----+-----+  +-----+-----+  +-----+-----+
+             | derived1  |  | derived2  |  | more der  |
+             +-----------+  +-----------+  +-----------+
+
+/*
+//
+/*
+    Implementation Issues:
+    ======================
+    For this project to work correctly you must:
+    - Use the DLL version of the C/C++ library for both client 
+      and DLLS (that ensures that both client and DLLs will 
+      use the same heap) - that now is the default setting in VS.
+    - You do that by going to the project settings \ C/C++ tab
+      and in the category combo box set Code Generation.  Then
+      in the Use Run-time Library combo box select one of the 
+      DLL libraries, e.g., either Multi-Threaded DLL or Debug
+      Multi-threaded DLL.  Do this for client and all DLLs.
+    - Set Properties for each derived (dll) project:
+        Configuration, General, output directory to ..\client
+        Linker, General, output file to ..\derived.dll
+        Linker, Advanced, import library to ..\client\derived.lib
+      These settings cause the build for either library to place
+      the dynamic link library and its exports definition file
+      where the client will load them, e.g., same directory as
+      client.vcproj.
+    - To build from the command line you can use:
+          cl /EHsc /LDd /MDd /Foderived derived1.cpp
+            or
+          cl /EHsc /LDd /MDd /Foderived derived2.cpp
+          cl /EHsc /MDd client.cpp derived.lib
+    - Alternately, you can use:
+          devenv derived1.vcproj /make /rebuild
+            or
+          devenv derived2.vcproj /make /rebuild
+            that copies derived.dll and derived.lib
+            into client project dir
+          devenv client.vcproj   /make /rebuild
+      with project settings as described above.
+
+*/
+
+#ifdef IN_DLL
+  #define DLL_DECL __declspec(dllexport)
+#else
+  #define DLL_DECL __declspec(dllimport)
+#endif
+
+typedef std::string stdStr;
+
+class protocol {  // interface for derived1 and derived2 classes
+
+  public:
+    virtual DLL_DECL int getInt()     = 0;
+    virtual DLL_DECL void putInt(int) = 0;
+    virtual DLL_DECL std::string passVal(std::string s)  = 0;
+    virtual DLL_DECL std::string passRef(std::string &s) = 0;
+    static  DLL_DECL protocol* makeObj();  // static member object factory
+};
+
+extern "C" { DLL_DECL protocol* gMakeObj(); }  // global object factory
+#endif
+///////////////////////////////////////////////////////////////////////////
+//  client-ImpLoad.cpp - demonstrate use of protocol language            //
+//                       implemented in implicitly loaded DLL            //
+//                                                                       //
+//  this file represents client code, which knows only about the         //
+//  protocol class, e.g., the protocol language and the names, but       //
+//  not the details, of the derived classes                              //
+//                                                                       //
+//  Jim Fawcett, CSE 687 - Object Oriented Design, Spring 2007           //
+///////////////////////////////////////////////////////////////////////////
+//  Important:                                                           //
+//    Please see notes in the Protocol.h file concerning required        //
+//    compiler options.                                                  //
+///////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <string>
+#include "protocol.h"   // note that the client only needs the base class
+                        // header file, not headers from derived classes
+using namespace std;
+
+void main() {
+
+  cout << "\n"
+       << " Test protocol with implicitly loaded library\n"
+       << "===============================================\n";
+
+  int i=0;
+
+// note that clients can not make a protocol object, but factory functions
+// make anonymous derived class objects and give client access to them 
+// through a base class protocol pointer.
+
+
+///////////////////////////////////////////////////////////////////////////
+//  client uses the first derived class, knowing only the protocol       //
+//         language and how to call its object factory                   //
+///////////////////////////////////////////////////////////////////////////
+
+  protocol *bptr = protocol::makeObj();
+                                  // static member factory function creates
+                                  // creates derived object - which one 
+                                  // depends on which dll is loaded
+
+  bptr->getInt();                 // derived class functions
+  bptr->putInt(i);                // use base class interface
+  string s = "\n  string from client";
+  cout << (bptr->passVal(s)).c_str();
+  cout << (bptr->passRef(s)).c_str() << endl;
+
+  delete bptr;
+
+  bptr = gMakeObj();              // global factory function creates
+                                  // derived object - which one depends
+                                  // on which dll is loaded
+
+  bptr->getInt();                 // derived class functions
+  bptr->putInt(i);                // use base class interface
+  s = "\n  string from client";
+  cout << (bptr->passVal(s)).c_str();
+  cout << (bptr->passRef(s)).c_str() << endl;
+
+  delete bptr;
+  cout << endl;
+
+}
+///////////////////////////////////////////////////////////////////////////
+//  client-ExpLoad.cpp - demonstrate use of protocol language            //
+//                       implemented in explicitly loaded DLL            //
+//                                                                       //
+//  this file represents client code, which knows only about the         //
+//  protocol class, e.g., the protocol language and the names, but       //
+//  not the details, of the derived classes                              //
+//                                                                       //
+//  Jim Fawcett, CSE 687 - Object Oriented Design, Spring 2007           //
+///////////////////////////////////////////////////////////////////////////
+//  Important:                                                           //
+//    Please see notes in the Protocol.h file concerning required        //
+//    compiler options.                                                  //
+///////////////////////////////////////////////////////////////////////////
+
+#include <windows.h>
+#include <iostream>
+#include <string>
+#include "protocol.h"   // note that the client only needs the base class
+                        // header file, not headers from derived classes
+using namespace std;
+
+void main() {
+
+  cout << "\n"
+       << " Test protocol with explicitly loaded library\n"
+       << "===============================================\n";
+
+  HMODULE hmod = LoadLibrary(L"../client_ImpLoad/derived.dll");
+  if(!hmod)
+  {
+    std::cout << "\n  failed to load derived.dll\n\n";
+    return;
+  }
+  typedef protocol* (*gMO)();
+  gMO gMakeObj = (gMO)GetProcAddress(hmod,"gMakeObj");
+  if(!gMakeObj)
+  {
+    std::cout << "\n  GetProcAddress failed for gMakeObj\n\n";
+    return;
+  }
+  int i=0;
+  protocol* bptr = gMakeObj();    // global factory function creates
+                                  // derived object - which one depends
+                                  // on which dll is loaded
+
+  bptr->getInt();                 // derived class functions
+  bptr->putInt(i);                // use base class interface
+  std::string s = "\n  string from client";
+  std::cout << (bptr->passVal(s)).c_str();
+  std::cout << (bptr->passRef(s)).c_str() << endl;
+
+  delete bptr;
+  FreeLibrary(hmod);
+  std::cout << endl;
+
+}
+///////////////////////////////////////////////////////////////////////////
+//  derived1.cpp - provides protocol details for derived1 class          //
+//                                                                       //
+//  this file is not visible to client, who has access only to the       //
+//  compiled derived1.dll and protocol header file                       //
+//                                                                       //
+//  Jim Fawcett, CSE 687 - Object Oriented Design, Spring 2007           //
+///////////////////////////////////////////////////////////////////////////
+//  Important:                                                           //
+//    Please see notes in the Protocol.h file                            //
+///////////////////////////////////////////////////////////////////////////
+
+#define IN_DLL
+#include <iostream>
+#include <string>
+#include "protocol.h"
+using namespace std;
+
+class derived1 : public protocol {
+
+  public:
+    DLL_DECL int getInt() {
+      cout << "\n  calling derived1::getInt()"; return 0;
+    }
+    DLL_DECL void putInt(int) {
+      cout << "\n  calling derived1::putInt()";
+    }
+    DLL_DECL string passVal(string s) {
+      s += ": a copy inside derived1";
+      return s;
+    }
+    DLL_DECL string passRef(string &s) {
+      s += ": a reference inside derived1";
+      return s;
+    }
+};
+
+DLL_DECL protocol* protocol::makeObj() {
+  std::cout << "\n  calling protocol::makeObj() from derived1.dll";
+  return new derived1;
+}
+
+DLL_DECL protocol* gMakeObj()
+{
+  std::cout << "\n  calling gMakeObj() from derived1.dll";
+  return new derived1;
+}///////////////////////////////////////////////////////////////////////////
+//  derived2.cpp - provides protocol details for derived2 class          //
+//                                                                       //
+//  this file is not visible to client, who has access only to the       //
+//  compiled derived.dll and protocol header file                        //
+//                                                                       //
+//  Jim Fawcett, CSE 687 - Object Oriented Design, Spring 2007           //
+///////////////////////////////////////////////////////////////////////////
+//  Important:                                                           //
+//    Please see notes in the Protocol.h file                            //
+///////////////////////////////////////////////////////////////////////////
+
+#define IN_DLL
+#include <iostream>
+#include <string>
+#include "protocol.h"
+using namespace std;
+
+class derived2 : public protocol {
+
+  public:
+    DLL_DECL int getInt() {
+      cout << "\n  calling derived2::getInt()"; return 0;
+    }
+    DLL_DECL void putInt(int) {
+      cout << "\n  calling derived2::putInt()";
+    }
+    DLL_DECL string passVal(string s) {
+      s += ": a copy inside derived2";
+      return s;
+    }
+    DLL_DECL string passRef(string &s) {
+      s += ": a reference inside derived2";
+      return s;
+    }
+};
+
+DLL_DECL protocol* protocol::makeObj() {
+  cout << "\n  calling protocal::makeObj from derived2.dll";
+  return new derived2;
+}
+
+DLL_DECL protocol* gMakeObj()
+{
+  std::cout << "\n  calling gMakeObj() from derived2.dll";
+  return new derived2;
+}
+

@@ -1,0 +1,3 @@
+echo "Building the file server: fs_server"
+echo "g++ -o fs_server cse384_file_server_executive.cpp  Project2utils.cpp FileSystem.cpp libmpl.a -lpthread"
+g++ -o fs_server cse384_file_server_executive.cpp  Project2utils.cpp FileSystem.cpp libmpl.a -lpthread

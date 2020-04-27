@@ -1,0 +1,3 @@
+C:\Users\mwcor\Desktop\teaching\CSE 384\website\lecture28\dllProtocol\Client_ImpLoad\derived1.pdb
+C:\Users\mwcor\Desktop\teaching\CSE 384\website\lecture28\dllProtocol\derived1\Debug\derived1.dll
+C:\Users\mwcor\Desktop\teaching\CSE 384\website\lecture28\dllProtocol\derived1\Debug\derived1.pdb

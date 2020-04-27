@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# build the dog library
+g++ -fpic -c dog.cpp -o Dog.o
+g++ -shared -o libDog.so Dog.o
+
+# build the cat library
+g++ -fpic -c cat.cpp -o Cat.o
+g++ -shared -o libCat.so Cat.o
+
+
+# build the client the code using the libary
+g++ app.cpp -o app -ldl
+
+# create soft link to the Dog library initially
+ln -s -f libDog.so libAnimal.so
+
+# Note: open separate terminal shell window, and type:
+# ln -s -f libCat.so libAnimal.so       
+# ln -s -f libDog.so libAnimal.so   
+# type the above commands interchangeably to get the application
+# to load the respective library  
+
+
+# build tell the loader where to find the shared object libraries
+export LD_LIBRARY_PATH=.
+./app
