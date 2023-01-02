@@ -28,33 +28,174 @@
   </main-menu>
 
   <div class="course" style="margin: 3%">
-    <H1>  Experimental project list </H1>   
+    <H1> Projects and Experiments </H1>   
   </div>
 
-  <div class="LectureResources" style="margin-left:5%; margin-right:3%">
+  <div class="LectureResources" style="margin-left:3%; margin-right:3%">
+     
 
-      <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
-        This serves as a mock link (the URL) for testing Xamarin Forms (Android) mobile app distribution method via a website/URL
-        <ul> 
-          <li>  Android Distribution Documentation can be found here: <a href="https://docs.microsoft.com/en-us/xamarin/android/deploy-test/publishing/"> Publishing an Application </a> </li>
-          <li>  A small Android (sample) App that generates "Hello World" PDF documents can be downloaded and installed to you Android device here:<a href="com.quanterion.xamarinapptext.apk"> Download App </a> </li>   
-        </ul>     
+      <div style="border: solid thick; font-size:large; padding:1em;padding-top:0;background-color: cornsilk">
+
+        <H3 style="text-decoration: underline;">  Overview </H1>   
+        <p>This page serves as a list of recent code projects, experiments, and interests using various languages, and technology frameworks including:
+        C++, C#, and most recently Python and Rust. <br><br>
+         Examples of recent projects that I will soon share on this site include: <br>
+         <ul style="font-size:medium;">
+            <li>
+              Design ideas for prototyping Internet-of-Things (IoT) devices using Raspberry PI and Arduino.  
+              Code examples using OOP methodologies in C++, C#, Python, (and eventually Rust) will focus the software architecture
+              and the security aspects behind design and implementation of such devices. 
+              GPIO access libraries and Azure Cloud (IoT) SDKs will be illustrated in 
+              the larger context of the software architecture.
+            </li>
+             <br>
+            <li> 
+              <a  href="https://jimfawcett.github.io/CommCompare.html">TCP socket-based communication framework</a>, focused on a system-level performance and design comparison of C++, Rust, (and eventually 
+              C# (.Net) and Python).  The project was initially developed collaboratively with <a href="https://jimfawcett.github.io"> Dr. James Fawcett </a>.
+              The current status of the project (i.e. comparison of C++ and Rust) can be viewed <a href="https://jimfawcett.github.io/CommCompare.html"> here. </a>
+            </li>
+            <br>
+            <li> 
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/progressive-web-app?view=aspnetcore-7.0&tabs=visual-studio">Progressive Web Applications(PWA) </a> examples currently under development, and using ASP.net Core and <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"> Blazor </a>(Web Assembly), 
+                rather than the traditional JavaScript frameworks.
+            </li>
+             <br>
+            <li> 
+               Other relevant code examples and experiments
+            </li>
+         </ul>
+       </p>
+
+        <h3> Python Code Examples </h3>
+          <p> I have a long history using C++ and C#, and currently experimenting with Python to use it for projects at work, 
+              and for personal interest. Below is a recent list of code examples (that will continue to evolve). Each exercises one or more Python 3 language constructs. <br> <br>
+               You can download and run the following list of examples by cloning the <a href="https://github.com/mwcorley79/python3probes.git">python3probs</a> repository: <br> 
+               <a href="https://github.com/mwcorley79/python3probes.git">https://github.com/mwcorley79/python3probes.git</a>   
+          </p>
+
+          <indent-block>
+            
+            <ol style="font-size:medium;">
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/pybq.py"> pybq.py </a> - a thread-safe queue that blocks the deQue operation, when the Queue is empty. </summary>
+                   <indent-block> 
+                      <p> This a first version port of Dr. Fawcett's <a href="https://github.com/JimFawcett/CppBlockingQueue"> C++ Blocking Queue.</a> to Python. It helps to simplify 
+                         code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used.  <br><br> View  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybq.py"> pybq.py </a>  for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py"> pybqGeneric.py </a> - a thread-safe queue (like pybq.py), but exercises Python Generics </summary>
+                   <indent-block> 
+                      <p> 2nd version port of Dr. Fawcett's <a href="https://github.com/JimFawcett/CppBlockingQueue"> C++ Blocking Queue.</a> to Python, and uses Generics.  It helps to simplify 
+                         code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used. <br><br> View  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py">  pybqGeneric.py</a>  for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/Message.py"> Message.py </a> - a data management class for handling binary and string messages, packaged for TCP (socket) communication</summary>
+                   <indent-block>     
+                      <p>
+                        Message.py is being developed in part, for wire protocol compatibility with the Message class constructs defined and used in C++/Rust comm compare experiment described above.  However, Message is a handy general utility for handling binary and string message types interchangeably.  Message.py exercise multiple Python language constructs including: 
+                        <ul>
+                          <li>
+                            <u>struct</u> - packet data, to convert native Python data types to string of bytes for achieving
+                            compatibility with external/networked systems written in other languages such as C++ or Rust.
+                          </li>
+                          <li>
+                            <u>properties</u> - (managed) attributes used to manage internal implementation without changing the public API of a class
+                          </li>
+                          <li>
+                            <u>multiple dispatch (decorator)</u> - for function overloading
+                          </li>
+                          <li>
+                            <u>Enum types</u>
+                          </li>
+                          <li>
+                            <u>Class methods versus instance methods</u>
+                          </li>
+                        </ul>
+                        
+                        <br> View <a href="https://github.com/mwcorley79/python3probes/blob/main/Message.py"> Message.py </a> for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/bq_test_with_message.py"> bq_test_with_message.py </a> - a test script that imports 
+                     <a href="https://github.com/mwcorley79/python3probes/blob/main/Message.py"> Message.py </a> and  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybq.py"> pybq.py </a> 
+                      to test the Message and BlockingQueue together. 
+                    </summary>
+                   <indent-block> 
+                      <p> This is a more complex, combined test that uses multiple threads, much like the use in socket communication
+                       <br> View <a href="https://github.com/mwcorley79/python3probes/blob/main/bq_test_with_message.py"> bq_test_with_message.py </a> for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/withProbe1.py"> withProbe1.py </a> - a simple example that tests the Python "with" statement, used for scope-based resource management
+                    </summary>
+                   <indent-block>
+                      <p>   
+                       <br>  View <a href="https://github.com/mwcorley79/python3probes/blob/main/withProbe1.py"> withProbe1.py </a>for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/destructor_probe.py"> destructor_probe.py </a> - a simple example that tests Python class destructor method
+                    </summary>
+                   <indent-block>
+                       <p>   
+                       <br> View <a href="https://github.com/mwcorley79/python3probes/blob/main/destructor_probe.py"> destructor_probe.py </a>for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> 
+                    <a href="https://github.com/mwcorley79/python3probes/blob/main/python_rpi_temperature_iot_device.py">python_rpi_temperature_iot_device.py</a> - a very simple (first example) of an IoT temperature 
+                    device prototype, built using the Raspberry Pi.
+                    </summary>
+                   <indent-block>   
+                        <p>  This example exercises GPIO (general purpose I/O) access libraries to read (over i2c) telemetry from a <a href="https://www.adafruit.com/product/2652">BME280 </a> 
+                          temperature sensor, and the Azure IoT Hub SDK to package and send JSON formatted telemetry to the Azure Cloud (IoT Hub).
+
+                        The device should resemble the following: https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/
+
+                       <br>  View <a href="https://github.com/mwcorley79/python3probes/blob/main/python_rpi_temperature_iot_device.py"> </a> for additional details. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+
+            </ol>
+          </indent-block>
+        
       </div>
-       <spacer-10></spacer-10>
+      
+      <spacer-10></spacer-10>
        
-      <div style="border: solid thick; font-size:large; padding:1em; margin-left:3%;background-color: cornsilk">
-        This serves as a mock link (the URL) for testing Xamarin Forms (iOS) mobile app distribution method via a website/URL (documenation links below)
-        <ul> 
-          <li>   <a href="https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/app-distribution/"> Overview  </a> </li>
-          <li>   <a href="https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/app-distribution/in-house-distribution?tabs=windows"> In-House Distribution </a> </li>
-          <li>  <a href="https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/app-distribution/ipa-support?tabs=windows"> IPA Support </a> </li>   
-        </ul>     
-      </div>
-
-     </div>
+  </div>
 
   <footer>
-    Revised: 01/11/2020
+    Revised: 01/02/2023
   </footer>
 
 </body>
