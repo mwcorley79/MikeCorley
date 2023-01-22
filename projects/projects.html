@@ -74,11 +74,53 @@
           </p>
 
           <indent-block>
-            
+            <h3> Message Passing Layer (MPLv2) </h3>
+            <p> 
+             MPLv2 is cross-platform library/framework for developing message passing systems. It wraps full duplex TCP sockets, and supports concurrent clients.
+             MPL is implemented in six python scripts, described below.  Note: this MPLv2 is identical to C# (dotnet) MPLv2 version here:  <a href="https://github.com/mwcorley79/dotnetMPLv2">dotnet MPLv2</a> 
+             The syntax and semantics these projects are identical. They can be used to acheive C# and Python interop. 
+            </p>
             <ol style="font-size:medium;">
               <li>
                 <details>
-                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/pybq.py"> pybq.py </a> - a thread-safe queue that blocks the deQue operation, when the Queue is empty. </summary>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/TCPConnector.py"> TCPConnector.py </a> - messaging connector client </summary>
+                   <indent-block> 
+                      <p> Create an instance of TCPConnector, connect to server (TCPResponder) to initiate message passing. Run Command:  <span style="font-style:italic;color:red;">python .\TCPConnector.py</span> </p>
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/TCPResponder.py"> TCPResponder.py </a> - messaging connector server </summary>
+                   <indent-block> 
+                      <p> Create an instance of TCPResponder, and start tge listener, for incoming (concurrent) client (TCPConnector) requests . Run Command:  <span style="font-style:italic;color:red;">python .\TCPResponder.py</span> </p>
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/ClientHandler.py"> ClientHandler.py </a> - abstract class for defining custom server processing </summary>
+                   <indent-block> 
+                      <p> Users must derive new from ClientHander, and implement asbtract methods: <span style="font-style:italic;color:red;"> Clone, AppProc</span>. 
+                          The derived ClientHandler class must be registered with TCPResponder, to be used for service client requests. 
+                      </p>
+                      <ul>
+                        <li>
+                          <u>clone</u> - used by TCPResponder to create instance of the derived handler for servicing incoming client requests 
+                        </li>
+                        <li>
+                          <u>app_proc</u> - defines the custom (application specific) server processing
+                        </li>
+                      </ul>
+                   </indent-block> 
+                </details>
+              </li>
+
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/pybq.py"> pybq.py </a> - a thread-safe queue that blocks the deQue operation, when the Queue is empty. </summary>
                    <indent-block> 
                       <p> This a first version port of Dr. Fawcett's <a href="https://github.com/JimFawcett/CppBlockingQueue"> C++ Blocking Queue.</a> to Python. It helps to simplify 
                          code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used.  <br><br> View  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybq.py"> pybq.py </a>  for additional details, and the terminal command to run the example. 
@@ -89,18 +131,7 @@
 
               <li>
                 <details>
-                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py"> pybqGeneric.py </a> - a thread-safe queue (like pybq.py), but exercises Python Generics </summary>
-                   <indent-block> 
-                      <p> 2nd version port of Dr. Fawcett's <a href="https://github.com/JimFawcett/CppBlockingQueue"> C++ Blocking Queue.</a> to Python, and uses Generics.  It helps to simplify 
-                         code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used. <br><br> View  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py">  pybqGeneric.py</a>  for additional details, and the terminal command to run the example. 
-                      </p>   
-                   </indent-block> 
-                </details>
-              </li>
-
-              <li>
-                <details>
-                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/Message.py"> Message.py </a> - a data management class for handling binary and string messages, packaged for TCP (socket) communication</summary>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/Message.py"> Message.py </a> - a data management class for handling binary and string messages, packaged for TCP (socket) communication</summary>
                    <indent-block>     
                       <p>
                         Message.py is being developed in part, for wire protocol compatibility with the Message class constructs defined and used in C++/Rust comm compare experiment described above.  However, Message is a handy general utility for handling binary and string message types interchangeably.  Message.py exercise multiple Python language constructs including: 
@@ -124,6 +155,26 @@
                         </ul>
                         
                         <br> View <a href="https://github.com/mwcorley79/python3probes/blob/main/Message.py"> Message.py </a> for additional details, and the terminal command to run the example. 
+                      </p>   
+                   </indent-block> 
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/MPLv2/EndPoint.py"> EndPoint.py </a> - a simple class to manage IP address and TCP port pairs used by TCPConnector and TCPResponder  </summary>
+                 
+                </details>
+              </li>
+            </ol>
+
+            <h3> Other Python probes</h3>
+            <ol style="font-size:medium;">
+              <li>
+                <details>
+                  <summary> <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py"> pybqGeneric.py </a> - a thread-safe queue (like pybq.py), but exercises Python Generics </summary>
+                   <indent-block> 
+                      <p> 2nd version port of Dr. Fawcett's <a href="https://github.com/JimFawcett/CppBlockingQueue"> C++ Blocking Queue.</a> to Python, and uses Generics.  It helps to simplify 
+                         code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used. <br><br> View  <a href="https://github.com/mwcorley79/python3probes/blob/main/pybqGeneric.py">  pybqGeneric.py</a>  for additional details, and the terminal command to run the example. 
                       </p>   
                    </indent-block> 
                 </details>
@@ -186,8 +237,86 @@
               </li>
 
             </ol>
-          </indent-block>
-        
+
+            <h3> C# Code Examples </h3>
+            <indent-block>
+              <h3> Message Passing Layer (MPLv2) </h3>
+              <p>
+                MPLv2 is cross-platform library/framework for developing message passing systems. It wraps full duplex TCP sockets,
+                and supports concurrent clients.
+                MPL is implemented in six python scripts, described below.
+                <br> <br>
+                You can download and run c# examples by cloning the repo <a href="https://github.com/mwcorley79/dotnetprobes">here</a>
+              </p>
+
+              <ol style="font-size:medium;">
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/TCPConnextor/TCPConnector.cs"> TCPConnector.cs </a> - messaging connector client </summary>
+                     <indent-block> 
+                        <p> Create an instance of TCPConnector, connect to server (TCPResponder) to initiate message passing. Run Command:  <span style="font-style:italic;color:red;">dotnet run --project .\TCPConnextor\TCPConnextor.csproj </span> </p>
+                     </indent-block> 
+                  </details>
+                </li>
+  
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/TCPResponder/TCPResponder.cs"> TCPResponder.cs </a> - messaging connector server </summary>
+                     <indent-block> 
+                        <p> Create an instance of TCPResponder, and start the listener, for incoming (concurrent) client (TCPConnector) requests. Run Command:  <span style="font-style:italic;color:red;">dotnet run --project .\TCPResponder\TCPResponder.csproj</span> </p>
+                     </indent-block> 
+                  </details>
+                </li>
+  
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/ClientHandler/ClientHandler.cs"> ClientHandler.cs </a> - abstract class for defining custom server processing </summary>
+                     <indent-block> 
+                        <p> Users must derive new from ClientHander, and implement asbtract methods: <span style="font-style:italic;color:red;"> Clone, AppProc</span>. 
+                            The derived ClientHandler class must be registered with TCPResponder, to be used for service client requests. 
+                        </p>
+                        <ul>
+                          <li>
+                            <u>Clone</u> - used by TCPResponder to create instance of the derived handler for servicing incoming client requests 
+                          </li>
+                          <li>
+                            <u>AppProc</u> - defines the custom (application specific) server processing
+                          </li>
+                        </ul>
+                     </indent-block> 
+                  </details>
+                </li>
+  
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/BlockingQueue/CSBlockingQueue.cs"> BlockingQueue </a> - a thread-safe queue that blocks the deQue operation, when the Queue is empty. </summary>
+                     <indent-block> 
+                        <p> This is Dr. Fawcett's BlockingQueue. Used it with his permission and taken directly from his website (repo) here: <a href="https://github.com/JimFawcett/CsBlockingQueue"> c# BlockingQueue </a> It helps to simplify 
+                           code necessary to safely share data between threads. Locks and condition variable synchronization primitives are used.   
+                        </p>   
+                     </indent-block> 
+                  </details>
+                </li>
+  
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/Message/Message.cs"> Message.cs </a> - a data management class for handling binary and string messages, packaged for TCP (socket) communication</summary>
+                     <indent-block>     
+                        <p>
+                          Message.py is being developed in part, for wire protocol compatibility with the Message class constructs defined and used in C++/Rust comm compare experiment described above.  However, Message is a handy general utility for handling binary and string message types interchangeably. 
+                        
+                        </p>   
+                     </indent-block> 
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/Utils/Utility.cs"> Utlity.cs </a> - socket send/recv helpers and locking utility classes</summary>
+                   
+                  </details>
+                </li>
+              </ol>
+
       </div>
       
       <spacer-10></spacer-10>
