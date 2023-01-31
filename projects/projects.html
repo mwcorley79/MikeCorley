@@ -77,8 +77,8 @@
             <h3> Message Passing Layer (MPLv2) </h3>
             <p> 
              MPLv2 is cross-platform library/framework for developing message passing systems. It wraps full duplex TCP sockets, and supports concurrent clients.
-             MPL is implemented in six python scripts, described below.  Note: this MPLv2 is identical to C# (dotnet) MPLv2 version here:  <a href="https://github.com/mwcorley79/dotnetMPLv2">dotnet MPLv2</a> 
-             The syntax and semantics these projects are identical. They can be used to acheive C# and Python interop. 
+             MPLv2 is implemented in six python scripts, described below.  Note: this MPLv2 is identical to C# (dotnet) MPLv2 version described below (repo is here):  <a href="https://github.com/mwcorley79/dotnetMPLv2">dotnet MPLv2</a> 
+             .The interface syntax and semantics of these two projects is virtually identical. Message.py and Message.cs are wire format compatible, and thus can used to acheive C# and Python interop.
             </p>
             <ol style="font-size:medium;">
               <li>
@@ -166,7 +166,9 @@
                 </details>
               </li>
             </ol>
+            </indent-block>
 
+            <indent-block>
             <h3> Other Python probes</h3>
             <ol style="font-size:medium;">
               <li>
@@ -237,6 +239,7 @@
               </li>
 
             </ol>
+          </indent-block>
 
             <h3> C# Code Examples </h3>
             <indent-block>
@@ -244,9 +247,10 @@
               <p>
                 MPLv2 is cross-platform library/framework for developing message passing systems. It wraps full duplex TCP sockets,
                 and supports concurrent clients.
-                MPL is implemented in six C# packages, described below.
+                MPL is implemented in six C# packages, described below. Note: this MPLv2 is identical to Python MPLv2 version described above.
+                The interface syntax and semantics of these two projects is virtually identical. Message.py and Message.cs are wire format compatible, and thus can used to acheive C# and Python interop.
                 <br> <br>
-                You can download and run c# examples by cloning the repo <a href="https://github.com/mwcorley79/dotnetprobes">here</a>
+                You can download and run the C# examples by cloning the repo <a href="https://github.com/mwcorley79/dotnetprobes">here</a>
               </p>
 
               <ol style="font-size:medium;">
@@ -309,6 +313,7 @@
                      </indent-block> 
                   </details>
                 </li>
+
                 <li>
                   <details>
                     <summary> <a href="https://github.com/mwcorley79/dotnetprobes/blob/main/dotnetMPLv2/Utils/Utility.cs"> Utlity.cs </a> - socket send/recv helpers and locking utility classes</summary>
@@ -316,8 +321,26 @@
                   </details>
                 </li>
               </ol>
+            </indent-block>
+
+            <indent-block>
+            <h3> Other (C# IoT) Project Code Examples </h3>
+          
+            <indent-block>  
+            <h4> Prototype of IoT HVAC device, using Raspberry Pi  </h3>
+              <p>
+                The objective of this project is to develop, and illustrate a simple design for a working prototype of an (IoT-enabled) Remote Temperature Management device. Temperature and humidity is monitored 
+                remotely in the Cloud,
+                will activate a fan or air conditioning unit etc., (and optionally take action using IFTTT) when the temperature and/or humidity exceeds a user specified threshold.
+                <br> <br>
+                You can download and run the Remote HVAC example on a Raspberry Pi by cloning the repo <a href="https://github.com/mwcorley79/hvac-IoT-device-proto">here</a>
+              </p>
+            </indent-block>
+              
+            </indent-block>
 
       </div>
+    
       
       <spacer-10></spacer-10>
        
