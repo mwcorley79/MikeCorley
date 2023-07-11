@@ -1408,7 +1408,8 @@
 
     <h2><b> Task 3: Develop a Cloud-Hosted (Azure) Function (FaaS), to process the device telemetry</b></h2>
     <p>
-       As telemetry arrives at the IoT Hub, a cloud-hosted function is triggered using IoTHub Trigger
+       As telemetry arrives at the IoT Hub, a cloud-hosted function is triggered using IoT Hub Trigger. 
+       Using IoT Hub trigger cause the functions to execute whenever telemetry arrives at the IoT Hub service.
        This code decodes (deserializes) the telemetry messages, and compares the temp/humidity values against user specified thresholds.   
        If a threshold is exceeded, a C2D message should be dispatched to remoting activate the HVAC system (i.e., for this project the HVAC system is a 120v AC Fan )
        Additionally, an IFTTT web hook should be used to automatically notify an operator by sending an email and/or a text message.
@@ -1434,12 +1435,80 @@
         <li>
             Sign in or Create an Azure Subscription
             <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas2.jpg" />
-                <p> Install VScode Azure Function Extension </p> 
+                <img src="images/faas1.jpg" />
+                <p> Sign in to azure  </p> 
             </div>
         </li>
 
-       
+        <li>
+            Choose the Azure icon in the Activity bar, then in the Workspace (local) area, select the + button, 
+            choose Create Function in the dropdown. When prompted, choose Create new project.
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas2.jpg" />
+                <p> Create a new Azure Function using Azure->Workspace  </p> 
+            </div>
+        </li>
+
+        <li>
+            Browse to the RTDMS_V1 solution folder, and create new workdspace folder called "RTDMS_functions", and select "Create" as  illustrated below:
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas3.jpg" />
+                <p> Create A New Project Workspace Folder  </p> 
+            </div>
+        </li>
+        
+        <li>
+            Select "C# Language" for the New Project
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas4.jpg" />
+                <p> Select C# Language for te Function project   </p> 
+            </div>
+        </li>
+
+        <li>
+            Select a .Net runtime: Choose ".Net 6.0 LTS", if you have have .Net 6.0 installed, or ".Net 7.0 LTS", if you have .Net 7.0 installed. 
+            <b>Do Not use:</b> "Isolated LTS"
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas5.jpg" />
+                <p> Select C# Language for te Function project   </p> 
+            </div>
+        </li>
+
+        <li>
+            Select "IoT Hub (Event Hub) template" for the function trigger".  Using IoT Hub trigger causes the functions to execute whenever 
+            telemetry arrives at the IoT Hub service.
+          
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas6.jpg" />
+                <p> 1. IoT Hub (Event Hub) Trigger </p> 
+                <img src="images/faas7.jpg" />
+                <p> 2. Keep the default, or change the name to you choice, press enter </p> 
+                <img src="images/faas8.jpg" />
+                <p> 3. use namespace, "Viceroy.Funcs", as shown above  </p> 
+            </div>
+        </li>
+
+        <li>
+            Choose the Defaults for the remaining prompts. Your completed function should resemble the following
+            screen shot: 
+          
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas9.jpg" />
+            </div>
+        </li>
+
+        <hr>
+
+        <li>
+             Sign into Azure and Create the Function Application. 
+             <div style="background:lightblue;margin:1em;padding:1em">
+                <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+                <b> Note: </b> You must use the exact runtime for the application, that you selected when you created the function project
+                <a href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp">Creating Azure Functions Reference</a>
+            </div>
+            
+        </li>
+
         
     </ol>
 
