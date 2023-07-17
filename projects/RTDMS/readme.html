@@ -26,9 +26,15 @@
         new risks. The adoption of IoT technology into military and commercial environments has been stifled due to the
         increased security risks and interoperability challenges that result from lacking standards and propritary vendor 
         systems that span the major pedigrees of device types, hardware features, and supported network communication protocols. Competing (and
-        proprietary) vendor systems. The high degree variability across the major device types has significantly complexity of security, 
-        conformance, and interoperability compliance testing.
+        proprietary) vendor systems. The high degree variability across the major device types has significantly increased
+        the complexity of reasoning about security, 
+        conformance, interoperability, and compliance testing.
     </p>
+
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:25%;border:solid thin; text-align: center;">
+        <img src="images/d3.jpg" style="width: 95%" />
+        Figure 1: RTDMS version 1.0
+    </div>
 
     <h3> <b>Objectives and Goals</b></h3>
     <p>The objective of this is to enable cyber security analysts and systems engineers to develop the
@@ -75,13 +81,10 @@
         device.
     </p>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:60%;height:25%;border:solid thin; text-align: center;">
-        <img src="images/d3.jpg" width="100%" />
-        Figure 1: RTDMS version 1.0
-    </div>
+    
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:35%;border:solid thin; text-align: center">
-        <img src="images/vis.png" width="100%" />
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:35%;border:solid thin; text-align: center">
+        <img src="images/vis.png" style="width: 95%" />
         Figure 2: Azure Cloud-Hosted (PaaS) TelemeMonitoring Web Application
     </div>
 
@@ -89,10 +92,10 @@
 
     <h3> <b> Concept Architecture Description </b> </h3>
     <p>
-        The goal of this project is to design and implement a robust prototype solution for the sample problem above.
+        This project is about the design and implementation of a robust prototype solution for the sample problem above.
     </p>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:30%;border:solid thin">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:30%;border:solid thin">
         <img src="images/concept2.jpg" style="width: 100%;" />
         <center>
             <p> Figure 3: RTDMS Concept </p>
@@ -111,17 +114,27 @@
             monitor and process temperature and humidity conditions remotely, and initiate automated actions.</li>
         <li> Provide real-time visualizations using an Azure Cloud-host (PaaS) web application, and a custom Power Bi
             dashboard.</li>
-        <li> Think critically about the security and resiliency inherent in the design of the underlying architecture,
-            and identify and document identified vulnerabilities and recommend and implement a mitigation strategy.
     </ol>
+    <br>
+    <p>
+        <b>Security and Resilience: </b> 
+        <em>“Security by Design”</em> is a set of principles and strategies applied to design of software systems 
+        and applications that have been designed to be foundationally secure.  
+        It is imperative to think critically about high-level design choices with best practice awareness.  
+        Architectural modularity is a key to ensuring a software system is robust, extensible, 
+        and maintainable to support requirements for change, as well as for enabling efficient procedures 
+        for correcting identified flaws (bugs), security vulnerabilities, and unforeseen risks 
+        that can arise as the system evolves over its lifecycle.   
+    </p>
+   
 
     <br>
 
     <p> A commonly held conceptual architecture framework for testing and assessing IoT devices for security and
         resiliency is illustrated as follows: </p>
-    <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:30%;text-align: center;">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:30%;text-align: center;">
         <img src="images/framework.jpg" style="width: 100%;" />
-        Figure 4: Conceptual architecture framework for testing and assessing IoT devices
+        Figure 4: Conceptual architecture framework for testing and assessing IoT devices <br>
         Source: <u> <i>https://www.clariontech.com/blog/iot-testing-framework</i></u>
     </div>
 
@@ -195,7 +208,7 @@
         device and external electronic components.
     </p>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:20%;height:10%;border:solid thin; text-align: center;">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:30%;height:10%;border:solid thin; text-align: center;">
         <img src="images/cobbler.jpg" style="width: 100%;" />
         Figure 5: GPIO expansion (TCobbler)
     </div>
@@ -206,7 +219,7 @@
         connection.
     </p>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin;text-align: center;">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:25%;border:solid thin;text-align: center;">
         <img src="images/rpigpio.png" style="width: 100%;" />
         Figure 6: GPIO Header Close Up
     </div>
@@ -242,7 +255,7 @@
     theI<sup>2</sup>C bus using
     pins SDA and SCK as described below:
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:60%;height:30%;border:solid thin;text-align: center;">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:30%;border:solid thin;text-align: center;">
         <img src="images/rdtms.png" width="100%" />
         Figure 7: RTDMS Device Sketch </p>
     </div>
@@ -328,7 +341,7 @@
         connection for the 120V AC power outlet.
     </div>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:45%;height:25%;border:solid thin;text-align: center;">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:25%;border:solid thin;text-align: center;">
         <img src="images/ac_connextion.jpg" style="width:100%" />
         Figure 8: RTDMS prototype with 120v AC Outlet Connection
     </div>
@@ -352,7 +365,7 @@
     </p>
 
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:25%;border:solid thin">
         <img src="images/pi.jpg" />
         <img src="images/pi4.jpg" />
         <center>
@@ -360,14 +373,14 @@
         </center>
     </div>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:25%;border:solid thin">
         <img src="images/pi2.jpg" />
         <center>
             <p> Figure 10: Select Raspberry Pi OS (other) </p>
         </center>
     </div>
 
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:25%;border:solid thin">
         <img src="images/pi3.jpg" />
         <center>
             <p> Figure 11: Use the 64-bit version </p>
@@ -446,14 +459,14 @@
     </p>
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-        <b> Note: </b> It appears the recent versions VSCode (v1.79+) don't operate correctly with Azure Functions
+        <b> VScode issue: </b> It appears the recent versions VSCode (v1.79+) don't operate correctly with Azure Functions
         Extension (needed later) on
         Ubuntu 22.04 (i.e. the "+" create workspace, function projects doesn't appear in the extension window). The
         interim fix
         for this issue is to install VSCode version 1.78 (April 2023) as illustrated:
         <a href="https://update.code.visualstudio.com/1.78.2/linux-deb-x64/stable">Download VSCode 1.78</a>
         <div style="margin:1em;margin-left:0;padding:.5em;width:100%;height:40%;border:solid thin; text-align: center;">
-            <img src="images/vs178.jpg" style="width: 100%;" />
+            <img src="images/vs178.jpg" style="width: 95%;" />
             <p> VSCode: <u> Install version 1.78 to resolve errors with Azure Functions Extension</u> </p>
         </div>
     </div>
@@ -485,7 +498,7 @@
     <h4> Install .Net 6.0 (LTS) for Linux (x64) on the Development Host): <a
             href=" https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a>
     </h4>
-    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:40%;border:solid thin; text-align: center">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:85%;height:40%;border:solid thin; text-align: center">
         <img src="images/dotnet.jpg" style="width: 100%;" />
         Dotnet 6.0: <u> https://dotnet.microsoft.com/en-us/download/dotnet/6.0 </u>
     </div>
@@ -495,6 +508,7 @@
     <p> Extract the downloaded file to $HOME/dotnet folder and set using export to execute the dotnet commands from
         current session:
     </p>
+
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
         <b> Note: </b> The command below illustrates use with dotnet sdk version: "dotnet-sdk-6.0.411". You will need to
@@ -519,6 +533,7 @@
             source ~/.bashrc
     </code> </pre>
 
+    <br>
     <p>Verify the SDK is installed, by listing the SDKs installed on the host, using the terminal command:</p>
 
     <pre style="width: 300px;"><code class="language-bash">dotnet --list-sdks</code></pre>
@@ -534,7 +549,7 @@
     <p> Open terminal, and use the dotnet CLI (command line interface) to run the command below.
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-        <b> Note: </b> The .Net solution is container for .Net projects. Notice there is currently one console
+        <b> Note about solutions and projects: </b> The .Net solution is container for .Net projects. Notice there is currently one console
         project (RTDMS-driver), and one library project (TelemModel). Both projects are added to the RTDMS-V1 solution.
         The "dotnet new console" command creates a project configuration that builds (compiles) to a .Net executable
         assembly (an .exe) file. Executable files are command line programs intended to be run
@@ -1413,16 +1428,15 @@
     </p>
 
     <h3><b>Deploying the RTDMS driver code to the Raspberry Pi </b></h3>
-    <p>To run/test the RTDMS code, it must be deployed to target device. For RTDMS the target hardware is the prototype
+    <p>To run/test the RTDMS code, it must be deployed to target device. For RTDMS, the target hardware is the prototype
         device you assembled on the full size
-        breadboard, and connected to a Raspberry Pi through the GPIO header.
+        breadboard and connected to a Raspberry Pi using the GPIO header.
     </p>
 
     <br>
-    <p>RTDMS code deployment to Raspberry Pi can be accomplished using two commands, and saved to a
-        script to be run to upload the code to the Raspberry PI. </p>
+    <p>RTDMS code deployment to Raspberry Pi can be accomplished using two commands that can saved to a
+        script, and run when updated source needs to be uploaded the to the Raspberry PI. </p>
     <p>Commands:</p>
-
     <ol>
         <li>The <b><em> dotnet publish --runtime linux-arm64 --self-contained </em></b> command builds the
             RTDMS application application code for self-contained deployment to Raspberry PI target CPU
@@ -1527,12 +1541,12 @@
         <h3> <b>Developing and Deploying an Azure function for the RTDMS prototype requires two steps: </b> </h3>
         <ol>
             <li>
-                <b><u>Creating and Deploying the function project </u></b> to an Azure function application in the Cloud.
+                <b><u>Creating and Deploying a local workspace function </u></b> to an Azure Function Application running in the Cloud.
                 Creating the function project is accomplished with a local workspace, using the VSCode extension
                 as
                 described below.
             </li>
-            <li> <b><u>Create the function application in the Azure Cloud</u></b> - this can be accomplished through the Azure
+            <li> <b><u>Create the Function Application in the Azure Cloud</u></b> - this can be accomplished through the Azure
                 web portal,
                 or through the VScode Azure extension (this document describes creating function application using the
                 Azure portal).
@@ -1558,7 +1572,7 @@
             </a>
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:90%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/azure-p1.jpg" />
+                <img src="images/azure-p1.jpg" style="width: 95%" />
                 <p> Azure Portal Sign in </p>
             </div>
         </li>
@@ -1566,7 +1580,7 @@
             Search for "function app" as and click the function app icon as shown below:
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:90%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/azure-p2.jpg" />
+                <img src="images/azure-p2.jpg" style="width: 95%"  />
                 <p> Portal search for Azure Function App </p>
             </div>
         </li>
@@ -1593,9 +1607,9 @@
 
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/azure-p3.jpg" />
+                <img src="images/azure-p3.jpg"  style="width: 95%"/>
                 <hr>
-                <img src="images/azure-p4.jpg" />
+                <img src="images/azure-p4.jpg" style="width: 95%" />
 
                 <p> Create an Azure Function Application </p>
             </div>
@@ -1603,17 +1617,17 @@
         <li>
             If the configuration review succeeds, click "Create" to Deploy the function application as shown below
             <div
-                style="background:lightblue;margin:1em;padding:1em; margin-right: 10em; width: fit-content;display: flex;">
+                style="background:lightblue;margin:1em;padding:1em; margin-right: 10em; width: fit-content ;display: flex;">
                 <img src="images/note.png" style="float: left;  width: 2em; height: 2em; margin-right: .5em;">
                 <b> Note: </b> deployment will take a few minutes to complete
                 </img>
 
             </div>
             <div
-                style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/azure-p5.jpg" />
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/azure-p5.jpg" style="width: 95%" />
                 <hr>
-                <img src="images/azure-p6.jpg" />
+                <img src="images/azure-p6.jpg" style="width: 95%" />
                 <p> Create and Deploy the Function Application </p>
             </div>
         </li>
@@ -1630,7 +1644,7 @@
             Install The Azure Functions extension for Visual Studio Code:
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas.jpg" />
+                <img src="images/faas.jpg" style="width: 95%" />
                 <p> Install VScode Azure Function Extension </p>
             </div>
         </li>
@@ -1638,7 +1652,7 @@
             Sign in or Create an Azure Subscription
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas1.jpg" />
+                <img src="images/faas1.jpg" style="width: 95%" />
                 <p> Sign in to azure </p>
             </div>
         </li>
@@ -1677,7 +1691,7 @@
             <b>Do Not use:</b> "Isolated LTS"
             <div style="background:lightblue;margin:1em;padding:1em">
                 <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-                <b> Note: </b> You must use the exact runtime for the function project, and the corresponing Azure
+                <b> Important: </b> You must use the exact runtime for the function project, and the corresponing Azure
                 function application
                 for successfull deployment. Otherwise, you may see a runtime error in the Azure portal
 
@@ -1686,7 +1700,7 @@
             </div>
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas5.jpg" />
+                <img src="images/faas5.jpg" style="width: 95%" />
                 <p> Select C# Language for the Function project </p>
             </div>
         </li>
@@ -1697,7 +1711,7 @@
             telemetry arrives at the connected IoT Hub service.
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas6.jpg" />
+                <img src="images/faas6.jpg" style="width: 95%" />
                 <p> IoT Hub (Event Hub) Trigger </p>
             </div>
 
@@ -1705,7 +1719,7 @@
             9.1 Provide a name for the function, or keep the default, and press enter
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas7.jpg" />
+                <img src="images/faas7.jpg" style="width: 95%" />
                 <p> Default function name: can be changed to a name of your choice </p>
             </div>
 
@@ -1721,7 +1735,7 @@
             9.3. Choose "+ Create new local app settings, for running/testing the function locally: local.settings.json"
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas10.jpg" />
+                <img src="images/faas10.jpg"style="width: 95%"  />
                 <p> local app settings: "local.settings.json""</p>
             </div>
 
@@ -1729,14 +1743,14 @@
             9.4 Click: "skip event hub namespace"</p>
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas11.jpg" />
+                <img src="images/faas11.jpg" style="width: 95%" />
 
             </div>
             <br>
             9.5. Press Enter to comfirm the IoT hub endpoint: "message/events"
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas12.jpg" />
+                <img src="images/faas12.jpg"  />
 
             </div>
         </li>
@@ -1747,8 +1761,9 @@
             fews minutes generate)
 
             <div
-                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-                <img src="images/faas13.jpg" />
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:70%;border:solid thin; text-align: center;">
+                <img src="images/faas13.jpg" style="width: 95%;height: 70%;"  />
+                <p> Generated Function (source code) </p>
             </div>
         </li>
 
@@ -1760,18 +1775,18 @@
 
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-                <img src="images/faas14.jpg" style="width:100%;" />
+                <img src="images/faas14.jpg" style="width:95%;" />
                 <p> local.settings.json </p>
             </div>
 
-            <br>
+            
             <p>11.1 In RTDMS_functions explorer view, open "local.settings.json" and update the key:
                 <em><b>"AzureWebJobsStorage"</em></b> with the value: <em><b>"UseDevelopmentStorage=true", and shown
                         above</em></b></p>
             </p>
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-                <img src="images/faas16.jpg" style="width:100%;" />
+                <img src="images/faas16.jpg" style="width:95%;" />
                 <p> IoT Hub - Event Hub-compatible endpoint </p>
             </div>
             <p> 11.2 To get telemetry to pass from the IoT Hub to the function, we need to configure the function with
@@ -1844,7 +1859,7 @@
             </code> </pre>
             
             <br>
-            <p> Make the following updates the function project source code: see the screenshot below. </p>
+            <p> Make the following updates the function workspace source code: see the screenshot below. </p>
             <p> 1. Modify the "using Microsoft.Azure.EventHubs;" to "using Azure.Messaging.EventHubs;" consistent with
                 the updated Microsoft.Azure.WebJobs.Extensions.EventHubs package. 
             </p>
@@ -1853,22 +1868,23 @@
 
             <div
             style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-            <img src="images/faas20.jpg" style="width:100%;" />
+            <img src="images/faas20.jpg" style="width:95%;" />
             <p> Minor updates to the function project source code </p>
         </div>
         </li>
 
         <li>
-            Deploy the Function project to Azure Function Application running in the Cloud by clicking the Azure Icon in the activity bar,
+            <p> Deploy the Function project to Azure Function Application running in the Cloud by clicking the Azure Icon in the activity bar,
             selecting the function workspace, and clicking the cloud-arrow icon.  
-            <br> 
+            <br><br> 
             If you are signed in Azure,
             a list of function applications to deploy, will be displayed.  Select "RTDMSFunctionApp" and click deploy.
             (see the screenshot below)
+            </p>
             <div
             style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-            <img src="images/faas23.jpg" style="width:100%;" />
-            <img src="images/faas25.jpg" style="width:100%;" />
+            <img src="images/faas23.jpg" style="width:95%;" />
+            <img src="images/faas25.jpg" style="width:95%;" />
             <p> Deploy The Function Project (local workspace) to the Azure Function Application in the Cloud  </p>
         </div>
 
@@ -1882,7 +1898,7 @@
 
          <div
             style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-            <img src="images/faas26.jpg" style="width:100%;" />
+            <img src="images/faas26.jpg" style="width:95;" />
             <p> Function Project deployed to the "RTDMSFunctionApp" Function Application</p>
         </div>
         </li>
@@ -1891,15 +1907,31 @@
             Click "Monitor" -> "Logs" to View realtime telemetry received by the Function Application 
             <div
             style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
-            <img src="images/faas27.jpg" style="width:100%;" />
-            <img src="images/faas28.jpg" style="width:100%;" />
-            <img src="images/faas21.jpg" style="width:100%;" />
+            <img src="images/faas27.jpg" style="width:95%;" />
+            <img src="images/faas28.jpg" style="width:95;" />
+            <img src="images/faas21.jpg" style="width:95%;" />
             <p> View realtime Telemetry Received by the function</p>
         </div>
 
         </li>
 
     </ol>
+
+    <h3> Task 3: Write Azure Function Code</h3>
+    <p>  The task is to write a functionto process incoming telemetry by deserializing UTF8 encoded messages and
+        extracting the temperature and humidy
+        data, and comparing the data values to user specified thresholds (threshholds can be hard coded). If
+        temperature and/or humidy thesholds are
+        exceeded, the function should send a remote cloud-to-device (c2d) message back to the RTDMS device to
+        automatically (remotely) activate
+        the external HVAC system (note: HVAC system is a 120v AC powered Fan). The LCD character display should
+        be illuminated to indcate HVAC (ON/OFF status). Additionally, the function should use an FTTT web hook to
+        automatically notify
+        an operator by dispatching an email and/or a text message indicating current (exceeded) temperature conditions.
+        You will need to
+        create and IFTTT account to create a web hook. You can learn more about IFTTT here: <a
+            href="https://ifttt.com/explore">https://ifttt.com/explore</a>
+    </p></p>
 
     <script src="js/prism.js"></script>
     <script src="js/copycode.js"></script>
