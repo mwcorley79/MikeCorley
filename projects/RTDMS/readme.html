@@ -15,27 +15,36 @@
     <p> Recent advancements in embedded computing technology have enabled a new generation of smaller and faster
         internet-of-things (IoT) devices. In research and development (and often in military contexts), the acronynm
         SWaP-C is used in reference to optimizing the Size, Weight, Power, and Cost of pysical devices, systems, and
-        programs. The convergence of allied technologies such as Edge computing, scalable Cloud services, AI/ML algorithm
-        advancement, and ubiqutious high bandwidth network availability (e.g., 5G), have led an evolving distributed ecosystem that
-        offers alternative, cost-effective, performant, scalable and resilent aproach to solving traditionally hard computational challenges.
-        Although new technology offers may benefits and advantages, there are also untended consequence that introduce new risks. The
-        adoption of IoT technology into both military and commercial environments has been stifled due to the increased security risks and interoperability
-        challenges resulting largely from lacking standardization and guidance, and the high degree variance in capabilities across 
-        the major pedigrees of device types, hardare features, and network protocols utilized. Competing (and proprietary) vendor systems
-        further increase interoperability challenges, and ultimately incease the complexity of integrating IoT technology into operational
-        systems and environments.
+        programs. The convergence of allied technologies such as edge computing, scalable cloud services, AI/ML
+        algorithm
+        advancement, and ubiqutious high bandwidth network availability (e.g., 5G), have led to an evolving ecosystem
+        that
+        offers a cost-effective, performant, scalable, and resilent approach to solving traditionally hard computational
+        challenges.
+        Although new technology offers advantages over traditional methods, there are also unintended consequences that
+        introduce
+        new risks. The adoption of IoT technology into military and commercial environments has been stifled due to the
+        increased security risks and interoperability challenges that result from lacking standards and propritary vendor 
+        systems that span the major pedigrees of device types, hardware features, and supported network communication protocols. Competing (and
+        proprietary) vendor systems. The high degree variability across the major device types has significantly complexity of security, 
+        conformance, and interoperability compliance testing.
     </p>
 
     <h3> <b>Objectives and Goals</b></h3>
     <p>The objective of this is to enable cyber security analysts and systems engineers to develop the
         architectural awareness to reason critically about the design, security, and resiliency of IoT systems. IoT
-        systems consist of hetergenous parts, and is therefore important that analysts have a holistic understanding of the
+        systems consist of hetergenous parts, and is therefore important that analysts have a holistic understanding of
+        the
         underlying architecure. This repository describes an active learning project that leads the student through the
-        end-to-end scenaro to design and implementation of a (“Smart”) IoT prototype that provides remote datacenter condition monitoring,
-        automated temperature regulation, and automated operator alerting. The student will gain a more complete understanding by designing and implementing 
-        an IoT systemfrom scratch, beginning with prototyping the basic device hardware, developing the essential software to drive the device,
-        and the code required to process telemetry deployment and executed in the Cloud.  
-        At each layer of the design, a critical security analysis/assessment should be performed to identify and document potential vulnerabilities. 
+        end-to-end scenaro to design and implementation of a (“Smart”) IoT prototype that provides remote datacenter
+        condition monitoring,
+        automated temperature regulation, and automated operator alerting. The student will gain a more complete
+        understanding by designing and implementing
+        an IoT systemfrom scratch, beginning with prototyping the basic device hardware, developing the essential
+        software to drive the device,
+        and the code required to process telemetry deployment and executed in the Cloud.
+        At each layer of the design, a critical security analysis/assessment should be performed to identify and
+        document potential vulnerabilities.
         A mitigation strategy should be developed and implemented for each identified case.
     </p>
 
@@ -43,21 +52,27 @@
     <p>Information technology (IT) infrastructure is one of the most important assets to data centric environment. If IT
         equipment such as servers, firewalls, routers, switch panels and related systems were to overheat, it could
         significantly impact the performance, availability, and the reliability of critical information systems,
-        potentually resulting in grave financial damage and even loss of life. The application of new IoT technology and with the
-        use of Cloud services can be used to achieve a lightweight, cost-effective solution that minimizes costs and overhead by
+        potentually resulting in grave financial damage and even loss of life. The application of new IoT technology and
+        with the
+        use of Cloud services can be used to achieve a lightweight, cost-effective solution that minimizes costs and
+        overhead by
         automating certain datacenter maintenance operations such montoring and regulating temperature conditions.
     </p>
 
     <h3> <b>Project Description</b></h3>
     <p>The RDTMS (v1.0) is intended to be prototyped using the Raspberry PI (RPi) SBC (single board computer), version 2
-        or greater. The purpose is to developed a "smart" HVAC system to monitor temperature and humidity conditions, and
+        or greater. The purpose is to developed a "smart" HVAC system to monitor temperature and humidity conditions,
+        and
         automatically activate/deactivate an external HVAC unit when sensed operating conditions exceed specified
         thresholds. A LCD character display is used indicate HVAC operation (ON/OFF) status. The system will
-        automatically dispatch a recorded phone call or text message to alert maintenance operators when conditions exceed specified
+        automatically dispatch a recorded phone call or text message to alert maintenance operators when conditions
+        exceed specified
         threshholds. If-This-Then-That (IFTTT) automation service is integated using a webhook exposed from an Azure
         function to facilite making phone call, sending the text message, or sending an email. A downloadable
-        Cloud-hosted (PaaS) web application will deployed to the Azure Cloud, and used to provide maintenance operators with a
-        real-time visualization and telemetry monitoring capability that can be viewed using a desktop PC or mobile device.
+        Cloud-hosted (PaaS) web application will deployed to the Azure Cloud, and used to provide maintenance operators
+        with a
+        real-time visualization and telemetry monitoring capability that can be viewed using a desktop PC or mobile
+        device.
     </p>
 
     <div style="margin:1em;margin-left:0;padding:.5em;width:60%;height:25%;border:solid thin; text-align: center;">
@@ -65,18 +80,16 @@
         Figure 1: RTDMS version 1.0
     </div>
 
-  
-
     <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:35%;border:solid thin; text-align: center">
         <img src="images/vis.png" width="100%" />
         Figure 2: Azure Cloud-Hosted (PaaS) TelemeMonitoring Web Application
     </div>
 
-
     <br>
+
     <h3> <b> Concept Architecture Description </b> </h3>
     <p>
-         The goal of this project is to design and implement a robust prototype solution for the sample problem above.     
+        The goal of this project is to design and implement a robust prototype solution for the sample problem above.
     </p>
 
     <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:30%;border:solid thin">
@@ -86,9 +99,10 @@
         </center>
     </div>
 
-     <p> Using the concept illustrated above, the implementation for the "Smart" HVAC prototype can be divided into four (4)
-        basic tasks, consistent with the commonly accepted conceptual framework (4-layer) architecture shown below:
-     </p>
+    <p> Using the concept illustrated in Figure 3, the implementation for the "Smart" HVAC prototype can be divided into
+        four (4)
+        basic tasks: :
+    </p>
     <ol>
         <li> Construct the (Device) Hardware.</li>
         <li> Develop the code (called the driver) that runs locally on the RPi to manage the electronic components that
@@ -121,18 +135,19 @@
         </ol>
     </div>
 
-    <p>As a security testing framework, each respective layer represents a conceptual mapping the device architecture functionality to specific testing types that should be
+    <p>As a security testing framework, each respective layer represents a conceptual mapping the device architecture
+        functionality to specific testing types that should be
         performed. Compare this framework to the RTDMS concept architecture depicted in Figure 4
-        (above). From Figure 3, and determine how the RTDMS functionality maps into the testing framework. 
+        (above). From Figure 3, and determine how the RTDMS functionality maps into the testing framework.
     </p>
 
     <br>
 
     <h2> <b> Task 1: Construct the Device: </b> </h2>
     <p>
-      <b> Device (Hardware) requirements: </b> 
-      RPi dev board (versions 2,3, and 4 suffice), and full-size breadboard
-      consisting of the following electronic components: 
+        <b> Device (Hardware) requirements: </b>
+        RPi dev board (versions 2,3, and 4 suffice), and full-size breadboard
+        consisting of the following electronic components:
     </p>
 
     <ul>
@@ -177,7 +192,7 @@
     </ul>
     <p>The electronic components connect to the RPi through the 40-pin general purpose input/output (GPIO) header. The
         GPIO supports low-level pin access and serial bus protocols for communicating (input and output) between the RPi
-        device and external electronic components. 
+        device and external electronic components.
     </p>
 
     <div style="margin:1em;margin-left:0;padding:.5em;width:20%;height:10%;border:solid thin; text-align: center;">
@@ -198,7 +213,8 @@
 
     <p>
         RPi supports multiple pin numbering schemes (GPIO, BOARD) that determined how pins are identified and addressed
-        by in source code. This RTDMS project will use the GPIO scheme. View the following reference for more detail on RPi
+        by in source code. This RTDMS project will use the GPIO scheme. View the following reference for more detail on
+        RPi
         supported pin number schemes: https://learn.sparkfun.com/tutorials/raspberry-gpio/gpio-pinout Figure 6 (above)
         provides a close up view of the the GPIO header. RPi supports serial bus protocols including I<sup>2</sup>C and
         SPI through the GPIO header.
@@ -212,14 +228,18 @@
         transfer), and SCL (for carrying the clock signal). I<sup>2</sup>C and the similar serial peripheral interface
         (SPI) protocol are commonly used in embedded device applications such as gateways and home routing devices, as
         well as industrial/commercial devices for integrated circuit communication. See the following URL for additional
-        detail on these protocols : <em> <a href="https://learn.sparkfun.com/tutorials/i2c/all">https://learn.sparkfun.com/tutorials/i2c/all</a> </em>
+        detail on these protocols : <em> <a
+                href="https://learn.sparkfun.com/tutorials/i2c/all">https://learn.sparkfun.com/tutorials/i2c/all</a>
+        </em>
     </div>
 
     <br>
 
     <h3> <b> Assemble the Device Hardware </b> </h3>
-    Beginning with the Raspberry Pi unplugged from the power source, follow the design sketch as shown below to install the electronic
-    compnents. Install the BME280 sensor and the LCD character display onto the breadboard, and connect them to theI<sup>2</sup>C bus using
+    Beginning with the Raspberry Pi unplugged from the power source, follow the design sketch as shown below to install
+    the electronic
+    compnents. Install the BME280 sensor and the LCD character display onto the breadboard, and connect them to
+    theI<sup>2</sup>C bus using
     pins SDA and SCK as described below:
 
     <div style="margin:1em;margin-left:0;padding:.5em;width:60%;height:30%;border:solid thin;text-align: center;">
@@ -230,18 +250,20 @@
     <br>
 
     <p><b>Complete the steps (1-14) below to construct the device: </b> The finished prototype should closely resemble
-    Figure 7 (above). </p>
+        Figure 7 (above). </p>
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
         <b>Note:</b>the following tutorial (URL below) by Cam Soper is an excellent primer for understanding the
         basic breadboard prototyping concepts and code, with illustrations for connecting the BME280 sensor to the GPIO
-        header: <a href=" https://learn.microsoft.com/en-us/training/modules/create-iot-device-dotnet/2-construct-iot-hardware"> 
+        header: <a
+            href=" https://learn.microsoft.com/en-us/training/modules/create-iot-device-dotnet/2-construct-iot-hardware">
             https://learn.microsoft.com/en-us/training/modules/create-iot-device-dotnet/2-construct-iot-hardware</a>
     </div>
 
     <div style="background:lightblue;margin:1em;width:fit-content;padding:1em">
         <img src="images/stop.png" style="float: left; width: 2em; height: 2em; margin-right: .5em;" />
-        <b>Warning:</b> care must be taken with connecting devices to the GPIO header. Improper electrical connections can
+        <b>Warning:</b> care must be taken with connecting devices to the GPIO header. Improper electrical connections
+        can
         permanently damage the Raspberry Pi
     </div>
 
@@ -294,11 +316,14 @@
 
     <div style="background:#FF2A00;color:white;margin:1em;width: fit-content; padding:1em">
         <img src="images/shock.jpg" style="width:50px; height:50px; float:left; margin:.5em">
-        <b>Danger: </b> The RTDMS sketch (above) is shown with an LED acting as a stand-in for the HVAC system. This is primarily
+        <b>Danger: </b> The RTDMS sketch (above) is shown with an LED acting as a stand-in for the HVAC system. This is
+        primarily
         to test the application logic during development. The completed prototype uses the relay to control a separate,
         high-voltage circuit to power external devices (the HVAC unit). It is <u><b>important to ensure that the
-        relay is properly connected to the high-voltage side! Incorrect connection of the relay to a 120v AC outlet can
-        result in a dangerous electrical shock and/or a fire! </b></u> The mentor will assist in ensuring the relay is properly
+                relay is properly connected to the high-voltage side! Incorrect connection of the relay to a 120v AC
+                outlet can
+                result in a dangerous electrical shock and/or a fire! </b></u> The mentor will assist in ensuring the
+        relay is properly
         connected for activating the HVAC unit. The figure below illustrates the completed RTDMS prototype with the
         connection for the 120V AC power outlet.
     </div>
@@ -312,17 +337,18 @@
     <p> Refer to the following URL, follow the documentation to download and install the Raspberry Pi Imager to a
         computer
         with an SD Card reader. Insert the SD card into the computer:
-        <a href="https://www.raspberrypi.com/software/operating-systems/"> https://www.raspberrypi.com/software/operating-systems/</a>
+        <a href="https://www.raspberrypi.com/software/operating-systems/">
+            https://www.raspberrypi.com/software/operating-systems/</a>
         The Imager will provide an option to choose "Rasperry Pi OS (other)". Select Raspberry Pi OS (64-bit Debian
         Bullseye) Pi Desktop as shown in below.
-        <div style="background:lightblue;margin:1em;padding:1em">
-            <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-            <b>Note:</b> You can use the 32-bit version of the Raspberry OS, but the 64-bit version is recommended.
-        </div>
-        
-        The sproket (cog) wheel on the lower right of the imager window allows
-        you to configure the Rasberry Pi prior to writing the image to the SD card. Configure settings including username,
-        network ssid, VNC, and SSH etc. as shown below:
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b>Note:</b> You can use the 32-bit version of the Raspberry OS, but the 64-bit version is recommended.
+    </div>
+
+    The sproket (cog) wheel on the lower right of the imager window allows
+    you to configure the Rasberry Pi prior to writing the image to the SD card. Configure settings including username,
+    network ssid, VNC, and SSH etc. as shown below:
     </p>
 
 
@@ -362,7 +388,8 @@
         <u> https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c </u>
     </div>
 
-    <p> <b> Test that the BME280 sensor and the LCD character display are configured properly for I<sup>2</sup>C bus communication: </b></p>
+    <p> <b> Test that the BME280 sensor and the LCD character display are configured properly for I<sup>2</sup>C bus
+            communication: </b></p>
     <p>Use the "i2cdetect" command as discussed in the following URL, to scan the I<sup>2</sup>C bus. The BME280 and LCD
         character display addresses should be displayed as 0x77 for the BME280, and 0x27 for the LCD character display.
         If no addresses appear in the scan (or only one address) then either the circuit configuration is incorrect,
@@ -376,68 +403,104 @@
     <h2><b> Task 2: Develop (complete) the Code for RTDMS Driver Software </b></h2>
     <h3> <b> Getting Started: </b></h3>
     <p>The RTDMS driver is the code that runs on the physical device. This includes the code for reading the BME280
-        (TPH) sensor data over the I<sup>2</sup>C bus, and packaging the data as telemetry to dispatch to the Cloud. As you
+        (TPH) sensor data over the I<sup>2</sup>C bus, and packaging the data as telemetry to dispatch to the Cloud. As
+        you
         will see below, the majority of the code has been provided. Your job is understand and complete each of the code
-        sections as described. The project was prepared on Ubuntu 22.04 host, developed with the C# programming and .Net 6.0 SDK environment
-        using the standard .Net IoT NuGet packages. Visual Studio (VSCode) editor with appropriate extensions is the recommended code editor. 
-        The Raspberry 3 single board computer (SBC) with ARM-64bit CPU, latest version of Raspberry Pi OS (Debian Linux distro) was selected the target
+        sections as described. The project was prepared on Ubuntu 22.04 host, developed with the C# programming and .Net
+        6.0 SDK environment
+        using the standard .Net IoT NuGet packages. Visual Studio (VSCode) editor with appropriate extensions is the
+        recommended code editor.
+        The Raspberry 3 single board computer (SBC) with ARM-64bit CPU, latest version of Raspberry Pi OS (Debian Linux
+        distro) was selected the target
         platform for the RDTMS prototype.
     </p>
 
     <h3><b> Create an Microsoft Azure Cloud Account: Student Subscription </b></h3>
-    <p> RTDMS prototype transmits temperature and humidity telemetry to the Azure(IoT Hub) Cloud service using 
-        Message Queuing Telemetry Transport (MQTT) protocol.  You will will need an Azure Cloud subscription. 
-        Refer to the following URL, use your university or school email to sign up a 
-        $100 Azure credit (good for 12 months): <a href="https://azure.microsoft.com/en-us/free/students/">https://azure.microsoft.com/en-us/free/students/</a>
+    <p> RTDMS prototype transmits temperature and humidity telemetry to the Azure(IoT Hub) Cloud service using
+        Message Queuing Telemetry Transport (MQTT) protocol. You will will need an Azure Cloud subscription.
+        Refer to the following URL, use your university or school email to sign up a
+        $100 Azure credit (good for 12 months): <a
+            href="https://azure.microsoft.com/en-us/free/students/">https://azure.microsoft.com/en-us/free/students/</a>
     </p>
 
     <p>
         Refer to the following URL to create an Azure IoT Hub Service (using the free tier), and register a new IoT
-        device. Name the device the "RTDMS_dev1". 
+        device. Name the device the "RTDMS_dev1".
     </p>
 
     <p> Copy the device the primary connection string, you will need to configure the
         appsettings.json configuration file in thge next section. The connection string is needed for authenticating the
         RTDMS device, and the Azure Cloud (IoT Hub service).
         <a
-            href="https//learn.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#create-an-iot-hub">
-            https//learn.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#create-an-iot-hub\
+            href="https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#create-an-iot-hub">
+            https//learn.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#create-an-iot-hub
         </a>
     </p>
 
     <br>
 
     <h3> <b> Ubuntu 22.04 (Development Host) Setup </b> </h3>
-    <p> Download and Visual Studio Code (VSCode) editor for Linux: 
-      <a href="https://code.visualstudio.com/docs/?dv=linux64_deb">https://code.visualstudio.com/docs/?dv=linux64_deb</a>
+    <p> Follow the instructions to Download Visual Studio Code (VSCode) editor for Linux:
+        <a
+            href="https://code.visualstudio.com/docs/?dv=linux64_deb">https://code.visualstudio.com/docs/?dv=linux64_deb</a>
     </p>
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b> Note: </b> It appears the recent versions VSCode (v1.79+) don't operate correctly with Azure Functions
+        Extension (needed later) on
+        Ubuntu 22.04 (i.e. the "+" create workspace, function projects doesn't appear in the extension window). The
+        interim fix
+        for this issue is to install VSCode version 1.78 (April 2023) as illustrated:
+        <a href="https://update.code.visualstudio.com/1.78.2/linux-deb-x64/stable">Download VSCode 1.78</a>
+        <div style="margin:1em;margin-left:0;padding:.5em;width:100%;height:40%;border:solid thin; text-align: center;">
+            <img src="images/vs178.jpg" style="width: 100%;" />
+            <p> VSCode: <u> Install version 1.78 to resolve errors with Azure Functions Extension</u> </p>
+        </div>
+    </div>
+    <br>
+
+    <!--
     <div style="margin:1em;margin-left:0;padding:.5em;width:65%;height:40%;border:solid thin; text-align: center;">
         <img src="images/vscode3.jpg" style="width: 100%;" />
-            <p> VSCode: <u> https://code.visualstudio.com/docs/?dv=linux64_deb </u> </p>    
+        <p> VSCode: <u> https://code.visualstudio.com/docs/setup/linux </u> </p>
     </div>
-    <pre style="width: 400px;">
-       <code class="language-bash"> sudo apt install ./code_version.deb</code>
+    <pre style="width: 50%;">
+       <code class="language-bash"> 
+        sudo dpkg -i <file>.deb
+        sudo apt-get install -f # Install dependencies
+       </code>
     </pre>
-   <br>
-   
     <br>
+
+    <br>
+    
     <p> <b> Start VSCode and install the official (Microsoft) C# language extension as illustrated (below): </b> </p>
     <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin; text-align: center">
-        <img src="images/extension1.jpg" style="width: 100%;" />
-        <u> Official C# VSCode extension </u> 
+        <img src="images/extension2.jpg" style="width: 100%;" />
+        <u> Official C# VSCode extension </u>
     </div>
     <br>
+   -->
 
-    <h4> Install .Net 6.0 (LTS) for Linux (x64) on the Development Host): <a href=" https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a> </h4>
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:40%;border:solid thin; text-align: center">
+    <h4> Install .Net 6.0 (LTS) for Linux (x64) on the Development Host): <a
+            href=" https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a>
+    </h4>
+    <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:40%;border:solid thin; text-align: center">
         <img src="images/dotnet.jpg" style="width: 100%;" />
-         Dotnet 6.0:  <u> https://dotnet.microsoft.com/en-us/download/dotnet/6.0 </u>  
+        Dotnet 6.0: <u> https://dotnet.microsoft.com/en-us/download/dotnet/6.0 </u>
     </div>
 
-     <br>
-    <p> Extract the downloaded file to $HOME/dotnet folder and set using export to execute the dotnet command from
+    <br>
+
+    <p> Extract the downloaded file to $HOME/dotnet folder and set using export to execute the dotnet commands from
         current session:
     </p>
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b> Note: </b> The command below illustrates use with dotnet sdk version: "dotnet-sdk-6.0.411". You will need to
+        substitute
+        with your downloaded version of the dotnet SDK.
+    </div>
 
     <pre> <code class="language-bash">
             # note: substitute vers. 6.0.411 for other downloaded .Net SDK versions
@@ -468,7 +531,19 @@
     </div>
 
     <h2> <b> Create the .Net (RTDMS-V1) Solution (sln) </b></h2>
-    <p> Open terminal, and use the dotnet CLI (command line interface) to run the command below. </p>
+    <p> Open terminal, and use the dotnet CLI (command line interface) to run the command below.
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b> Note: </b> The .Net solution is container for .Net projects. Notice there is currently one console
+        project (RTDMS-driver), and one library project (TelemModel). Both projects are added to the RTDMS-V1 solution.
+        The "dotnet new console" command creates a project configuration that builds (compiles) to a .Net executable
+        assembly (an .exe) file. Executable files are command line programs intended to be run
+        from the "console" (the terminal/shell window). Library projects by contrast, are not executed directly
+        (such as the TelemModel project). Libray projects are compiled to dynamic link library (.dll) assemblies,
+        and linked to console (executable) projects during compilation (statically), or (dynamically) at runtime.
+        In most cases, library projects contain code that intended to be shared (reused) by multiple projects.
+    </div>
+    </p>
     <pre>
         <code class="language-bash">
             # Open command termninal, navigate to the home (~) folder and make a projects folder
@@ -514,26 +589,33 @@
             </code>              
             </pre>
 
-            <div style="background:lightblue;margin:1em;padding:1em">
-                <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-                <b>Note on the C# .Net IoT (NuGet) Library packages: </b>
-                 <ul>
-                     <li> 
-                        <b> System.Device.Gpio: </b> supports general-purpose I/O (GPIO) pins, PWM, I2C, SPI and related interfaces
-                        for interacting with low level hardware pins to control hardware sensors, displays and input devices on
-                        single-board-computers; Raspberry Pi, BeagleBoard, HummingBoard, ODROID, and other single-board-computers
-                        that are supported by Linux.  
-                    </li>
-                    <li>
-                        <b> IoT.Device.Bindings: </b> provides device bindings to streamline app development by wrapping
-                        System.Device.Gpio. It contains classes representing a wide array of common IoT sensors and other devices.
-                        It's a community-driven, open-source project, and anybody can add new device support.
-                    </li>
-                 </ul>
-            </div>
+    <p>
+        The RTDMS-driver is a Linux Executable program that implements device functionality on a Raspberry Pi,
+        using the services of various software artifacts:
+    </p>
 
-
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b>Note on the C# .Net IoT (NuGet) Library packages: </b>
+        <ul>
+            <li>
+                <b> System.Device.Gpio: </b> supports general-purpose I/O (GPIO) pins, PWM, I2C, SPI and related
+                interfaces
+                for interacting with low level hardware pins to control hardware sensors, displays and input devices on
+                single-board-computers; Raspberry Pi, BeagleBoard, HummingBoard, ODROID, and other
+                single-board-computers
+                that are supported by Linux.
+            </li>
+            <li>
+                <b> IoT.Device.Bindings: </b> provides device bindings to streamline app development by wrapping
+                System.Device.Gpio. It contains classes representing a wide array of common IoT sensors and other
+                devices.
+                It's a community-driven, open-source project, and anybody can add new device support.
+            </li>
+        </ul>
+    </div>
     <br>
+
     <h3> <b> Prepare the RTDMS code </b></h3>
     <pre style="width: 40%;">
         <code class="language-bash">
@@ -545,19 +627,20 @@
         </code>
     </pre>
     <br>
-    <p> </p>As illustrated by the VSCode screenshot below: Create a subfolder named <b>src</b> under the <b>RTDMS-driver</b> project folder: </p>
-    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+    <p> </p>As illustrated by the VSCode screenshot below: Create a subfolder named <b>src</b> under the
+    <b>RTDMS-driver</b> project folder: </p>
+    <div style="margin:1em;margin-left:0;padding:.5em;width:90%;height:50%;border:solid thin; text-align: center;">
         <img src="images/sln_view.jpg" width="100%" />
-        VSCode: RDTMS Solution folder 
+        VSCode: RDTMS Solution folder
     </div>
 
     <br>
 
     <p> Under the "RDTMS_driver/src" folder, create the following C# code (.cs) files, and copy the code content as
-     specifed for each file. </p>
+        specifed for each file. </p>
 
     <p>1. Move the existing Program.cs file in "RDTMS_driver/" to the "RDTMS_driver/src" folder, and replace the
-    contents of the file with the code shown below:
+        contents of the file with the code shown below:
     </p>
 
     <pre>
@@ -602,7 +685,7 @@
 
     <br>
     <p>2. Create a new .cs file called: RTDMS.cs in "RDTMS_driver/src". Copy and Paste the code below and save the
-    file. RTDMS.cs implements the primary RTDMS-driver functionality. </p>
+        file. RTDMS.cs implements the primary RTDMS-driver functionality. </p>
     <pre><code class="language-csharp">
 
             // Description: Interim (version 1) IoT bootcamp development project (Remote Data Center Monitoring) prototype
@@ -1016,11 +1099,11 @@
             }
          }
         </code></pre>
-        <br>
+    <br>
 
     <p> 3. Create a new .cs file called: IoTHubClient.cs in " RDTMS_driver/src". Copy and Paste the code below and
-    save the file. IoTHubClient is a utility class for connecting to the Azure IoT hub using Shared Access
-    Signature (SAS) and provides functions for device-to-cloud (d2c), and cloud-to-device (c2d) messaging.
+        save the file. IoTHubClient is a utility class for connecting to the Azure IoT hub using Shared Access
+        Signature (SAS) and provides functions for device-to-cloud (d2c), and cloud-to-device (c2d) messaging.
     </p>
 
     <pre><code class="language-csharp">
@@ -1111,15 +1194,15 @@
                 }
             }
             </code></pre>
-           
-            <br> 
 
-            <p>4. Create a new .cs file called: LCDWriter.cs in "RDTMS_driver/src". Copy and Paste the code below and
-                save the file. LCDWriter.cs provides a reusable C# package for the writing messages to LCD character
-                displays.
-            </p>
+    <br>
 
-         <pre> <code class="language-csharp">
+    <p>4. Create a new .cs file called: LCDWriter.cs in "RDTMS_driver/src". Copy and Paste the code below and
+        save the file. LCDWriter.cs provides a reusable C# package for the writing messages to LCD character
+        displays.
+    </p>
+
+    <pre> <code class="language-csharp">
            using Iot.Device.CharacterLcd;
             using Iot.Device.Pcx857x;
             using System;
@@ -1222,14 +1305,14 @@
             }
          </code></pre>
 
-         <br>
+    <br>
     <p>5. Create a new .cs file named: Settings.cs in "RDTMS_driver/src". Copy and Paste the code
-    below and save the file.
-    Settings.cs provide data model for reading JSON configuration values from appsettings.json,
-    used to configure the RTDMS application.
+        below and save the file.
+        Settings.cs provide data model for reading JSON configuration values from appsettings.json,
+        used to configure the RTDMS application.
     </p>
 
-    <pre> 
+    <pre>
         <code class="language-csharp">
         // Description: Interim (version 1) IoT bootcamp development project (Remote Data Center Monitoring) prototype
         // Skill Level: university engineering or comp sci ( sophomore and higher)
@@ -1253,13 +1336,14 @@
     </code>
  </pre>
 
- <br>
+    <br>
     <p>6. Create an file named: appsettings.json in "RDTMS_driver/src". Copy and Paste the JSON
-    content below, and save the file.  <b> Replace "ConnectionStringValue" with the primary connecting string for the "RTDMS_dev1"
-   device you registered when you created the IoT Hub previously. </b>
-   "appsettings.json" is the JSON formatted configuration file that stores the application settings 
-   used to configure the RTDMS application. appsettings.json is read once during
-    application startup to popuplate the settings for the RTDMS driver.
+        content below, and save the file. <b> Replace "ConnectionStringValue" with the primary connecting string for the
+            "RTDMS_dev1"
+            device you registered when you created the IoT Hub previously. </b>
+        "appsettings.json" is the JSON formatted configuration file that stores the application settings
+        used to configure the RTDMS application. appsettings.json is read once during
+        application startup to popuplate the settings for the RTDMS driver.
     </p>
 
     <pre><code class="language-bash">
@@ -1280,7 +1364,7 @@
     <br>
 
     <p>7. In project folder "TelemModel/", rename Class1.cs to Telem.cs replace the file content
-    with the code below, and save the file.
+        with the code below, and save the file.
     </p>
 
     <pre> <code class="language-csharp">
@@ -1303,44 +1387,47 @@
                             </code> </pre>
 
     <br>
-                
+
     <h3> <b> Building RTDMS driver code </b></h3>
     <p> At this point, the RTDMS driver should compile successfully with no errors and no warnings.
-    To Test if the code compiles succesfully, open a terminal in the VScode editor and navigate to the solution folder: <u>cd RTDMS-V1/</u>, and
-    issue the command:
+        To Test if the code compiles succesfully, open a terminal in the VScode editor and navigate to the solution
+        folder: <u>cd RTDMS-V1/</u>, and
+        issue the command:
     </p>
 
-    <p> 
-      <u> "dotnet build" </u> to compile all of the projects in the solution as shown in the example screen shot
-       below.
+    <p>
+        <u> "dotnet build" </u> to compile all of the projects in the solution as shown in the example screen shot
+        below.
     </p>
 
     <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
         <img src="images/build.jpg" />
-        <p> VSCode: RDTMS Solution folder </p> 
+        <p> VSCode: RDTMS Solution folder </p>
     </div>
 
     <p> If the build command displays errors or warnings, then revist the steps for under "Preparing
-    the code" above. Note: that although the code compiles succesfully on the host, it will not run host because the IoT libraries(Device.Bindings, and Devoce.GPIO) target 
-    Raspberry Pi hardware (i.e., the GPIO header etc.). Therefore, we need build the code for the Rasberry Pi architecture (ARM), and deploy it to the Raspberry Pi.
+        the code" above. Note: that although the code compiles succesfully on the host, it will not run host because the
+        IoT libraries(Device.Bindings, and Devoce.GPIO) target
+        Raspberry Pi hardware (i.e., the GPIO header etc.). Therefore, we need build the code for the Rasberry Pi
+        architecture (ARM), and deploy it to the Raspberry Pi.
     </p>
 
     <h3><b>Deploying the RTDMS driver code to the Raspberry Pi </b></h3>
-    <p>To run/test the RTDMS code, it must be deployed to target hardware device. For
-    this project, the target hardware is the prototype RTDMS device you assembled on the full size
-    breadboard and connected to a Raspberry Pi via the GPIO header.
+    <p>To run/test the RTDMS code, it must be deployed to target device. For RTDMS the target hardware is the prototype
+        device you assembled on the full size
+        breadboard, and connected to a Raspberry Pi through the GPIO header.
     </p>
 
     <br>
-    <p>RTDMS code deployment to Raspberry Pi can be accomplished using two commands, saved to a
-    script to run each time the code is uploaded to the Raspberry PI. </p>
+    <p>RTDMS code deployment to Raspberry Pi can be accomplished using two commands, and saved to a
+        script to be run to upload the code to the Raspberry PI. </p>
     <p>Commands:</p>
-    
+
     <ol>
         <li>The <b><em> dotnet publish --runtime linux-arm64 --self-contained </em></b> command builds the
             RTDMS application application code for self-contained deployment to Raspberry PI target CPU
             architecture.
-        
+
             <br>
             <br>
             This command creates a directory with RTDMS binaries and all of the depenencies required for
@@ -1350,20 +1437,22 @@
             <br>
             The option <em> --runtime linux-arm64 </em> generates binaries compiled for the ARM (64-bit)
             CPU architecure. The <em> --self-contained </em> option packages
-            the .Net CLR (virtual machine) runtime along side the RTDMS application deployment
+            the .Net CLR (virtual machine) runtime togther with the RTDMS application deployment
             binaries. Packaging the runtime with RTDMS binaries carries the advantage of not
-            requiring the .Net SDK to be installed on the Raspberry Pi OS system.
+            requiring the .Net SDK to be installed on the Raspberry Pi device.
 
             <div class="note">
                 Note the location of the publish folder: <u>
                     RDTMS_driver/bin/Debug/net6.0/linux-arm64/publish </u>
             </div>
         </li>
-        <li> 
+        <li>
             The <em> scp (secure copy) </em> command is used to copy the files from the publish folder to the
-            deployment location on the Raspberry Pi.  For example, the commmand: <b><em> scp RTDMS_driver/bin/Debug/net6.0/linux-arm/publish/*
-            pi@192.168.43.160:~/RTDMS_deployment" </em> </b> secure copies all of the files in publish folder to the remote raspberry Pi folder: "~/RTDMS_deployment". "pi" is the
-            specified username, and "192.168.43.160" is the example IP address of the Raspberry Pi.     
+            deployment location on the Raspberry Pi. For example, the commmand: <b><em> scp
+                    RTDMS_driver/bin/Debug/net6.0/linux-arm64/publish/*
+                    pi@192.168.43.160:~/RTDMS_deployment" </em> </b> secure copies all of the files in publish folder to
+            the remote raspberry Pi folder: "~/RTDMS_deployment". "pi" is the
+            specified username, and "192.168.43.160" is the example IP address of the Raspberry Pi.
         </li>
     </ol>
 
@@ -1378,138 +1467,438 @@
         packaging using docker (container) images.
     </div>
 
-    <p> Using the deployment commands described above, create bash scripted  named: <em> deploy-script.sh </em> in "RDTMS_driver/src". Copy and Paste the
-    content shown below, and save the file.
+    <p> Using the deployment commands described above, create a bash scripted named: <em> deploy-script.sh </em> in
+        "RDTMS_driver/src". Copy and Paste the
+        content shown below, and save the file.
     </p>
 
     <pre> <code class="language-bash">
         # 1. Compile for the ARM (64-bit) architecture, and publish the RTDMS-driver to folder:
-        bin/Debug/net6.0/linux-arm64/publish for deployment to RPi target device
+        # "bin/Debug/net6.0/linux-arm64/publish" for deployment to RPi target device
         dotnet publish --sc -r linux-arm64
 
-        # 2. secure copy to the publish (deployment) folder tp the Raspberry Pi, specified folder
-        # replace "username" with your Raspberry Pi username, and "ip_address" with
-        # the IP address of your Raspberry Pi. This example assumes the deployment folder:
+        # 2. secure copy from the publish (deployment) folder to the specified (remote) folder on the Raspberry Pi. 
+        # Replace "username" with your Raspberry Pi username, and "ip_address" with
+        # the IP address of your Raspberry Pi. This example assumes a deployment folder named:
         ~/RTDMS_deployment
-        scp bin/Debug/net6.0/linux-arm/publish/* username@ip-address:~/RTDMS_deployment                      
+        scp bin/Debug/net6.0/linux-arm64/publish/* username@ip-address:~/RTDMS_deployment                      
     </code></pre>
 
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
         <b> Note: </b> You might want consider configuring your raspberry PI to use passwordless SSH,to enhance
         productivity:
-        <a href="https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a">https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a</a>
+        <a
+            href="https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a">https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a</a>
     </div>
 
     <h3> <b> Complete the implementation of the RTDMS driver code </b></h3>
     <p> Open source code <em>RTDMS.cs</em> in <em>RDTMS_driver/src</em></p>
-    <p> Locate, and complete all of the functions with the preceding comment: 
-        <b style="padding: .25em;color: gray;background-color: black;"><em>  /* complete this function */ </em></b>  </p>
+    <p> Locate, and complete all of the functions with the preceding comment: <br> <br>
+        <b style="padding: .25em;color: gray;background-color: black;"><em> /* complete this function */ </em></b>
+    </p>
 
     <h2><b> Task 3: Develop a Cloud-Hosted (Azure) Function (FaaS), to process the device telemetry</b></h2>
     <p>
-       As telemetry arrives at the IoT Hub, a cloud-hosted function is triggered using IoT Hub Trigger. 
-       Using IoT Hub trigger cause the functions to execute whenever telemetry arrives at the IoT Hub service.
-       This code decodes (deserializes) the telemetry messages, and compares the temp/humidity values against user specified thresholds.   
-       If a threshold is exceeded, a C2D message should be dispatched to remoting activate the HVAC system (i.e., for this project the HVAC system is a 120v AC Fan )
-       Additionally, an IFTTT web hook should be used to automatically notify an operator by sending an email and/or a text message.
-       You will need to create and IFTTT account. You can learn more about IFTTT here: <a href="https://ifttt.com/explore">https://ifttt.com/explore</a>
+        Azure Functions is a serverless FaaS (function-as-service) solution in which a small unit of source code (using
+        any programming language)
+        is deployed and executed (using triggers), and without requiring explicit IT infrastructure and server
+        management.
+        In the case of the RTDMS
+        prototype, the task is to write a function that will be triggered whenever telemetry (temperature and humidy)
+        data
+        arrives at the IoT hub service (IoT Hub trigger).
+        The function requirements are to process incoming telemetry by deserializing UTF8 encoded messages and
+        extracting the temperature and humidy
+        data, and comparing the data values to user specified thresholds (threshholds can be hard coded). If
+        temperature and/or humidy thesholds are
+        exceeded, the function should send a remote cloud-to-device (c2d) message back to the RTDMS device to
+        automatically (remotely) activate
+        the external HVAC system (note: HVAC system is a 120v AC powered Fan). The LCD character display should
+        be illuminated to indcate HVAC (ON/OFF status). Additionally, the function should use an FTTT web hook to
+        automatically notify
+        an operator by dispatching an email and/or a text message indicating current (exceeded) temperature conditions.
+        You will need to
+        create and IFTTT account to create a web hook. You can learn more about IFTTT here: <a
+            href="https://ifttt.com/explore">https://ifttt.com/explore</a>
     </p>
+
     
-    <p> To create a new Azure (FaaS) function, the following prerequisites are required:</p>
-    <div style="background:lightblue;margin:1em;padding:1em">
+        <h3> <b>Developing and Deploying an Azure function for the RTDMS prototype requires two steps: </b> </h3>
+        <ol>
+            <li>
+                <b><u>Creating and Deploying the function project </u></b> to an Azure function application in the Cloud.
+                Creating the function project is accomplished with a local workspace, using the VSCode extension
+                as
+                described below.
+            </li>
+            <li> <b><u>Create the function application in the Azure Cloud</u></b> - this can be accomplished through the Azure
+                web portal,
+                or through the VScode Azure extension (this document describes creating function application using the
+                Azure portal).
+                An Azure function application can host multiple function projects.
+            </li>
+            <br>
+        </ol>
+    
+
+    <div style="background:orange;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-        <b> Note: </b> You require an active Azure subscription, to complete this task. If you have not created account subscription,
-        please do so before proceding: <a href="https://azure.microsoft.com/en-us/free/students/">https://azure.microsoft.com/en-us/free/students/</a>
+        <b> Prerequisites: </b> An active Azure subscription is required to complete this task. If you have not already
+        created an account and subscription,
+        please do so before proceding with this task: <a
+            href="https://azure.microsoft.com/en-us/free/students/">https://azure.microsoft.com/en-us/free/students/</a>
     </div>
+
+    <h3>1. Create the Azure Function Application Using the Azure Web Portal</h3>
     <ol>
-        <li> install curl:  <em>sudo apt-get install curl</em></li>
-        <li>Install Azure Functions Core Tools version 4.x.  (for Linux) <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cportal%2Cv2%2Cbash&pivots=programming-language-csharp#install-the-azure-functions-core-tools">Azure Functions Core Tools version 4.x. </a></li>
         <li>
-            Install The Azure Functions extension for Visual Studio Code: 
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+            Sign in to the Azure portal: <a href="https://azure.microsoft.com/en-us/get-started/azure-portal">
+                https://azure.microsoft.com/en-us/get-started/azure-portal
+            </a>
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:90%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/azure-p1.jpg" />
+                <p> Azure Portal Sign in </p>
+            </div>
+        </li>
+        <li>
+            Search for "function app" as and click the function app icon as shown below:
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:90%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/azure-p2.jpg" />
+                <p> Portal search for Azure Function App </p>
+            </div>
+        </li>
+        <li>
+            Click "Create", to begin the new Function Application: Supply inputs for the following fields as shown below:
+            <ul>
+                <li> Choose an existing, or create a new resource group (recommended to use the same resource group used for the IoT Hub)"</li>
+                <li> Set The Function App Name: "RTDMSFunctionApp" </li>
+                <li> Set the Runtime stack : ".NET"</li>
+                <li> Version: "6 (LTS) - long term suppprt
+                    <div style="background:lightblue;margin:1em;padding:1em; margin-right: 10em; width: fit-content;">
+                        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+                        <b> Important: </b> Make sure the runtime version selected for the function app matches the runtime version
+                        selected
+                        for function code project in the next step. 
+                    </div>
+                </li>
+                <li> Choose a "region" closest to your location (I happen to be in New York), so "East US" is most
+                    appropriate.</li>
+                <li>Select <u> "Windows" </u>for the operating system, and <u>"Consumption (Serverless)" </u> for the
+                    hosting option." </li>
+                <li> Verify options, and click "Review + Create"</li>
+            </ul>
+
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/azure-p3.jpg" />
+                <hr>
+                <img src="images/azure-p4.jpg" />
+
+                <p> Create an Azure Function Application </p>
+            </div>
+        </li>
+        <li>
+            If the configuration review succeeds, click "Create" to Deploy the function application as shown below
+            <div
+                style="background:lightblue;margin:1em;padding:1em; margin-right: 10em; width: fit-content;display: flex;">
+                <img src="images/note.png" style="float: left;  width: 2em; height: 2em; margin-right: .5em;">
+                <b> Note: </b> deployment will take a few minutes to complete
+                </img>
+
+            </div>
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/azure-p5.jpg" />
+                <hr>
+                <img src="images/azure-p6.jpg" />
+                <p> Create and Deploy the Function Application </p>
+            </div>
+        </li>
+
+    </ol>
+
+    <h3>2. Create the Function Project, and deploy it to the "RTDMSFunctionApp" Function Application in the Cloud </h3>
+    <ol>
+        <li> Install curl: <em>sudo apt-get install curl</em></li>
+        <li>Install Azure Functions Core Tools version 4.x. (for Linux) <a
+                href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cportal%2Cv2%2Cbash&pivots=programming-language-csharp#install-the-azure-functions-core-tools">Azure
+                Functions Core Tools version 4.x. </a></li>
+        <li>
+            Install The Azure Functions extension for Visual Studio Code:
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
                 <img src="images/faas.jpg" />
-                <p> Install VScode Azure Function Extension </p> 
+                <p> Install VScode Azure Function Extension </p>
             </div>
         </li>
         <li>
             Sign in or Create an Azure Subscription
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
                 <img src="images/faas1.jpg" />
-                <p> Sign in to azure  </p> 
+                <p> Sign in to azure </p>
             </div>
         </li>
-
         <li>
-            Choose the Azure icon in the Activity bar, then in the Workspace (local) area, select the + button, 
+            Choose the Azure icon in the Activity bar, then in the Workspace (local) area, select the + button,
             choose Create Function in the dropdown. When prompted, choose Create new project.
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas2.jpg" />
-                <p> Create a new Azure Function using Azure->Workspace  </p> 
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas2_1.jpg" />
+                <p> Create a new Azure Function using Azure->Workspace </p>
             </div>
         </li>
 
         <li>
-            Browse to the RTDMS_V1 solution folder, and create new workdspace folder called "RTDMS_functions", and select "Create" as  illustrated below:
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+            Browse to the RTDMS_V1 solution folder, and create new workspace folder called "RTDMS_functions", and
+            select "Create" as illustrated below:
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
                 <img src="images/faas3.jpg" />
-                <p> Create A New Project Workspace Folder  </p> 
+                <p> Create A New Project Workspace Folder </p>
             </div>
         </li>
-        
+
         <li>
             Select "C# Language" for the New Project
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
                 <img src="images/faas4.jpg" />
-                <p> Select C# Language for te Function project   </p> 
+                <p> Select C# Language for the Function project </p>
             </div>
         </li>
 
         <li>
-            Select a .Net runtime: Choose ".Net 6.0 LTS", if you have have .Net 6.0 installed, or ".Net 7.0 LTS", if you have .Net 7.0 installed. 
+            Select a .Net runtime: Choose ".Net 6.0 LTS", if you have have .Net 6.0 installed, or ".Net 7.0 LTS", if you
+            have .Net 7.0 installed.
             <b>Do Not use:</b> "Isolated LTS"
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas5.jpg" />
-                <p> Select C# Language for te Function project   </p> 
-            </div>
-        </li>
-
-        <li>
-            Select "IoT Hub (Event Hub) template" for the function trigger".  Using IoT Hub trigger causes the functions to execute whenever 
-            telemetry arrives at the IoT Hub service.
-          
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas6.jpg" />
-                <p> 1. IoT Hub (Event Hub) Trigger </p> 
-                <img src="images/faas7.jpg" />
-                <p> 2. Keep the default, or change the name to you choice, press enter </p> 
-                <img src="images/faas8.jpg" />
-                <p> 3. use namespace, "Viceroy.Funcs", as shown above  </p> 
-            </div>
-        </li>
-
-        <li>
-            Choose the Defaults for the remaining prompts. Your completed function should resemble the following
-            screen shot: 
-          
-            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
-                <img src="images/faas9.jpg" />
-            </div>
-        </li>
-
-        <hr>
-
-        <li>
-             Sign into Azure and Create the Function Application. 
-             <div style="background:lightblue;margin:1em;padding:1em">
+            <div style="background:lightblue;margin:1em;padding:1em">
                 <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-                <b> Note: </b> You must use the exact runtime for the application, that you selected when you created the function project
-                <a href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp">Creating Azure Functions Reference</a>
+                <b> Note: </b> You must use the exact runtime for the function project, and the corresponing Azure
+                function application
+                for successfull deployment. Otherwise, you may see a runtime error in the Azure portal
+
+                <a href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp">Creating
+                    Azure Functions Reference</a>
             </div>
-            
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas5.jpg" />
+                <p> Select C# Language for the Function project </p>
+            </div>
         </li>
 
-        
+        <li>
+            Select "IoT Hub (Event Hub) template" for the function trigger". IoT Hub trigger causes the function
+            code to execute whenever
+            telemetry arrives at the connected IoT Hub service.
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas6.jpg" />
+                <p> IoT Hub (Event Hub) Trigger </p>
+            </div>
+
+            <br>
+            9.1 Provide a name for the function, or keep the default, and press enter
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas7.jpg" />
+                <p> Default function name: can be changed to a name of your choice </p>
+            </div>
+
+            <br>
+            9.2. Specify the function namespace: "Viceroy.Funcs", as shown below
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas8.jpg" />
+                <p> Use namespace, "Viceroy.Funcs", as shown above </p>
+            </div>
+
+            <br>
+            9.3. Choose "+ Create new local app settings, for running/testing the function locally: local.settings.json"
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas10.jpg" />
+                <p> local app settings: "local.settings.json""</p>
+            </div>
+
+            <br>
+            9.4 Click: "skip event hub namespace"</p>
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas11.jpg" />
+
+            </div>
+            <br>
+            9.5. Press Enter to comfirm the IoT hub endpoint: "message/events"
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/faas12.jpg" />
+
+            </div>
+        </li>
+
+        <br>
+        <li>
+            Upon completion of the above steps, the following function code will be generated (note: it may take a few
+            fews minutes generate)
+
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas13.jpg" />
+            </div>
+        </li>
+
+        <li>
+            <p>We need to finalize the configuration settings, and make minor modifications to the function copde in
+                order
+                the function to
+                compile, and deploy successfully. </p>
+
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas14.jpg" style="width:100%;" />
+                <p> local.settings.json </p>
+            </div>
+
+            <br>
+            <p>11.1 In RTDMS_functions explorer view, open "local.settings.json" and update the key:
+                <em><b>"AzureWebJobsStorage"</em></b> with the value: <em><b>"UseDevelopmentStorage=true", and shown
+                        above</em></b></p>
+            </p>
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas16.jpg" style="width:100%;" />
+                <p> IoT Hub - Event Hub-compatible endpoint </p>
+            </div>
+            <p> 11.2 To get telemetry to pass from the IoT Hub to the function, we need to configure the function with
+                IoT Hub endpoint for the data to be visible to the function code. <br><br>
+                Sign into the Azure portal and navigate to the IoT Hub resource you created
+                previously. <br><br> As shown above, from the left pane menu, click <em> <b>"Built-in
+                        endpoints"</b></em>,
+                and copy the value for the <em><b> "Event-Hub compatible endpoint" </b></em>and paste it as the value
+                for the
+                <em><b>"HubConnection"</b></em> key in "local.setting.json"
+                Make sure the keys/values and are double-quoted as shown in the illustration above. Save and close the
+                file.
+            </p>
+
+            <br>
+            <p> 11.3 Using Azure portal, navigate the Azure function application: "RTDMSFunctionApp", created in the
+                previous section. Click on
+                <em><b>Configuration</b></em> as shown below.
+            </p>
+
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas17.jpg" style="width:100%;" />
+                <p> Azure Function App Configuration </p>
+            </div>
+            <br>
+            <p> Click <em><b>New application setting</b></em> and enter the "HubConnection" configuration key, and the
+                "Event-Hub compatible endpoint" of IoT Hub as just as was specified in local.settings.json. This creates
+                an environment variable ("HubConnection") that connects the "RTDMSFunctionApp" function application to
+                the IoT
+                Hub service using the hubs endpoint with the "iothubowner" shared access policy.
+            </p>
+
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas18.jpg" style="width:100%;" />
+                <p> "Azure Function App Configuration </p>
+            </div>
+           
+           
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas19.jpg" style="width:100%;" />
+                <p> Azure Function App Configuration </p>
+            </div>
+            <div
+                style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+                <img src="images/faas22.jpg" style="width:100%;" />
+                <p> Save Configuration Settings </p>
+            </div>
+        </li>
+        <li>
+            <p> Open a VScode terminal, and navigate to the "RDTMS_functions" project workspace:
+            </p>
+            <p> Run the folowing commands on the "RDTMS_functions" projects: </p>
+
+            <pre> <code class="language-bash">
+            # make sure current folder is the RTDMS project workspace
+            cd ~/projects/RTDMS-V1/RTDMS_functions/
+                
+            # update the function to use the latest version of the Microsoft.Azure.WebJobs.Extensions.EventHubs package
+            dotnet add package Microsoft.Azure.WebJobs.Extensions.EventHubs
+                
+            # since the function will have send cloud-to-device (c2d) commands to activate the HVAC system,
+            # Add the NuGet package for the c2d communication to function project: 
+            dotnet add package Microsoft.Azure.Devices
+                
+            # The function decodes, and processes device telemetry so add a reference to TelemetryModel class lib project:
+            dotnet add RTDMS_functions.csproj reference ../TelemModel/TelemModel.csproj
+            </code> </pre>
+            
+            <br>
+            <p> Make the following updates the function project source code: see the screenshot below. </p>
+            <p> 1. Modify the "using Microsoft.Azure.EventHubs;" to "using Azure.Messaging.EventHubs;" consistent with
+                the updated Microsoft.Azure.WebJobs.Extensions.EventHubs package. 
+            </p>
+            <p> 2. Update the IoTHubrigger attribute value to use HubConnection setting: "Connection=HubConnection" </p>
+            <p> 3. Modify "message.Body.Array" to "message.Body.ToArray()" </p>
+
+            <div
+            style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+            <img src="images/faas20.jpg" style="width:100%;" />
+            <p> Minor updates to the function project source code </p>
+        </div>
+        </li>
+
+        <li>
+            Deploy the Function project to Azure Function Application running in the Cloud by clicking the Azure Icon in the activity bar,
+            selecting the function workspace, and clicking the cloud-arrow icon.  
+            <br> 
+            If you are signed in Azure,
+            a list of function applications to deploy, will be displayed.  Select "RTDMSFunctionApp" and click deploy.
+            (see the screenshot below)
+            <div
+            style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+            <img src="images/faas23.jpg" style="width:100%;" />
+            <img src="images/faas25.jpg" style="width:100%;" />
+            <p> Deploy The Function Project (local workspace) to the Azure Function Application in the Cloud  </p>
+        </div>
+
+        </li>
+
+        <li>
+         <p> </p>Use the Azure web portal to navigate the "RTDMSFunctionApp" Function Application. As illustrated below, click the "Functions" 
+         option on the side menu to view the deployed function.  Note: the function was deployed as zip file package, 
+         in read only mode, so you won't be able view the code.  </p> 
+         </li>
+
+         <div
+            style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+            <img src="images/faas26.jpg" style="width:100%;" />
+            <p> Function Project deployed to the "RTDMSFunctionApp" Function Application</p>
+        </div>
+        </li>
+
+        <li>
+            Click "Monitor" -> "Logs" to View realtime telemetry received by the Function Application 
+            <div
+            style="margin:1em;margin-left:0;padding:.5em;width:85%;height:60%;border:solid thin; text-align: center;">
+            <img src="images/faas27.jpg" style="width:100%;" />
+            <img src="images/faas28.jpg" style="width:100%;" />
+            <img src="images/faas21.jpg" style="width:100%;" />
+            <p> View realtime Telemetry Received by the function</p>
+        </div>
+
+        </li>
+
     </ol>
 
     <script src="js/prism.js"></script>
