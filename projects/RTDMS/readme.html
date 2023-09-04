@@ -459,11 +459,10 @@
     </p>
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-        <b> VScode issue: </b> It appears the recent versions VSCode (v1.79+) don't operate correctly with Azure Functions
+        <b> VScode issue: </b> In some instances, with recent versions VSCode (v1.79+) don't operate correctly with Azure Functions
         Extension (needed later) on
-        Ubuntu 22.04 (i.e. the "+" create workspace, function projects doesn't appear in the extension window). The
-        interim fix
-        for this issue is to install VSCode version 1.78 (April 2023) as illustrated:
+        Ubuntu 22.04 (i.e. the "+" create workspace, function projects doesn't appear in the extension window). If you experience 
+        this issue, the interim fix is to install a previous VSCode version 1.78 (April 2023) as illustrated:
         <a href="https://update.code.visualstudio.com/1.78.2/linux-deb-x64/stable">Download VSCode 1.78</a>
         <div style="margin:1em;margin-left:0;padding:.5em;width:100%;height:40%;border:solid thin; text-align: center;">
             <img src="images/vs178.jpg" style="width: 95%;" />
@@ -472,15 +471,18 @@
     </div>
     <br>
 
-    <!--
-    <div style="margin:1em;margin-left:0;padding:.5em;width:65%;height:40%;border:solid thin; text-align: center;">
+    <h4> <b> Install the latest version of the VSCode on linux</b> </h4>
+    <div style="margin:1em;margin-left:0;padding:.5em;width:90%;height:40%;border:solid thin; text-align: center;">
         <img src="images/vscode3.jpg" style="width: 100%;" />
-        <p> VSCode: <u> https://code.visualstudio.com/docs/setup/linux </u> </p>
+        <p> VSCode: <a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux </a> </p>
     </div>
-    <pre style="width: 50%;">
+
+    <pre style="width: 90%;">
        <code class="language-bash"> 
-        sudo dpkg -i <file>.deb
-        sudo apt-get install -f # Install dependencies
+      sudo apt install ./<file>.deb
+      # If you're on an older Linux distribution, you will need to run this instead:
+       # sudo dpkg -i <file>.deb
+       # sudo apt-get install -f # Install dependencies
        </code>
     </pre>
     <br>
@@ -488,12 +490,12 @@
     <br>
     
     <p> <b> Start VSCode and install the official (Microsoft) C# language extension as illustrated (below): </b> </p>
-    <div style="margin:1em;margin-left:0;padding:.5em;width:50%;height:25%;border:solid thin; text-align: center">
+    <div style="margin:1em;margin-left:0;padding:.5em;width:80%;height:25%;border:solid thin; text-align: center">
         <img src="images/extension2.jpg" style="width: 100%;" />
         <u> Official C# VSCode extension </u>
     </div>
     <br>
-   -->
+
 
     <h4> Install .Net 6.0 (LTS) for Linux (x64) on the Development Host): <a
             href=" https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a>
@@ -962,17 +964,17 @@
                     HVAC_On = onoff;
                     if(HVAC_On)
                     {
-                        // *** 1. write the the code to turn On the HVAC
-                        Console.WriteLine("HVAC On not implementated");
+                        // *** 1. write the the code to turn On the HVAC         
                     }
                     else
                     {
-                        // *** 2. write the the code to turn On the HVAC
-                        gpio.Write(HVAC_Pin, PinValue.Low);
+                        // *** 2. write the the code to turn Off the HVAC
                     }
 
-                    Console.WriteLine($"{LCD_message}");
-                    // *** 3. write the code to display the message on the LCD character display
+                    // display LCD message in the console
+                       Console.WriteLine($"{LCD_message}");
+                    
+                       // *** 3. write the code to display the message on the LCD character display
                 }
 
                 bool ExecuteCommand(string commandText)
@@ -1428,9 +1430,31 @@
     </p>
 
     <h3><b>Deploying the RTDMS driver code to the Raspberry Pi </b></h3>
+
     <p>To run/test the RTDMS code, it must be deployed to target device. For RTDMS, the target hardware is the prototype
         device you assembled on the full size
         breadboard and connected to a Raspberry Pi using the GPIO header.
+    </p>
+
+    <p> Prior to deploying the code, you need to specify a target deployment folder on the remote (raspberry pi) 
+        device. Open a terminal, and start an ssh session to the device as shown in command below:
+        
+        <pre> <code class="language-bash">
+            # substitute "username" with raspberry pi username, and "ip-address" for IPv4 address
+            # of the raspberry pi 
+            ssh username@ip-address
+     </code></pre>
+
+     Supply the password to authenticate (or consider setting up "passwordless ssh" as mentioned below).
+     <br>
+     In the remote terminal, create a new deployment folder to contain the RTDMS code:
+     "mkdir ~/RTDMS_deployment" as illustrated in the screen below:
+
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+        <img src="images/deploy-folder.jpg" style="width: 95%;" />
+        <p> Create remote deploymemt folder over ssh </p>
+    </div>
+   
     </p>
 
     <br>
@@ -1482,9 +1506,21 @@
     </div>
 
     <p> Using the deployment commands described above, create a bash scripted named: <em> deploy-script.sh </em> in
-        "RDTMS_driver/src". Copy and Paste the
-        content shown below, and save the file.
+        "RDTMS_driver/". Copy and Paste the
+        content shown below, and save the file. <br>
+        Make the deployment script executable: 
+        <pre> <code class="language-bash">
+          chmod +x ./deploy-script.sh
+        </code></pre>
     </p>
+
+    <div style="background:lightblue;margin:1em;padding:1em">
+        <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+        <b> Note: </b> if you installed the 32-bit version of Raspberry PI OS, then you will be need 
+        to the change the commands below to compile for 32-bit, rather 64-bit as ist shown.  Specifically,
+        change the instances of <b> <em>linux-arm64 </em></b> to <br>
+         <b><em>linux-arm</em></b> in both command shown below
+    </div>
 
     <pre> <code class="language-bash">
         # 1. Compile for the ARM (64-bit) architecture, and publish the RTDMS-driver to folder:
@@ -1500,17 +1536,203 @@
 
     <div style="background:lightblue;margin:1em;padding:1em">
         <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
-        <b> Note: </b> You might want consider configuring your raspberry PI to use passwordless SSH,to enhance
-        productivity:
+        <b> Note: </b> You might consider configuring your Raspberry PI to use passwordless SSH (see the following link)
         <a
             href="https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a">https://danidudas.medium.com/how-to-connect-to-raspberry-pi-via-ssh-without-password-using-ssh-keys-3abd782688a</a>
     </div>
 
+    <b><h3> Execute the RTDMS driver executive on the remote device </h3></b>
+    <p> Open a terminal, start an ssh session with Raspberry Pi (if the ssh session used for the deployment section above is still valid,
+        use that, otherwsie start a  new session). 
+        <br><br>
+         Navigate to the deployment folder (~/RTDMS_deployment), make the RTDMS driver executable, and run the execuatble 
+        as shown in the screen shot illusrated below. The RTDMS driver menu shoud be displayed in the terminal (Console) window:
+        
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+        <img src="images/test-run.jpg" style="width: 95%;" />
+        <p> Run the RTDMS driver execuable from ssh session to the Raspberry Pi </p>
+    </div>
+   
+    </p>
+
     <h3> <b> Complete the implementation of the RTDMS driver code </b></h3>
+
+    <p> The primary intent of the coding exercises is to expose newcomers (systems engineers and cyber security analysts)
+        to the foundational architectural ideas behind a moderately complex end-to-end IoT system.    
+        Understanding the software that drives an IoT system with architectural perspective is arguably
+        the most significant aspect for reasoning about critical issues including cyber security, resilency, and system 
+        robustness.
+
+        <br><br>
+        You will find that the majority of the code for this project is provided.
+        <br><br>
+        The goal is influence the reader to make a detailed study of the code proivided by completing the exercises to gain
+        a deeper understanding of how IoT devices functional in the basic general sense. The project code is self guided 
+        walk thru of the design and the implementation of the major components from scratch.  The intent is not focus exclusively software 
+        design principles, but rather to guide the reader into holistic architectural perspective of basic IoT systems in general, 
+        while gaining insigns into the some of core implentations concepts and underpinnings required for effective reasoning.     
+         <br><br>
+        
+         <div style="background:lightblue;margin:1em;padding:1em">
+            <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+            <b> Note: </b> The project is designed around the C# .Net 
+            development stack toolset, and Azure Cloud ecosystem, but other development and stack can easily be substituted. Having 
+            completed this project as is, you might choose to subsitute the .Net C# language for Python or Java,
+            and Micrsoft Azure Cloud servuices for Amazon (AWS) Cloud services.      
+        </div>
+
+    
+        RTDMS driver code runs on the Raspberry Pi (as an embedded Linux OS process), which implements the basic IoT 
+         functionality of the prototyoe device.  
+         <div style="background:lightblue;margin:1em;padding:1em">
+            <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+            <b> Note: </b> The Rasberry Pi is single board computer (SBC), in contrast to a microcontroller in which
+            the code (i.e., the firmware)  is flashed to the deviceand runs as single process executive rather, not as a 
+            full fledged OS process.  
+        </div>
+         
+         
+        The RTDMS code supports the core device features including 
+        reading the BME280 sensor (i.e., temperature, humdity, pressure) data, writing status 
+        messages to the LCD caharacter display, and bidirectional message communication between the device
+        and cloud over encrypted MQTT (Message Queueing Telemetry Transport) session. <br><br>
+         Azure Cloud communication is supported by "Microsoft.Azure.Devices.Client" NuGet package 
+         Local communcation between the Raspberry PI and the RDTMS sensors uses the I2C serial bus protocol.  
+         The official .Net IoT NuGet packages: "System.Device.Gpio", and "IoT.Device.Bindings", described above.
+        The rasberry Pi provides I2C and GPIO access support though the onboard (40-pin) GPIO header.
+    
+        </p>
+
+    <p> The goal of thsi section is enable  you </p>
     <p> Open source code <em>RTDMS.cs</em> in <em>RDTMS_driver/src</em></p>
-    <p> Locate, and complete all of the functions with the preceding comment: <br> <br>
+
+    <p> Locate, and complete the functions with the preceding comment: <br> <br>
         <b style="padding: .25em;color: gray;background-color: black;"><em> /* complete this function */ </em></b>
     </p>
+
+    <br>
+     <b><h3>Task 2: Code Exercise # 1</h3></b>
+     <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+        <img src="snippets/task1.jpg" style="width: 95%;" />
+        <p>  Locate and complete this code in RTDMS.cs </p>
+    </div>
+     <p>a. Complete the function shown above, by writing the code to read the BME280 sensor, and 
+       return a 3-tuple (temperature, humidity, pressure). 
+
+       <br> <br>
+       
+       b. Save and deploy the changes to the Raspberry Pi. <br> <br>
+       c. Run the RTDMS driver, type 's' menu option, press Enter. The output result should resemble
+             the following screen shot illustrating the BME280: temperature, and humidity data. <em>(Note: only
+             only the temperature and humidy and displayed, since RTDMS does not currently utilize barometic 
+             pressure). </em>
+             <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/task1-out.jpg" style="width: 95%;" />
+                <p>  Correct Output for coding exercise #1  </p>
+            </div>
+    </p>
+
+
+    <br>
+     <b><h3>Task 2: Code Exercise # 2</h3></b>
+     <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+        <img src="snippets/task2.jpg" style="width: 95%;" />
+        <p>  Locate and complete this code in RTDMS.cs </p>
+    </div>
+     <p>a. Complete the function (shown above), by writing the code activate/deactivate 
+            (turn on and off) the external HVAC system.  <br>
+            
+            <div style="background:lightblue;margin:1em;padding:1em">
+                <img src="images/note.png" style="float: left;width: 2em; height: 2em; margin-right: .5em;" />
+                <b> Note: </b>  Activating The HVAC, should cause the LED controlled by the relay to illuminate (see Figure 1)  
+                If the rely is setup to control an external circuit (e.g., 120v AC), whatever device is attached to the circuit
+                should activate/deactivate accordingly (i.e., the HVAC system). 
+            </div>
+
+        b. Write the code to display the HVAC operating status on the LCD character display. 
+
+       <br> <br> 
+       
+       c. Save and deploy the changes to the Raspberry Pi. <br> <br>
+       Run the RTDMS driver, toggle 'h' menu option (pressing Enter) to see view the HVAC On/Off function
+       of the rely activating and deactivating the external device.
+        The output result should resemble
+             the following screen shot illustrating status message: "HVAC On" and "HAC Off" in the Menu console, and 
+             the LCD character display.
+             <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+                <img src="images/task2-out.jpg" style="width: 95%;" />
+                <p>  Correct Output for coding exercise # 2   </p>
+            </div>
+    </p>
+
+
+    <br>
+    <b><h3>Task 2: Code Exercise # 3</h3></b>
+    <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+       <img src="snippets/task3.jpg" style="width: 95%;" />
+       <p>  Locate and complete this code in RTDMS.cs </p>
+   </div>
+    <p>a. Complete the function (shown above). Refer to comments in code above, and write 
+        the code to serialize the telemetry data object as JSON message.  Encode the JSON message using UTF-8 encoding, 
+        and finally send the message to the Azure IoT using Message Queuing Telemetry Transport protcol (MQTT). 
+        
+        <br> <br> Use the following URL and guide for this exercise: 
+        <a href="https://github.com/Azure/azure-iot-sdk-csharp/blob/main/iothub/device/samples/getting%20started/SimulatedDevice/Program.cs">
+            https://github.com/Azure/azure-iot-sdk-csharp/blob/main/iothub/device/samples/getting%20started/SimulatedDevice/Program.cs
+        </a>  <br><br>
+        <b>Note: MQTT communication with the Azure IoT Hub is facilated through the IoTHubClient object.  You do not need to establish 
+        an explict MQTT session since, the RTDMS driver establish a secure connection to the IotT Hub service on 
+        during start up.
+        </b>
+     </em> 
+           
+        
+      <br> <br> 
+      
+      b. Save and deploy the changes to the Raspberry Pi. <br><br>
+      Run the RTDMS driver, toggle 'h' menu option (pressing Enter) to see view the HVAC On/Off function
+      of the relay activating and deactivating the external device.
+       The output result should resemble
+            the following screen shot illustrating the status message: "HVAC On" and "HVAC Off" in the Menu console, and 
+            the LCD character display.
+            <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+               <img src="images/task2-out.jpg" style="width: 95%;" />
+               <p>  Correct Output for coding exercise # 2   </p>
+           </div>
+   </p>
+
+
+   <br>
+   <b><h3>Task 2: Code Exercise # 4</h3></b>
+   <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+      <img src="snippets/task4.jpg" style="width: 95%;" />
+      <p>  Locate and complete this code in RTDMS.cs </p>
+  </div>
+   <p>a. Complete the function (shown above).  Write the code change the telemetry transmit interval. Referring to
+    the code shown, implement the following:
+
+        a. Prompt user for new interval rate (in milliseconds (ms) e.g. 1 sec == 1000 ms)
+        b. Read the new the rate from the user via command line (STDIN)
+        c. Verify what the user input is valid
+        d. Set the TransitInterval variable with value read from the user
+        e. Write a message on the console (STDOUT), indicating the messaging rate has been updated.
+      
+   
+     <br> <br> 
+     
+     f. Save and deploy the changes to the Raspberry Pi. <br><br>
+     Run the RTDMS driver, select 't' menu option (pressing Enter) Separe thread
+     of the relay activating and deactivating the external device.
+      The output result should resemble
+           the following screen shot illustrating the status message: "HVAC On" and "HVAC Off" in the Menu console, and 
+           the LCD character display.
+           <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:50%;border:solid thin; text-align: center;">
+              <img src="images/task2-out.jpg" style="width: 95%;" />
+              <p>  Correct Output for coding exercise # 2   </p>
+          </div>
+  </p>
+
+
 
     <h2><b> Task 3: Develop a Cloud-Hosted (Azure) Function (FaaS), to process the device telemetry</b></h2>
     <p>
@@ -1668,7 +1890,7 @@
 
         <li>
             Browse to the RTDMS_V1 solution folder, and create new workspace folder called "RTDMS_functions", and
-            select "Create" as illustrated below:
+            select "Create" and select as the workspace folder as illustrated below:
             <div
                 style="margin:1em;margin-left:0;padding:.5em;width:85%;height:50%;border:solid thin; text-align: center;">
                 <img src="images/faas3.jpg" />
